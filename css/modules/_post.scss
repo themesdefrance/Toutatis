@@ -1,0 +1,304 @@
+.post{
+	margin-bottom: 50px;
+}
+
+.post-header{
+	margin-bottom: 20px;
+	padding-bottom: 5px;
+	@extend %custom-border;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+.post-thumbnail{
+	position:relative;
+	overflow:hidden;
+	
+	transition: .4s background ease-out;
+	
+	img{
+		height:auto;
+		display:block;
+	}
+	
+	.post-permalink{
+		display: block;
+		position:relative;
+		text-decoration: none;
+		color: inherit;
+		overflow: hidden;
+		
+		img{		
+			opacity:1;
+			transition:.4s opacity ease-out;
+		}
+		
+		&:before{
+			background: #000;
+			content: attr(title);
+			opacity: 0;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%) scale(.1);
+			backface-visibility: hidden;
+			font-size: 18px;
+			line-height: 1;
+			padding: 12px 8px;
+			text-align: center;
+			transition: .2s all ease-out;
+			z-index: 10;
+		}
+	}
+	
+	&:hover{
+		/*color:transparent;*/
+		
+		img,
+		iframe{
+			filter: blur(1.5px);
+			opacity:0.5;
+		}
+		
+		.post-permalink:before{
+			opacity: 1;
+			transform: translate(-50%, -50%);
+		}
+	}
+}
+
+.post-thumbnail,
+.post-video{
+	margin-bottom:10px;
+}
+
+.single .post-thumbnail:hover img{
+	filter: none;
+	opacity:1;
+}
+
+.post-header-title{
+	@extend .typcn;
+	
+	a{
+		transition: color 0.2s ease-out;
+	}
+	
+	&:before{
+		@extend %custom-color;
+	}
+}
+
+.format-standard .post-header-title:before{
+			content: '\e04a';
+}
+
+.format-link .post-header-title:before{
+			content: '\e09b';
+}
+
+.format-video .post-header-title:before{
+			content: '\e130';
+}
+
+.format-quote .post-header-title:before{
+			content: '\e0b7';
+}
+
+.post-header-title,
+.post-header-title a{
+	color: #333;
+	text-decoration: none;
+	margin-bottom: 10px;
+	font-size: 36px;
+}
+
+.post-header-title blockquote{
+	display:inline;
+}
+
+.post-header-meta{
+	color: #B2B2B2;
+	font-size: 14px;
+}
+.post-header-meta a,
+.post-footer-meta a{
+	@extend %custom-color;
+	text-decoration: none;
+}
+.post-content{
+	font-size: 16px;
+	line-height: 1.6;
+	
+	*{
+		max-width:100%;
+		-ms-word-wrap: break-word;
+		word-break: break-word;
+	}
+	
+	img{
+		height:auto;
+	}
+	
+	h1{
+		font-size: 36px;
+		margin-bottom: 14px;
+	}
+	h2{
+		font-size: 28px;
+		margin-bottom: 10px;
+	}
+	h3{
+		font-size: 24px;
+		margin-bottom: 8px;
+	}
+	h4,h5,h6{
+		font-size: 18px;
+		margin-bottom: 6px;
+	}
+	dl,
+	table,
+	ul,
+	ol,
+	address{
+		margin-bottom: 20px;
+	}
+	p{
+		margin-bottom: 10px;
+	}
+	//no margins for nested lists
+	ul ul,
+	ul ol,
+	ol ul,
+	ol ol{
+		margin-bottom: 0;
+		
+		li{
+			margin-left: 25px;
+		}
+	}
+	//custom list style
+	ul,
+	ol{
+		list-style: none;
+	}
+	ul > li:before{
+		content: "▪";
+		@extend %custom-color;
+		padding-right: 4px;
+		font-size: 20px;
+	}
+	ol{
+		counter-reset: ordered;
+	}
+	ol > li{
+		counter-increment: ordered;
+		
+		&:before{
+			content: counter(ordered);
+			@extend %custom-color;
+			padding-right: 8px;
+			font-size: 20px;
+		}
+	}
+	li{
+		list-style-position: outside;
+		margin-bottom: 5px;
+	}
+	a{
+		@extend %custom-color;
+		text-decoration: none;
+		
+		&:hover{
+			text-decoration:underline;
+		}
+		
+	}
+	
+	dt{
+		font-weight: 700;
+	}
+	dt ~ dd{
+		margin-bottom: 10px;
+	}
+	abbr,
+	acronym{
+		cursor: help;
+		border-bottom: 1px dotted;
+	}
+	tr:nth-child(odd){
+		background: #F1F1F1;
+	}
+	th{
+		text-align:center;
+		@extend %custom-bg;
+		font-size: 20px;
+		font-weight: 400;
+		font-family: $heading-font;
+	}
+	td,
+	th{
+		padding: 8px 4px;
+	}
+	pre{
+		line-height: 1.1;
+	}
+	blockquote{
+		font-family: $heading-font;
+		font-size: 24px;
+		line-height: 1.3;
+		margin: 30px 0;
+		
+		
+		
+		p:before{
+			content:'“';
+			font-size: 24px;
+			position: relative;
+		}
+		
+		cite{
+			display: block;
+			font-family: $body-copy-font;
+			font-size: 16px;
+			margin-top: 20px;
+			font-style: normal;
+		}
+	}
+	.alignright{
+		float:right;
+		margin:5px 0 20px 20px;
+	}
+	.alignleft{
+		float:left;
+		margin:5px 20px 20px 0;
+	}
+	.aligncenter{
+		display:block;
+		margin:5px auto 5px auto;
+	}
+	.wp-caption-text{
+		padding: 2px 0;
+		color: #8d8d8d;
+		text-align:center;
+	}
+	
+	.readmore{
+		padding-top:10px;
+	}
+}
+
+.post-content.quote blockquote{
+	margin: 0;
+}
+
+.post-quote-author{
+	margin-bottom:10px;
+	display:block;
+	font-style:italic;
+}
+
+.post-footer{
+	margin-top: 20px;
+}
+

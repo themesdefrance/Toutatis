@@ -1,0 +1,24 @@
+.error404{
+	h1{
+		@extend .typcn-warning-outline
+	}
+	
+	ul.galopin-archives{
+	
+		li{
+			
+			&:before{
+				content:'';
+				padding:0;
+			}
+		}
+	}
+}
+
+.page .post-thumbnail:hover{
+	transition:all 0 ease 0;
+}
+.page .post-thumbnail:hover img{
+	filter: blur(0px);
+	opacity:1;
+}
