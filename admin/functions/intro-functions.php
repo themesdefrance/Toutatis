@@ -53,17 +53,6 @@ if (!function_exists('intro_nomenu')){
 	}
 }
 
-// Only get post in search results
-if (!function_exists('intro_search_filter')){
-	function intro_search_filter($query) {
-	
-		if ($query->is_search)
-			$query->set('post_type', 'post');
-		return $query;
-	}
-}
-add_filter('pre_get_posts','intro_search_filter');
-
 //customized pagination links
 if (!function_exists('intro_posts_nav')){
 	//derived from http://www.wpbeginner.com/wp-themes/how-to-add-numeric-pagination-in-your-wordpress-theme/
