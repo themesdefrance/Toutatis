@@ -1,10 +1,10 @@
 <?php $link = get_post_meta($post->ID, '_intro_link_meta', true); ?>
 
-<article <?php post_class('article'); ?> itemscope itemtype="http://schema.org/Article">
+<article <?php post_class('post'); ?> itemscope itemtype="http://schema.org/Article">
 
-	<header class="post-header">
+	<header class="entry-header">
 	
-		<div class="post-link">
+		<div class="entry-link">
 		
 			<?php if (is_single()): ?>
 				

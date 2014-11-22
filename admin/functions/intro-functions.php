@@ -44,6 +44,18 @@ if (!function_exists('intro_nomenu')){
 	}
 }
 
+// Function to call if no primary menu
+if (!function_exists('intro_post_thumbnail')){
+	function intro_post_thumbnail(){
+		
+		if(get_option('intro_show_sidebar'))
+			the_post_thumbnail('intro-post-thumbnail');
+		else
+			the_post_thumbnail('intro-post-thumbnail-full');
+		
+	}
+}
+
 //customized pagination links
 if (!function_exists('intro_posts_nav')){
 	//derived from http://www.wpbeginner.com/wp-themes/how-to-add-numeric-pagination-in-your-wordpress-theme/

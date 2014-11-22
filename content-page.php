@@ -1,10 +1,4 @@
-<?php 
-
-$sidebar = get_option('intro_show_sidebar');
-
-?>
-
-<article <?php post_class(); ?> itemscope itemtype="http://schema.org/Article">
+<article id="page-<?php the_ID(); ?>" <?php post_class('page'); ?> itemscope itemtype="http://schema.org/Article">
 
 	<header class="entry-header" >
 					
@@ -12,12 +6,7 @@ $sidebar = get_option('intro_show_sidebar');
 		
 			<div class="entry-thumbnail">
 
-				<?php
-					if($sidebar)
-						the_post_thumbnail('intro-post-thumbnail');
-					else
-						the_post_thumbnail('intro-post-thumbnail-full');
-				?>
+				<?php intro_post_thumbnail(); ?>
 					
 			</div><!--END .entry-thumbnail-->
 			

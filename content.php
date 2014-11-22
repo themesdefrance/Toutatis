@@ -1,6 +1,4 @@
-<?php $sidebar = get_option('intro_show_sidebar'); ?>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="http://schema.org/Article">
+<article id="post-<?php the_ID(); ?>" <?php post_class('post'); ?> itemscope itemtype="http://schema.org/Article">
 
 	<header class="entry-header" >
 					
@@ -8,16 +6,17 @@
 		
 			<div class="entry-thumbnail">
 			
-				<?php if (is_single()){ ?> <a href="<?php the_permalink(); ?>" title="<?php _e('Read more','intro'); ?>" class="post-permalink"><?php } ?>
+				<?php if (is_single()): ?> 
 
-					<?php
-						if($sidebar)
-							the_post_thumbnail('intro-post-thumbnail');
-						else
-							the_post_thumbnail('intro-post-thumbnail-full');
-					?>
+					<?php intro_post_thumbnail(); ?>
 					
-				<?php if (is_single()){ ?></a> <?php } ?>
+				<?php else: ?>
+				
+					<a href="<?php the_permalink(); ?>" title="<?php _e('Read more','intro'); ?>" class="entry-permalink">
+						<?php intro_post_thumbnail(); ?>
+					</a>
+					
+				<?php endif; ?>
 					
 			</div><!--END .entry-thumbnail-->
 			

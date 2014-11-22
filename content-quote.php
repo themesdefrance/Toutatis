@@ -1,11 +1,11 @@
-<?php $quote = "“" . get_post_meta($post->ID, '_intro_quote_meta', true) . "”"; ?>
+<?php $quote 		= "“" . get_post_meta($post->ID, '_intro_quote_meta', true) . "”"; ?>
 <?php $author_quote = get_post_meta($post->ID, '_intro_quote_author_meta', true); ?>
 
 <article <?php post_class('post'); ?> itemscope itemtype="http://schema.org/Article">
 
-	<header class="post-header">
+	<header class="entry-header">
 		
-		<div class="post-quote">
+		<div class="entry-quote">
 		
 			<?php if (is_single()): ?>
 				
@@ -33,7 +33,7 @@
 				
 			<?php endif; ?>
 			
-			<span class="post-quote-author"><?php echo $author_quote; ?></span>
+			<span class="entry-quote-author"><?php echo $author_quote; ?></span>
 			
 		</div>
 		

@@ -69,8 +69,8 @@ if (!function_exists('intro_setup')){
 		add_theme_support('post-thumbnails');
 		
 		// Set images sizes
-		//add_image_size('intro-post-thumbnail', 633, 400, true);
-		//add_image_size('intro-post-thumbnail-full', 900, 400, true);
+		add_image_size('intro-post-thumbnail', 633, 400, true);
+		add_image_size('intro-post-thumbnail-full', 900, 400, true);
 		
 		// Add Meta boxes for post formats
 		require_once 'admin/metaboxes/post-formats.php';
@@ -107,17 +107,17 @@ if (!function_exists('intro_enqueue')){
 	
 		$theme = wp_get_theme();
 		
-		wp_register_script('fitvids', get_template_directory_uri().'/js/min/jquery.fitvids.min.js', array('jquery'), $theme->get('Version'), true);
+		wp_register_script('fitvids', get_template_directory_uri().'/js/min/jquery.fitvids.min.js', array('jquery'), false, true);
 		
-		wp_register_script('intro', get_template_directory_uri().'/js/min/intro.min.js', array('jquery'), $theme->get('Version'), true);
+		wp_register_script('intro', get_template_directory_uri().'/js/min/intro.min.js', array('jquery'), false, true);
 		
-		//wp_enqueue_style( 'intro-fonts', '//fonts.googleapis.com/css?family=Montserrat|Raleway:400,700&subset=latin,latin-ext');
+		wp_enqueue_style( 'intro-fonts', '//fonts.googleapis.com/css?family=Quicksand:400,700&subset=latin,latin-ext');
 		
 		//main stylesheet
-		wp_enqueue_style('stylesheet', get_stylesheet_directory_uri().'/style.css', array(), $theme->get('Version'));
+		wp_enqueue_style('stylesheet', get_stylesheet_directory_uri().'/style.css', array(), false);
 		
 		//icons
-		//wp_enqueue_style('icons', get_template_directory_uri().'/fonts/typicons.min.css', array(), $theme->get('Version'));
+		wp_enqueue_style('icons', get_template_directory_uri().'/fonts/typicons.min.css', array(), false);
 		
 		wp_enqueue_script('fitvids');
 		
@@ -164,6 +164,7 @@ add_action('wp_head', 'intro_custom_styles', 99);
 if(!function_exists('intro_user_styles')){
 	function intro_user_styles(){
 		if (get_option('intro_color')){
+			
 			$color = apply_filters('intro_color', get_option('intro_color'));
 			
 			require_once 'admin/functions/color-functions.php';
@@ -179,8 +180,8 @@ if(!function_exists('intro_user_styles')){
 			$complement = apply_filters('intro_color_complement', intro_HSLToHTML($hsl->hue, $hsl->saturation, $hsl->lightness));
 		}
 		else{ // Default color
-			$color = '#E54C3C';
-			$complement = '#c73829';
+			$color = '#EB5252';
+			$complement = '#D14949';
 			$contrast = '#fff';
 		} 
 		?>
@@ -218,6 +219,7 @@ if(!function_exists('intro_user_styles')){
 			}
 			
 			.menu-wrapper .sub-menu a,
+			.content a,
 			.footer a,
 			.post-header-title a:hover,
 			.post-header-meta a,
@@ -233,6 +235,8 @@ if(!function_exists('intro_user_styles')){
 			.widget > h3:before{
 				color: <?php echo $color; ?>;
 			}
+			
+			.content a:hover,
 			.footer a:hover,
 			.post-header-meta a:hover,
 			.entry-content a:hover,
@@ -243,12 +247,7 @@ if(!function_exists('intro_user_styles')){
 			.comment-form .logged-in-as a:hover{
 				color: <?php echo $complement; ?>;
 			}
-			
-			.footer,
-			.post-header,
-			.comment-footer{
-				border-color: <?php echo $color; ?>;
-			}			
+					
 			</style>
 		<?php }
 }

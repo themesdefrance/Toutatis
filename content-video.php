@@ -1,10 +1,10 @@
 <?php $video_link = get_post_meta($post->ID, '_intro_video_meta', true); ?>
 
-<article <?php post_class('article'); ?>>
+<article <?php post_class('post'); ?>>
 
-	<header class="post-header">
+	<header class="entry-header">
 	
-		<div class="post-video">
+		<div class="entry-video">
 									
 			<?php echo wp_oembed_get( $video_link); ?>
 			
