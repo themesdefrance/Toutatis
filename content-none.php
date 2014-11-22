@@ -1,6 +1,6 @@
 <?php $sidebar = get_option('intro_show_sidebar'); ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="http://schema.org/Article">
+<article <?php post_class('post'); ?> itemscope itemtype="http://schema.org/Article">
 
 	<header class="entry-header" >
 			

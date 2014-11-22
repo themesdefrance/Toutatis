@@ -16,7 +16,7 @@
 					
 				</div><!-- END .wrapper -->
 				
-				<footer class="footer" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+				<footer class="site-footer" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 					
 					<div class="wrapper">
 					
@@ -56,10 +56,8 @@
 				<button id="back-to-top" title="<?php _e('Back to the top', 'intro'); ?>" class="back-to-top typcn typcn-arrow-up-thick"></button>
 			
 			</div> <!-- END .footer-wrapper -->
-			
-		</div> 
 		
-	</div>
+	</div> <!-- END .site-wrapper -->
 	
 	<?php wp_footer(); ?>
 	

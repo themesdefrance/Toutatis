@@ -9,27 +9,26 @@ __('Fullwidth','intro');
 
 <div class="wrapper">	
 			
-	<ul class="posts">
+	<main class="main-content col-1-1" role="main" itemprop="mainContentOfPage">
 		
-		<?php if(have_posts()) : ?>
-		
-			<?php while (have_posts()) : the_post(); ?>
+		<?php
 			
-				<li>
-					<?php get_template_part('content'); ?>
-				</li>
-			
-			<?php endwhile; ?>
+			if(have_posts()) :
 		
-		<?php else: ?>
+				while (have_posts()) : the_post();
+
+					get_template_part('content');
+			
+					endwhile;
+		
+			else:
 				
-				<li>
-					<?php get_template_part('content', 'none'); ?>
-				</li>
+				get_template_part('content', 'none');
 		
-		<?php endif; ?>
+			endif;
+		?>
 		
-	</ul> <!-- END .posts -->
+	</main>
 	
 	<?php intro_posts_nav(false, '', '<div class="pagination">', '</div>'); ?>
 	

@@ -193,12 +193,12 @@ if(!function_exists('intro_user_styles')){
 			input[type='button'],
 			.widget_calendar #next a, 
 			.widget_calendar #prev a,
-			.menu-wrapper,
+			.site-header,
 			.search-form .submit-btn,
 			.entry-content th,
 			.entry-pagination,
 			.pagination,
-			.menu-wrapper .sub-menu a:hover,
+			.site-header .sub-menu a:hover,
 			.back-to-top{
 				background: <?php echo $color; ?>;
 				color: <?php echo $contrast; ?>;
@@ -218,7 +218,7 @@ if(!function_exists('intro_user_styles')){
 				color: <?php echo $contrast; ?>;
 			}
 			
-			.menu-wrapper .sub-menu a,
+			.site-header .sub-menu a,
 			.content a,
 			.footer a,
 			.post-header-title a:hover,

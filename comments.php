@@ -1,7 +1,9 @@
 <?php if (post_password_required()) return; ?>
 
-<div id="comments" class="post-comments">
+<div id="comments" class="entry-comments">
+	
 	<?php if (have_comments()): ?>
+	
 		<h2 class="comments-title">
 			<?php
                 printf(_n(apply_filters('intro_one_comment', '1 comment was added, add yours.'), apply_filters('intro_several_comments', '%1$s comments were added, add yours.'), get_comments_number(), 'intro'), number_format_i18n(get_comments_number()));
@@ -26,11 +28,13 @@
         <?php } // check for comment navigation ?>
  
 	<?php else:  ?>
+	
 		<h2 class="comments-title">
 			<?php apply_filters('intro_first_comment', __('Be the first to post a comment.', 'intro')); ?>
 		</h2>
 
 		<?php comment_form(intro_comment_form_args()); 
+			
 	endif; ?>
     <?php if (!comments_open() && get_comments_number() != '0' && post_type_supports(get_post_type(), 'comments')): ?>
 		<p class="nocomments">

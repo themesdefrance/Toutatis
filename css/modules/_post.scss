@@ -1,8 +1,8 @@
-.post{
+/*.post{
 	margin-bottom: 50px;
-}
+}*/
 
-.post-header{
+.entry-header{
 	margin-bottom: 20px;
 	padding-bottom: 5px;
 	@extend %custom-border;
@@ -10,7 +10,7 @@
 	border-bottom-style: solid;
 }
 
-.post-thumbnail{
+.entry-thumbnail{
 	position:relative;
 	overflow:hidden;
 	
@@ -21,7 +21,7 @@
 		display:block;
 	}
 	
-	.post-permalink{
+	.entry-permalink{
 		display: block;
 		position:relative;
 		text-decoration: none;
@@ -60,24 +60,24 @@
 			opacity:0.5;
 		}
 		
-		.post-permalink:before{
+		.entry-permalink:before{
 			opacity: 1;
 			transform: translate(-50%, -50%);
 		}
 	}
 }
 
-.post-thumbnail,
-.post-video{
+.entry-thumbnail,
+.entry-video{
 	margin-bottom:10px;
 }
 
-.single .post-thumbnail:hover img{
+.single .entry-thumbnail:hover img{
 	filter: none;
 	opacity:1;
 }
 
-.post-header-title{
+.entry-header-title{
 	@extend .typcn;
 	
 	a{
@@ -89,44 +89,44 @@
 	}
 }
 
-.format-standard .post-header-title:before{
+.format-standard .entry-header-title:before{
 			content: '\e04a';
 }
 
-.format-link .post-header-title:before{
+.format-link .entry-header-title:before{
 			content: '\e09b';
 }
 
-.format-video .post-header-title:before{
+.format-video .entry-header-title:before{
 			content: '\e130';
 }
 
-.format-quote .post-header-title:before{
+.format-quote .entry-header-title:before{
 			content: '\e0b7';
 }
 
-.post-header-title,
-.post-header-title a{
+.entry-header-title,
+.entry-header-title a{
 	color: #333;
 	text-decoration: none;
 	margin-bottom: 10px;
 	font-size: 36px;
 }
 
-.post-header-title blockquote{
+.entry-header-title blockquote{
 	display:inline;
 }
 
-.post-header-meta{
+.entry-header-meta{
 	color: #B2B2B2;
 	font-size: 14px;
 }
-.post-header-meta a,
-.post-footer-meta a{
+.entry-header-meta a,
+.entry-footer-meta a{
 	@extend %custom-color;
 	text-decoration: none;
 }
-.post-content{
+.entry-content{
 	font-size: 16px;
 	line-height: 1.6;
 	
@@ -177,30 +177,7 @@
 			margin-left: 25px;
 		}
 	}
-	//custom list style
-	ul,
-	ol{
-		list-style: none;
-	}
-	ul > li:before{
-		content: "▪";
-		@extend %custom-color;
-		padding-right: 4px;
-		font-size: 20px;
-	}
-	ol{
-		counter-reset: ordered;
-	}
-	ol > li{
-		counter-increment: ordered;
-		
-		&:before{
-			content: counter(ordered);
-			@extend %custom-color;
-			padding-right: 8px;
-			font-size: 20px;
-		}
-	}
+
 	li{
 		list-style-position: outside;
 		margin-bottom: 5px;
@@ -288,17 +265,17 @@
 	}
 }
 
-.post-content.quote blockquote{
+.entry-content.quote blockquote{
 	margin: 0;
 }
 
-.post-quote-author{
+.entry-quote-author{
 	margin-bottom:10px;
 	display:block;
 	font-style:italic;
 }
 
-.post-footer{
+.entry-footer{
 	margin-top: 20px;
 }
 

@@ -6,35 +6,28 @@
 
 	<div class="wrapper<?php if ($sidebar) echo ' grid'; ?>">	
 		
-		<div class="<?php if ($sidebar) echo 'col-2-3'; ?>" role="main" itemprop="mainContentOfPage">
+		<main class="main-content<?php if ($sidebar) echo ' col-2-3'; ?>" role="main" itemprop="mainContentOfPage">
+				
+			<?php 
+				
+				if(have_posts()) :
 			
-			<ul class="posts">
-				
-				<?php if(have_posts()) : ?>
-				
-					<?php while (have_posts()) : the_post(); ?>
-					
-						<li>
+					while (have_posts()) : the_post();
 							
-							<?php get_template_part('content', get_post_format()); ?>
-	
-						</li>
+						get_template_part('content', get_post_format());
 					
-					<?php endwhile; ?>
+					endwhile;
 				
-				<?php else: ?>
-						
-						<li>
-							<?php get_template_part('content', 'none'); ?>
-						</li>
+				else:
 				
-				<?php endif; ?>
+						get_template_part('content', 'none');
 				
-			</ul> <!-- END .col-2-3 -->
+				endif;
+			?>
 			
 			<?php intro_posts_nav(false, '', '<div class="pagination">', '</div>'); ?>
 			
-		</div> <!-- END .wrapper -->
+		</main>
 		
 		<?php if ($sidebar){ ?>
 		

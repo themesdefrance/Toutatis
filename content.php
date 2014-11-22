@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class('post'); ?> itemscope itemtype="http://schema.org/Article">
+<article <?php post_class('post'); ?> itemscope itemtype="http://schema.org/Article">
 
 	<header class="entry-header" >
 					
@@ -12,8 +12,10 @@
 					
 				<?php else: ?>
 				
-					<a href="<?php the_permalink(); ?>" title="<?php _e('Read more','intro'); ?>" class="entry-permalink">
+					<a class="entry-permalink" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+						
 						<?php intro_post_thumbnail(); ?>
+						
 					</a>
 					
 				<?php endif; ?>

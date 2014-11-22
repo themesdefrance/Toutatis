@@ -40,7 +40,9 @@ module.exports = function(grunt) {
 		    },
 		    build: {
 		      files: {
-		        'js/min/**.min.js': ['js/**.js']
+		        'js/min/intro.min.js': ['js/intro.js'],
+		        'js/min/jquery.fitvids.min.js': ['js/jquery.fitvids.js']
+		        
 		      }
 		    }
 		},

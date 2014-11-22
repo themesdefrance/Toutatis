@@ -6,7 +6,7 @@
 
 	<div class="wrapper<?php if ($sidebar) echo ' grid'; ?>">	
 		
-		<div class="<?php if ($sidebar) echo 'col-2-3'; ?>" role="main" itemprop="mainContentOfPage">
+		<main class="main-content<?php if ($sidebar) echo ' col-2-3'; ?>" role="main" itemprop="mainContentOfPage">
 		
 			<?php
 				
@@ -21,9 +21,9 @@
 				endwhile;
 			?>
 
-		</div><!-- END .col-2-3 -->
+		</main>
 		
-		<?php if ($sidebar){ ?>
+		<?php if ($sidebar): ?>
 		
 			<aside class="sidebar col-1-3" role="complementary" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
 			
@@ -31,7 +31,7 @@
 				
 			</aside>
 		
-		<?php } ?>
+		<?php endif; ?>
 			
 	</div> <!-- END .wrapper -->
 

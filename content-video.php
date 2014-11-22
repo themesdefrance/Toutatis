@@ -1,6 +1,6 @@
 <?php $video_link = get_post_meta($post->ID, '_intro_video_meta', true); ?>
 
-<article <?php post_class('post'); ?>>
+<article <?php post_class('post'); ?> itemscope itemtype="http://schema.org/Article">
 
 	<header class="entry-header">
 	

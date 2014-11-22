@@ -213,26 +213,26 @@ if (!function_exists('intro_comment_form_args')){
 			'fields' => apply_filters( 'intro_comment_form_default_fields', array(
 			    'author' =>
 			      '<p class="comment-form-author">' .
-			      '<label for="author"></label> ' .
+			      '<label for="author">' . __( 'Name', 'intro' ) . '</label> ' .
 			      '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
 			      '" size="30"' . $aria_req .
 			      ' placeholder="' . __('Name','intro') . ( $req ? ' (' . __( 'required', 'intro' ) . ')' : '' ) .'"/></p>',
 			
 			    'email' =>
 			      '<p class="comment-form-email">' .
-			      '<label for="email"></label> ' .
+			      '<label for="email">' . __( 'Email', 'intro' ) . '</label> ' .
 			      '<input id="email" name="email" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) .
 			      '" size="30"' . $aria_req .
 			      ' placeholder="' . __( 'Email', 'intro' ) . ( $req ? ' (' . __( 'required', 'intro' ) . ')' : '' ) .'"/></p>',
 			
 			    'url' =>
-			      '<p class="comment-form-url"><label for="url"></label>' .
+			      '<p class="comment-form-url"><label for="url">' . __( 'Website', 'intro' ) . '</label>' .
 			      '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
 			      '" size="30"' .
 			      ' placeholder="' . __( 'Website', 'intro' ) . '"/></p>'
 			   )
 			),
-			'comment_field' =>  apply_filters( 'intro_comment_form_default_comment_field','<p class="comment-form-comment"><label for="comment"></label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="' . __('Comment','intro' ) .'"></textarea></p>')
+			'comment_field' =>  apply_filters( 'intro_comment_form_default_comment_field','<p class="comment-form-comment"><label for="comment">' . __( 'Comment', 'intro' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="' . __('Comment','intro' ) .'"></textarea></p>')
 		);
 		
 		return $comment_args;
