@@ -1,19 +1,14 @@
-<?php 
+<?php $sidebar = get_option('intro_show_sidebar'); ?>
 
-$sidebar = get_option('intro_show_sidebar');
-$postlink = ((is_single() || is_page()) ? false : true);
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="http://schema.org/Article">
 
-?>
-
-<article <?php post_class('post'); ?> itemscope itemtype="http://schema.org/Article">
-
-	<header class="post-header">
+	<header class="entry-header" >
 					
 		<?php if (has_post_thumbnail() && !post_password_required()): ?>
 		
-			<div class="post-thumbnail">
+			<div class="entry-thumbnail">
 			
-				<?php if ($postlink){ ?> <a href="<?php the_permalink(); ?>" title="<?php _e('Read more','intro'); ?>" class="post-permalink"><?php } ?>
+				<?php if (is_single()){ ?> <a href="<?php the_permalink(); ?>" title="<?php _e('Read more','intro'); ?>" class="post-permalink"><?php } ?>
 
 					<?php
 						if($sidebar)
@@ -22,37 +17,36 @@ $postlink = ((is_single() || is_page()) ? false : true);
 							the_post_thumbnail('intro-post-thumbnail-full');
 					?>
 					
-				<?php if ($postlink){ ?></a> <?php } ?>
+				<?php if (is_single()){ ?></a> <?php } ?>
 					
 			</div><!--END .entry-thumbnail-->
 			
 		<?php endif; ?>
 		
 		
-		<?php if (is_single() || is_page()): ?>
+		<?php if (is_single()): ?>
 			
-			<h1 class="entry-title" itemprop="name">
+			<h1 class="entry-title" itemprop="headline">
 				
 				<?php the_title(); ?>
 					
 			</h1>
 			
-		<?php elseif(!is_page()): ?>
+		<?php else: ?>
 		
-			<h2 class="entry-title" itemprop="name">
+			<h2 class="entry-title" itemprop="headline">
 				
-				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark">
 					
 					<?php the_title(); ?>
 					
 				</a>
 				
 			</h2>
-			
 		
 		<?php endif; ?> 
 		
-		<?php get_template_part('content', 'header-meta'); ?>
+		<?php get_template_part('content', 'header'); ?>
 		
 	</header>
 	
@@ -62,9 +56,9 @@ $postlink = ((is_single() || is_page()) ? false : true);
 
 	</div>
 	
-	<footer class="post-footer">
+	<footer class="entry-footer">
 	
-		<?php get_template_part('content', 'footer-meta'); ?>
+		<?php get_template_part('content', 'footer'); ?>
 		
 	</footer>
 	

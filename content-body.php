@@ -1,40 +1,35 @@
 <?php
-
-	if (is_single() || is_page()){
+	
+	if (is_single()):
 	
 		the_content();
-	}
-	else if(is_category() || is_tax()){
+
+	elseif(is_category() || is_tax() || is_search()):
 	
 		echo intro_excerpt(25);
 		
-		if (!intro_is_masonry()){ ?>
+		?>
 		
 		<p class="readmore">
+			
 			<a href="<?php the_permalink(); ?>" class="button" title="<?php the_title(); ?>"><?php _e('Read more','intro'); ?></a>
+			
 		</p>
 		
 	<?php
-		}
 	 
-	}else if(is_tag()|| is_search()){
-	
-		echo intro_excerpt(0); // == No excerpt
+	elseif(is_tag()):
+		// No excerpt for tags archives
+		echo intro_excerpt(0);
 		
-	} else if (intro_is_masonry()){
-	
-		echo intro_excerpt(20);
-		
-	}else{
+	else:
 	
 		echo intro_excerpt(40);
 		
-		if (!intro_is_masonry()){ ?>
+		?>
 		
 		<p class="readmore">
 			<a href="<?php the_permalink(); ?>" class="button" title="<?php the_title(); ?>"><?php _e('Read more','intro'); ?></a>
 		</p>
-		
-	<?php } ?>
 	
-<?php } ?>
+<?php endif; ?>

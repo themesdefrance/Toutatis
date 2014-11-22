@@ -37,7 +37,7 @@
 			
 		</div>
 		
-		<?php get_template_part('content', 'header-meta'); ?>
+		<?php get_template_part('content', 'header'); ?>
 		
 	</header>
 		
@@ -49,7 +49,7 @@
 	
 	<footer class="post-footer">
 	
-		<?php get_template_part('content', 'footer-meta'); ?>
+		<?php get_template_part('content', 'footer'); ?>
 		
 	</footer>
 	

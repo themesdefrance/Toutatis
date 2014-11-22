@@ -2,14 +2,11 @@
 
 <?php get_header(); ?>
 
-<div class="wrapper">	
+<div class="content">
 
-	<div class="<?php if ($sidebar) echo 'grid'; ?>">
-	
-		<div class="<?php if ($sidebar) echo 'col-2-3'; ?>">
-			
-			<?php get_template_part('header', 'bar'); } ?>
-			
+	<div class="wrapper<?php if ($sidebar) echo ' grid'; ?>">	
+		
+		<div class="<?php if ($sidebar) echo 'col-2-3'; ?>" role="main" itemprop="mainContentOfPage">
 			
 			<ul class="posts">
 				
@@ -26,29 +23,31 @@
 					<?php endwhile; ?>
 				
 				<?php else: ?>
-				
-					<p><?php echo apply_filters('intro_nopostfound', __('Sorry but no post match what you are looking for.','intro')); ?></p>
+						
+						<li>
+							<?php get_template_part('content', 'none'); ?>
+						</li>
 				
 				<?php endif; ?>
 				
-			</ul>
+			</ul> <!-- END .col-2-3 -->
 			
 			<?php intro_posts_nav(false, '', '<div class="pagination">', '</div>'); ?>
 			
-		</div>
+		</div> <!-- END .wrapper -->
 		
 		<?php if ($sidebar){ ?>
 		
-		<aside class="sidebar col-1-3">
-		
-			<?php dynamic_sidebar('blog'); ?>
+			<aside class="sidebar col-1-3" role="complementary" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
 			
-		</aside>
+				<?php dynamic_sidebar('blog'); ?>
+				
+			</aside> <!-- END .sidebar .col-1-3 -->
 		
 		<?php } ?>
 		
-	</div>
-	
-</div>
+	</div> <!-- END .wrapper -->
+
+</div> <!-- END .content -->
 
 <?php get_footer(); ?>

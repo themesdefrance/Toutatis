@@ -17,21 +17,22 @@ __('Fullwidth','intro');
 			
 				<li>
 					<?php get_template_part('content'); ?>
-					
 				</li>
 			
 			<?php endwhile; ?>
 		
 		<?php else: ?>
 				
-			<p><?php echo apply_filters('intro_nopostfound', __('Sorry but no post match what you are looking for.','intro')); ?></p>
+				<li>
+					<?php get_template_part('content', 'none'); ?>
+				</li>
 		
 		<?php endif; ?>
 		
-	</ul>
+	</ul> <!-- END .posts -->
 	
 	<?php intro_posts_nav(false, '', '<div class="pagination">', '</div>'); ?>
 	
-</div>
+</div> <!-- END .wrapper -->
 
 <?php get_footer(); ?>

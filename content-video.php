@@ -28,7 +28,7 @@
 			
 		<?php endif; ?>
 		
-		<?php get_template_part('content', 'header-meta'); ?>
+		<?php get_template_part('content', 'header'); ?>
 		
 	</header>
 	
@@ -38,9 +38,9 @@
 
 	</div>
 	
-	<footer class="post-footer">
+	<footer class="entry-footer">
 	
-		<?php get_template_part( 'content', 'footer-meta' ); ?>
+		<?php get_template_part( 'content', 'footer' ); ?>
 		
 	</footer>
 	

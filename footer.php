@@ -1,4 +1,4 @@
-			</div> <!-- END .content -->
+			
 			
 			<div class="footer-wrapper">
 					
@@ -16,7 +16,7 @@
 					
 				</div><!-- END .wrapper -->
 				
-				<footer class="footer">
+				<footer class="footer" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 					
 					<div class="wrapper">
 					
@@ -57,7 +57,7 @@
 			
 			</div> <!-- END .footer-wrapper -->
 			
-		</div>
+		</div> 
 		
 	</div>
 	

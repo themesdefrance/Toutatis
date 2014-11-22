@@ -1,6 +1,6 @@
 <?php $link = get_post_meta($post->ID, '_intro_link_meta', true); ?>
 
-<article <?php post_class('article'); ?>>
+<article <?php post_class('article'); ?> itemscope itemtype="http://schema.org/Article">
 
 	<header class="post-header">
 	
@@ -34,7 +34,7 @@
 		
 		</div>
 		
-		<?php get_template_part('content', 'header-meta'); ?>
+		<?php get_template_part('content', 'header'); ?>
 		
 	</header>
 	
@@ -46,7 +46,7 @@
 	
 	<footer class="post-footer">
 	
-		<?php get_template_part( 'content', 'footer-meta' ); ?>
+		<?php get_template_part( 'content', 'footer' ); ?>
 		
 	</footer>
 	

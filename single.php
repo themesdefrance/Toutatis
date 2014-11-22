@@ -2,42 +2,39 @@
 
 <?php get_header(); ?>
 
-<div class="wrapper">	
+<div class="content">
 
-	<div class="<?php if ($sidebar) echo 'grid'; ?>">
-	
-		<div class="<?php if ($sidebar) echo 'col-2-3'; ?>">
+	<div class="wrapper<?php if ($sidebar) echo ' grid'; ?>">	
 		
-			<?php the_post(); get_template_part('content', get_post_format()); ?>
-			
-			<?php comments_template(); ?>
-			
-			<?php intro_posts_nav(false, '','<div class="pagination">','</div>'); ?>
+		<div class="<?php if ($sidebar) echo 'col-2-3'; ?>" role="main" itemprop="mainContentOfPage">
+		
+			<?php
+				
+				while ( have_posts() ) : the_post();
+				
+					get_template_part('content', get_post_format());
+				
+					comments_template();
+					
+					intro_posts_nav(false, '','<div class="pagination">','</div>');
+				
+				endwhile;
+			?>
 
-		</div>
+		</div><!-- END .col-2-3 -->
 		
 		<?php if ($sidebar){ ?>
 		
-		<aside class="sidebar col-1-3">
-		
-			<?php dynamic_sidebar('blog'); ?>
+			<aside class="sidebar col-1-3" role="complementary" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
 			
-		</aside>
+				<?php dynamic_sidebar('blog'); ?>
+				
+			</aside>
 		
 		<?php } ?>
-		
-	</div>
-
-	<aside class="footerbar">
-	
-		<div class="grid">
-		
-			<?php get_sidebar('footer'); ?>
 			
-		</div>
-		
-	</aside>
-	
-</div>
+	</div> <!-- END .wrapper -->
+
+</div> <!-- END .content -->
 
 <?php get_footer(); ?>

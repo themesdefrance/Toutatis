@@ -7,7 +7,7 @@
 
 <?php if(!is_page() && !is_tag()): ?> 
 		
-	<span class="post-header-meta">
+	<span class="post-header-meta" >
 		
 	<?php
 		

@@ -4,15 +4,6 @@
 // Utility functions   //
 /////////////////////////
 
-if (!function_exists('intro_is_masonry')){
-	function intro_is_masonry(){
-		// Are we on a page that support masonry ? If yes, check if masonry is activated
-		if(!is_page() && !is_single() && !is_404() && !is_singular() && !is_attachment() && !is_page_template() && !is_preview())
-			return get_option('intro_masonry');
-		return false;
-	}
-}
-
 if (!function_exists('intro_excerpt')){
 	function intro_excerpt($length){
 		global $post;

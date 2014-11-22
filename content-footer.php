@@ -22,11 +22,3 @@
 	
 	</nav>
 <?php } ?>
-
-<?php if (intro_is_masonry()){ ?>
-	<div class="masonry-footer">
-		<time class="date updated">
-			<?php the_time(get_option('date_format')); ?>
-		</time>
-	</div>
-<?php } ?>

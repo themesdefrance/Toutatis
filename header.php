@@ -26,13 +26,13 @@
 	
 	<?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?> >
+<body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
 <!--[if lt IE 8]><p class=chromeframe><?php _e('Your browser is <em>too old !','intro'); ?></em> <a href="http://browsehappy.com/"><?php _e('Update your browser','intro'); ?></a> <?php _e('or','intro'); ?> <a href="http://www.google.com/chromeframe/?redirect=true"><?php _e('Install Google Chrome Frame','intro'); ?></a> <?php _e('to display this website correctly','intro'); ?>.</p><![endif]-->
 	
 	<div class="page-wrapper">
 		<div class="content-wrapper">
 			
-			<header class="menu-wrapper">
+			<header class="menu-wrapper" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
 				
 				<div class="intro-logo">
 					<a href="<?php echo home_url(); ?>" >
@@ -40,7 +40,7 @@
 					</a>
 				</div>
 				
-				<nav class="main-menu">
+				<nav class="main-menu" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 					<?php
 					wp_nav_menu(array(
 						'theme_location' => 'primary',
@@ -54,5 +54,5 @@
 				
 			</header>
 			
-			<div class="content">
+			
 			

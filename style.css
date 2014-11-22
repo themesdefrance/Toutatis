@@ -1,14 +1,14 @@
 /*!
-Theme Name: Galopin
+Theme Name: Intro
 Theme URI: https://www.themesdefrance.fr/galopin
 Author: Themes de France
 Author URI: https://www.themesdefrance.fr
 Description:
-Version: 1.000
+Version: 0.001
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: 
-Text Domain: galopin
+Text Domain: intro
 */
 .typcn:before, .post-header-title:before, .comment-form label:before, .widget > h3:before {
   font-family: 'typicons';
