@@ -8,7 +8,7 @@
 									
 			<?php echo wp_oembed_get( $video_link); ?>
 			
-		</div>
+		</div><!--END .entry-video-->
 		
 		<?php if (is_single()): ?>
 			
@@ -24,7 +24,7 @@
 					
 				</a>
 			
-			</h2>
+			</h2><!--END .entry-title-->
 			
 		<?php endif; ?>
 		
@@ -36,12 +36,12 @@
 		
 		<?php get_template_part( 'content', 'body' ); ?>	
 
-	</div>
+	</div><!--END .entry-content-->
 	
 	<footer class="entry-footer">
 	
 		<?php get_template_part( 'content', 'footer' ); ?>
 		
-	</footer>
+	</footer><!--END .entry-footer-->
 	
 </article>

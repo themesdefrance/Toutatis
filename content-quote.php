@@ -13,7 +13,7 @@
 				
 					<blockquote><?php echo $quote; ?></blockquote>
 					
-				</h1>
+				</h1><!--END .entry-title-->
 				
 			<?php else: ?>
 				
@@ -29,28 +29,28 @@
 					
 					</blockquote>
 					
-				</h2>
+				</h2><!--END .entry-title-->
 				
 			<?php endif; ?>
 			
 			<span class="entry-quote-author"><?php echo $author_quote; ?></span>
 			
-		</div>
+		</div><!--END .entry-quote-->
 		
 		<?php get_template_part('content', 'header'); ?>
 		
-	</header>
+	</header><!--END .entry-header-->
 		
 	<div class="entry-content" itemprop="articleBody">
 		
 		<?php get_template_part('content', 'body'); ?>
 		
-	</div>
+	</div><!--END .entry-content-->
 	
 	<footer class="post-footer">
 	
 		<?php get_template_part('content', 'footer'); ?>
 		
-	</footer>
+	</footer><!--END .entry-footer-->
 	
 </article>

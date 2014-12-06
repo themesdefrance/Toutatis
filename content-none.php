@@ -8,9 +8,9 @@
 			
 			<?php the_title(); ?>
 				
-		</h1>
+		</h1><!--END .entry-title-->
 		
-	</header>
+	</header><!--END .entry-header-->
 	
 	<div class="entry-content" itemprop="articleBody">
 		
@@ -29,6 +29,6 @@
 			
 		<?php endif; ?>
 
-	</div>
+	</div><!--END .entry-content-->
 	
 </article>

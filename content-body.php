@@ -32,4 +32,6 @@
 			<a href="<?php the_permalink(); ?>" class="button" title="<?php the_title(); ?>"><?php _e('Read more','intro'); ?></a>
 		</p>
 	
-<?php endif; ?>
+		<?php
+			
+	endif; ?>

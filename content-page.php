@@ -1,4 +1,4 @@
-<article id="page-<?php the_ID(); ?>" <?php post_class('page'); ?> itemscope itemtype="http://schema.org/Article">
+<article id="page-<?php the_ID(); ?>" <?php post_class('page'); ?> itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
 
 	<header class="entry-header" >
 					

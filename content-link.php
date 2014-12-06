@@ -16,7 +16,7 @@
 						
 					</a>
 					
-				</h1>
+				</h1><!--END .entry-title-->
 				
 			<?php else: ?>
 			
@@ -28,26 +28,26 @@
 						
 					</a>
 				
-				</h2>
+				</h2><!--END .entry-title-->
 				
 			<?php endif; ?>
 		
-		</div>
+		</div><!--END .entry-link-->
 		
 		<?php get_template_part('content', 'header'); ?>
 		
 	</header>
 	
-	<div class="post-content">
+	<div class="entry-content">
 		
 		<?php get_template_part( 'content', 'body' ); ?>	
 
-	</div>
+	</div><!--END .entry-content-->
 	
-	<footer class="post-footer">
+	<footer class="entry-footer">
 	
 		<?php get_template_part( 'content', 'footer' ); ?>
 		
-	</footer>
+	</footer><!--END .entry-footer-->
 	
 </article>

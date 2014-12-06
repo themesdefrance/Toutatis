@@ -1,4 +1,4 @@
-<article <?php post_class('post'); ?> itemscope itemtype="http://schema.org/Article">
+<article <?php post_class('post'); ?> itemscope="itemscope" itemtype="http://schema.org/Article">
 
 	<header class="entry-header" >
 					
@@ -31,7 +31,7 @@
 				
 				<?php the_title(); ?>
 					
-			</h1>
+			</h1><!--END .entry-title-->
 			
 		<?php else: ?>
 		
@@ -43,24 +43,24 @@
 					
 				</a>
 				
-			</h2>
+			</h2><!--END .entry-title-->
 		
 		<?php endif; ?> 
 		
 		<?php get_template_part('content', 'header'); ?>
 		
-	</header>
+	</header><!--END .entry-header-->
 	
 	<div class="entry-content" itemprop="articleBody">
 		
 		<?php get_template_part('content', 'body'); ?>
 
-	</div>
+	</div><!--END .entry-content-->
 	
 	<footer class="entry-footer">
 	
 		<?php get_template_part('content', 'footer'); ?>
 		
-	</footer>
+	</footer><!--END .entry-footer-->
 	
 </article>
