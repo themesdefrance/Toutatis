@@ -9,10 +9,7 @@
 	<meta charset="<?php bloginfo('charset'); ?>">
 	
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	
-	<title>
-		<?php wp_title('|', true, 'right'); ?>
-	</title>
+
 	<link rel="shortcut icon" href="/favicon.ico?v=0">
 	
 	<meta name="viewport" content="width=device-width">
@@ -33,22 +30,29 @@
 			
 			<header class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
 				
-				<div class="intro-logo">
-					<a href="<?php echo home_url(); ?>" >
-						<?php echo bloginfo('name'); ?>
-					</a>
-				</div>
+				<div class="wrapper">
 				
-				<nav class="main-menu" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-					<?php
-					wp_nav_menu(array(
-						'theme_location' => 'primary',
-						'menu_class'     => 'top-level-menu',
-						'container'      => false,
-						'depth'          => 2,
-						'fallback_cb'    => 'intro_nomenu'
-					));
-					?>
-				</nav>
+					<div class="intro-logo">
+						<a href="<?php echo home_url(); ?>" title="<?php echo bloginfo('name'); ?>" class="logo-text">
+							<?php echo bloginfo('name'); ?>
+						</a>
+					</div><!--END .intro-logo-->
+					
+					<nav class="main-menu" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+						<?php
+						wp_nav_menu(array(
+							'theme_location' => 'primary',
+							'menu_class'     => 'top-level-menu',
+							'container'      => false,
+							'depth'          => 2,
+							'fallback_cb'    => 'intro_nomenu'
+						));
+						?>
+					</nav><!--END .main-menu-->
 				
-			</header>
+				</div><!--END .wrapper-->
+				
+			</header><!--END .site-header-->
+			
+			<?php get_template_part('header', 'bar'); ?>
+			

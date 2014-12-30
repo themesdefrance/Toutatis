@@ -1,4 +1,4 @@
-			<div class="footer-wrapper">
+			<section class="footer-wrapper">
 					
 				<div class="wrapper">
 				
@@ -53,7 +53,7 @@
 				
 				<button id="back-to-top" title="<?php _e('Back to the top', 'intro'); ?>" class="back-to-top typcn typcn-arrow-up-thick"></button>
 			
-			</div> <!-- END .footer-wrapper -->
+			</section> <!-- END .footer-wrapper -->
 		
 	</div> <!-- END .site-wrapper -->
 	

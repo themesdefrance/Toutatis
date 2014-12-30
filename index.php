@@ -2,9 +2,9 @@
 
 <?php get_header(); ?>
 
-<div class="content">
+<section class="content">
 
-	<div class="wrapper<?php if ($sidebar) echo ' grid'; ?>">	
+	<div class="wrapper<?php //if ($sidebar) echo ' grid'; ?>">	
 		
 		<main class="main-content<?php if ($sidebar) echo ' col-2-3'; ?>" role="main" itemprop="mainContentOfPage">
 				
@@ -41,6 +41,6 @@
 		
 	</div> <!-- END .wrapper -->
 
-</div> <!-- END .content -->
+</section> <!-- END .content -->
 
 <?php get_footer(); ?>
