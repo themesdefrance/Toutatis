@@ -11,7 +11,8 @@ $grid-collapse-below: 500px !default;
 }
 [class*='col-']{
 	@extend %grid-col;
-	
+	@extend .clearfix;
+
 	&:last-child{
 		padding-right:0;
 	}
