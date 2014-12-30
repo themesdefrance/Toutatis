@@ -1,9 +1,9 @@
 <?php
 
-define('EDD_SL_STORE_URL', 'https://www.themesdefrance.fr');
-define('EDD_SL_THEME_NAME', 'Intro');
-define('EDD_SL_THEME_VERSION', '0.0.1');
-define('EDD_SL_LICENSE_KEY', 'intro_license_edd');
+define('INTRO_STORE_URL', 'https://www.themesdefrance.fr');
+define('INTRO_THEME_NAME', 'Intro');
+define('INTRO_THEME_VERSION', '0.0.1');
+define('INTRO_LICENSE_KEY', 'intro_license_edd');
 
 if(!class_exists('EDD_SL_Theme_Updater'))
 	include(dirname( __FILE__ ).'/admin/EDD_SL_Theme_Updater.php');
@@ -68,9 +68,12 @@ if (!function_exists('intro_setup')){
 		// Enable thumbnails
 		add_theme_support('post-thumbnails');
 		
+		// Enable custom title tag for 4.1
+		add_theme_support( 'title-tag' );
+		
 		// Set images sizes
-		add_image_size('intro-post-thumbnail', 633, 400, true);
-		add_image_size('intro-post-thumbnail-full', 900, 400, true);
+		add_image_size('intro-post-thumbnail', 720, 445, true);
+		add_image_size('intro-post-thumbnail-full', 1140, 605, true);
 		
 		// Add Meta boxes for post formats
 		require_once 'admin/metaboxes/post-formats.php';
@@ -193,7 +196,6 @@ if(!function_exists('intro_user_styles')){
 			input[type='button'],
 			.widget_calendar #next a, 
 			.widget_calendar #prev a,
-			.site-header,
 			.search-form .submit-btn,
 			.entry-content th,
 			.entry-pagination,
@@ -260,7 +262,7 @@ add_action('wp_head','intro_user_styles', 98);
 
 if(!function_exists('intro_edd')){
 	function intro_edd(){
-		$license = trim(get_option(EDD_SL_LICENSE_KEY));
+		$license = trim(get_option(INTRO_LICENSE_KEY));
 		$status = get_option('intro_license_status');
 		
 		if (!$status){
@@ -268,10 +270,10 @@ if(!function_exists('intro_edd')){
 			$api_params = array(
 				'edd_action'=>'activate_license',
 				'license'=>$license,
-				'item_name'=>urlencode(EDD_SL_THEME_NAME)
+				'item_name'=>urlencode(INTRO_THEME_NAME)
 			);
 	
-			$response = wp_remote_get(add_query_arg($api_params, EDD_SL_STORE_URL), array('timeout'=>15, 'sslverify'=>false));
+			$response = wp_remote_get(add_query_arg($api_params, INTRO_STORE_URL), array('timeout'=>15, 'sslverify'=>false));
 	
 			if (!is_wp_error($response)){
 				$license_data = json_decode(wp_remote_retrieve_body($response));
@@ -280,10 +282,10 @@ if(!function_exists('intro_edd')){
 		}
 		
 		$edd_updater = new EDD_SL_Theme_Updater(array( 
-				'remote_api_url'=> EDD_SL_STORE_URL,
-				'version' 	=> EDD_SL_THEME_VERSION,
+				'remote_api_url'=> INTRO_STORE_URL,
+				'version' 	=> INTRO_THEME_VERSION,
 				'license' 	=> $license,
-				'item_name' => EDD_SL_THEME_NAME,
+				'item_name' => INTRO_THEME_NAME,
 				'author'	=> __('Themes de France','intro')
 			)
 		);

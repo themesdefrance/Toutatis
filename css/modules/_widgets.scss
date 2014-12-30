@@ -39,11 +39,6 @@
 	font-size: 20px;
 	margin-bottom: 10px;
 	color:#333;
-	@extend .typcn;
-	&:before{
-		@extend %custom-color;
-		margin-right: 5px;
-	}
 }
 
 // WordPress default widgets
@@ -74,48 +69,7 @@
 	}
 }
 
-.widget_tag_cloud h3,
-.widget_categories h3{
-	@extend .typcn-tags;
-}
-
-.widget_recent_entries h3{
-	@extend .typcn-folder-open;
-}
-
-.widget_archive h3{
-	@extend .typcn-archive;
-}
-
-.widget_pages h3{
-	@extend .typcn-document;
-}
-
-.widget_meta h3{
-	@extend .typcn-link;
-}
-
-.widget_nav_menu h3{
-	@extend .typcn-th-list;
-}
-
-.widget_recent_entries h3{
-	@extend .typcn-folder-open;
-}
-
-.widget_search h3{
-	@extend .typcn-zoom;
-}
-
-.widget_recent_comments h3{
-	@extend .typcn-messages;
-}
-
 .widget_text{
-
-	h3{
-		@extend .typcn-folder-open;
-	}
 	
 	p {
 		margin-bottom: 10px;
@@ -150,9 +104,6 @@
 }
 
 .widget_calendar{
-	h3{
-		@extend .typcn-calender;
-	}
 	
 	caption{
 		font-family: $heading-font;
@@ -208,13 +159,9 @@
 	}
 }
 
-// Galopin custom widgets
+// Intro custom widgets
 
-.widget_galopincalltoaction{
-	
-	h3{
-		@extend .typcn-flag-outline;
-	}
+.widget_introcalltoaction{
 	
 	.cta-description{
 	
@@ -229,11 +176,7 @@
 	}
 }
 
-.widget_galopinsocial{
-	
-	h3{
-		@extend .typcn-thumbs-up
-	}
+.widget_introsocial{
 	
 	ul {
 		overflow: hidden;
@@ -248,12 +191,6 @@
 				font-size:26px;
 			}
 		}
-	}
-}
-
-.widget_galopinvideo{
-	h3{
-		@extend .typcn-video-outline
 	}
 }
 

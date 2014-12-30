@@ -1,5 +1,5 @@
 <?php
-function galopin_HTMLToRGB($htmlCode)
+function intro_HTMLToRGB($htmlCode)
 {
 	if($htmlCode[0] == '#') $htmlCode = substr($htmlCode, 1);
     
@@ -14,7 +14,7 @@ function galopin_HTMLToRGB($htmlCode)
 	return $b + ($g << 0x8) + ($r << 0x10);
 }
 
-function galopin_RGBToHSL($RGB) {
+function intro_RGBToHSL($RGB) {
 	$r = 0xFF & ($RGB >> 0x10);
 	$g = 0xFF & ($RGB >> 0x8);
 	$b = 0xFF & $RGB;
@@ -56,7 +56,7 @@ function galopin_RGBToHSL($RGB) {
 	return (object) Array('hue' => $h, 'saturation' => $s, 'lightness' => $l);
 }
 
-function galopin_HSLToHTML($h, $s, $l, $o = 1) {
+function intro_HSLToHTML($h, $s, $l, $o = 1) {
 	$h = ((float)$h) / 255.0;
 	$s = ((float)$s) / 255.0;
 	$l = ((float)$l) / 255.0;

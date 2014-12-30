@@ -32,23 +32,6 @@
 			opacity:1;
 			transition:.4s opacity ease-out;
 		}
-		
-		&:before{
-			background: #000;
-			content: attr(title);
-			opacity: 0;
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%) scale(.1);
-			backface-visibility: hidden;
-			font-size: 18px;
-			line-height: 1;
-			padding: 12px 8px;
-			text-align: center;
-			transition: .2s all ease-out;
-			z-index: 10;
-		}
 	}
 	
 	&:hover{
@@ -58,11 +41,6 @@
 		iframe{
 			filter: blur(1.5px);
 			opacity:0.5;
-		}
-		
-		.entry-permalink:before{
-			opacity: 1;
-			transform: translate(-50%, -50%);
 		}
 	}
 }
@@ -78,31 +56,11 @@
 }
 
 .entry-header-title{
-	@extend .typcn;
 	
 	a{
 		transition: color 0.2s ease-out;
 	}
-	
-	&:before{
-		@extend %custom-color;
-	}
-}
 
-.format-standard .entry-header-title:before{
-			content: '\e04a';
-}
-
-.format-link .entry-header-title:before{
-			content: '\e09b';
-}
-
-.format-video .entry-header-title:before{
-			content: '\e130';
-}
-
-.format-quote .entry-header-title:before{
-			content: '\e0b7';
 }
 
 .entry-header-title,

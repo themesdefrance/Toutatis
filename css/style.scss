@@ -18,8 +18,11 @@
 
 .wrapper{
 
-	max-width: 1200px;
+	max-width: 1140px;
+	width:94%;
 	margin: 0 auto;
+	
+	@extend .clearfix;	
 	
 	@include width-below(1200px){
 		max-width: 960px;
@@ -33,18 +36,14 @@
 	}
 }
 
-.main-content{
-	
-	article{
-		padding:0 50px 50px 50px;
-	}
-}
-
 $menu-width: 280px;
 
 .site-header{
 	z-index: $z-menu;
 	width: 100%;
+	font-weight: bold;
+	border-bottom: 1px solid rgba(56, 69, 91, 0.1);
+	
 	@extend %custom-bg;
 	@extend .clearfix;
 	
@@ -58,55 +57,71 @@ $menu-width: 280px;
 	}
 	
 	.intro-logo{
-		text-align: center;
+		width: 30%;
+		float: left;
+		text-align: left;
+		padding: 33px 0;
 		
-		a{
+		a.logo-text{
 			font-size: 26px;
+			color: $heading-font-color;
+			text-decoration: none;
+			text-transform: uppercase;
+			letter-spacing: -1px;
 		}
 	}
-	
-}
-.main-menu{
-	width: 100%;
-	text-align: center;
-	font-family: $heading-font;
-	
-	@include width-below($grid-collapse-below){
-		text-align: left;
+
+	.main-menu{
+		width: 70%;
+		float: left;
+		font-family: $heading-font;
+		
+		@include width-below($grid-collapse-below){
+			text-align: left;
+		}
+		
+		ul.top-level-menu{
+			list-style: none;
+			z-index: 10;
+			position: relative;
+			float:right;
+		}
+		
+		li{
+			display: inline-block;
+			padding:0 10px;
+			
+			@include width-below($grid-collapse-below){
+				display: block;		
+			}
+			
+			&:last-child {
+				padding-right: 0;
+			}
+			
+			&.current-menu-item a,
+			&:hover a{
+				color:$main-color;
+				border-bottom-color:$main-color;
+			}
+		}
+		
+		a{
+			display: inline-block;
+			color: $heading-font-color;
+			padding:40px 0px 37px;
+			border-bottom: 3px solid transparent;
+			text-decoration: none;
+			font-size: 16px;
+			
+			@include width-below($grid-collapse-below){
+				display: block;
+				color: #fff;
+			}
+		}
 	}
 }
-.site-header ul{
-	list-style: none;
-}
-.site-header li{
-	display: inline-block;
-	
-	@include width-below($grid-collapse-below){
-		display: block;		
-	}
-	
-	&.current-menu-item a,
-	&:hover a{
-		opacity: 1;
-	}
-}
-.site-header a{
-	display: inline-block;
-	color: #fff;
-	padding:18px 10px 20px 15px;
-	text-decoration: none;
-	font-size: 16px;
-	opacity: .7;
-	
-	@include width-below($grid-collapse-below){
-		display: block;
-		color: #fff;
-	}
-}
-.top-level-menu{
-	z-index: 10;
-	position: relative;
-}
+
 .site-header .sub-menu{
 	position: absolute;
 	background: #fff;
@@ -147,11 +162,31 @@ $menu-width: 280px;
 		@extend %custom-bg;
 	}
 }
+
+.header-bar {
+	padding-top: 50px;
+	font-weight: bold;
+	
+	.header-bar-title {
+		font-size: 28px;
+		font-weight: bold;
+		color: $heading-font-color;
+		text-transform: uppercase;
+		letter-spacing: -1px;
+	}
+	
+	#site-breadcrumbs {
+		margin: 10px 0;
+		font-size: 14px;
+	}
+}
+
+
 //this would be a no-js version of the menu hovering
 //.top-level-menu > li:hover .sub-menu{
 //	display: block;
 //}
-
+/*
 .site-header .search-wrapper,
 .site-header .social-menu{
 	position: absolute;
@@ -181,7 +216,7 @@ $menu-width: 280px;
 		padding: 10px 0;
 	}
 }
-
+*/
 .search-wrapper .search-form{
 	display: none;
 }
@@ -210,25 +245,6 @@ $menu-width: 280px;
 		padding-top: 10px;
 		padding-left: 15px;
 	}
-}
-
-.site-header .social-menu{
-	right: 0;
-	
-	a{
-		padding: 15px 5px;
-	}
-	
-	@include width-below($grid-collapse-below){
-		
-		padding-left: 5px;
-		li{
-			display: inline-block;
-		}
-	}
-}
-.site-header .social-menu .typcn:before{
-	font-size: 26px;
 }
 
 
@@ -327,7 +343,6 @@ body.admin-bar .site-header{
 
 @import "modules/search";
 @import "modules/post";
-@import "modules/pages";
 @import "modules/comments";
 @import "modules/widgets";
 @import "modules/pagination";

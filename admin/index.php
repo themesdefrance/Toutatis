@@ -37,7 +37,7 @@ $form->startForm();
 $form->setting(array('type'=>'color',
 					 'name'=>'color',
 					 'options'=>array(
-					 	'default'=>'#E54C3C'
+					 	'default'=>'#ff625b'
 					 ),
 					 'label'=>__("Main color", 'intro'),
 					 'description'=>__('This color will be used across your website for buttons, links, etc.', 'intro')));

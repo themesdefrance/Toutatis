@@ -1,16 +1,20 @@
-$grid-gutters: 20px;
+$grid-gutters: 40px;
 $grid-collapse-below: 500px !default;
 
-.grid{
+/*.grid{
 	@extend .clearfix;
-	margin-left: - $grid-gutters !important;
-}
+	//margin-left: - $grid-gutters !important;
+}*/
 %grid-col{
 	float: left;
-	padding-left: $grid-gutters;
+	padding-right: $grid-gutters;
 }
 [class*='col-']{
 	@extend %grid-col;
+	
+	&:last-child{
+		padding-right:0;
+	}
 }
 .col-1-1{
 	width: 100%;
@@ -37,9 +41,9 @@ $grid-collapse-below: 500px !default;
 @media only screen and (max-width: $grid-collapse-below){
 	[class*='col-']{
 		width: 100%;
-		padding-left: 0;
+		padding-right: 0;
 	}
-	.grid{
+	/*.grid{
 		margin-left: 0 !important;
-	}
+	}*/
 }
