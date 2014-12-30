@@ -15,6 +15,7 @@ CocoDictionary::register(CocoDictionary::SHORTHAND, 'endForm', 'cocoricoFormTabl
 function cocoricoSettingShorthand($cocorico, $params){
 	$params = array_merge(array(
 		'labeless'=>false,
+		'filters'=>array(),
 	), $params);
 	
 	$cocorico->startWrapper('tr');
@@ -51,7 +52,14 @@ function cocoricoSettingShorthand($cocorico, $params){
 			$ui = $cocorico->component($params['type'], $params['name'], $params['options']);
 			break;
 	}
-	$ui->filter('stripslashes')->filter('save', $params['name']);
+	
+	$ui->filter('stripslashes');
+	
+	foreach ($params['filters'] as $filter){
+		$ui->filter($filter);
+	}
+	
+	$ui->filter('save', $params['name']);
 	
 	if (isset($params['description'])){
 		$cocorico->component('description', $params['description']);

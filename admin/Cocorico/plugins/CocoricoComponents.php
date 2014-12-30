@@ -76,7 +76,8 @@ function cocoricoTextareaComponent($component, $options=array()){
 	foreach ($attrs as $name=>$value){
 		$output .= ' '.$name.'="'.esc_attr($value).'"';
 	}
-	$output .= '>'.$component->getValue().'</textarea>';
+	
+	$output .= '>'. (!is_array($component->getValue())? $component->getValue() : '') .'</textarea>';
 	
 	return $output;
 }

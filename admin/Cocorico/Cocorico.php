@@ -1,7 +1,7 @@
 <?php
 
 if (!defined('COCORICO_PATH')){
-	define('COCORICO_PATH', dirname(__FILE__));
+	define('COCORICO_PATH', str_replace('\\', '/', dirname(__FILE__)));
 	
 	//autoload cocorico core
 	foreach (array('core', 'plugins') as $dir){
@@ -13,7 +13,7 @@ if (!defined('COCORICO_PATH')){
 	if (!function_exists('cocorico_enqueue')){
 		function cocorico_enqueue(){
 			//Cocorico is supposed to be dropped in a plugin or a theme-get the url either way
-			if (strpos(COCORICO_PATH, get_theme_root()) === 0){
+			if (strpos(COCORICO_PATH, str_replace('\\', '/', get_theme_root())) === 0){
 				$rootlessPath = substr(COCORICO_PATH, strlen(get_theme_root()));
 				$coco_path = get_theme_root_uri().str_replace('\\', '/', $rootlessPath);
 			}
