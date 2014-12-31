@@ -1,5 +1,5 @@
 //defining a properry in rem unit with a px fallback
-$font-base: 16px !default;
+$font-base: 16 !default;
 html{
 	font-size: #{$font-base}px;
 	color: #333;

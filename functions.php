@@ -195,6 +195,8 @@ if(!function_exists('intro_user_styles')){
 			.entry-header-meta a,
 			.entry-content a,
 			.footer a,
+			.footer-wrapper .footer-bar a:hover,
+			.widget_introsocial ul li a:hover,
 			.post-header-title a:hover,
 			.post-header-meta a,
 			.entry-content a,
@@ -227,7 +229,8 @@ if(!function_exists('intro_user_styles')){
 			.entry-quote a:hover,
 			.entry-link,
 			.entry-link a:hover,
-			.pagination a:hover{
+			.pagination a:hover,
+			.widget_introsocial ul li a{
 				color:<?php echo $contrast; ?>;
 			}
 			
@@ -239,6 +242,7 @@ if(!function_exists('intro_user_styles')){
 			.widget_tag_cloud a:hover,
 			.widget_calendar #next a,
 			.widget_calendar #prev a,
+			.widget_introcalltoaction a.button,
 			.search-form .submit-btn,
 			.entry-quote:hover,
 			.entry-link:hover,
@@ -260,13 +264,15 @@ if(!function_exists('intro_user_styles')){
 			input[type='button']:hover,
 			.widget_calendar #next a:hover,
 			.widget_calendar #prev a:hover,
+			.widget_introcalltoaction a.button:hover,
 			.search-form .submit-btn:hover,
 			.entry-content th:hover,
 			.entry-pagination:hover,
 			.back-to-top:hover{
 				background: <?php echo $complement; ?>;
 				color: <?php echo $contrast; ?>;
-			}
+			}			
+			
 			.widget_tag_cloud a:hover{
 				border-color:<?php echo $color; ?>;	
 			}

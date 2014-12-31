@@ -2,13 +2,9 @@
 					
 				<div class="wrapper">
 				
-					<div class="footerbar">
-		
-						<div class="grid">
+					<div class="footer-bar">
 						
-							<?php dynamic_sidebar('footer'); ?>
-							
-						</div> <!-- END .grid -->
+						<?php dynamic_sidebar('footer'); ?>
 			
 					</div><!-- END .footerbar -->
 					

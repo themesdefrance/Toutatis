@@ -278,17 +278,21 @@ body.admin-bar .site-header{
 
 .footer-wrapper {
 	padding-top: 60px;
+	background:#1c1c1c;
 }
 
-.footerbar{
+.footer-bar{
 	margin-top: 20px;
+	color: $footer-font-color;
+	
+	@extend .clearfix;
 	
 	.widget{
 		border-bottom: none;
 	}
 }
 
-.footerbar .widget{
+.footer-bar .widget{
 	@extend %grid-col;
 	
 	@include width-above(701px){
@@ -303,17 +307,20 @@ body.admin-bar .site-header{
 }
 
 .site-footer{
-	width: 95%;
 	margin: 40px auto 0;
 	padding: 20px 0;
-	@extend %custom-border;
-	border-top-width: 1px;
-	border-top-style: solid;
+	background:#000;
+	color:#858585;
 }
 .site-footer a{
-	@extend %custom-color;
+	color:$footer-font-color;
 	text-decoration: none;
 	font-family: $heading-font;
+	font-weight:bold;
+	
+	&:hover{
+		text-decoration:underline;
+	}
 }
 .site-footer .footnote{
 	@include width-below($grid-collapse-below){

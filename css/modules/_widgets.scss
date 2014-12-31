@@ -177,9 +177,6 @@
 
 .widget_introcalltoaction{
 	
-	background: #F5F5F5;
-	padding:20px;
-	
 	.cta-description{
 	
 		p{
@@ -225,3 +222,10 @@
 	}
 }
 
+// Footer widgets
+
+.footer-bar .widget{
+	> h3{
+		color:$footer-font-color;
+	}
+}
