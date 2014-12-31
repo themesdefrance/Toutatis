@@ -178,6 +178,14 @@ $menu-width: 280px;
 	#site-breadcrumbs {
 		margin: 10px 0;
 		font-size: 14px;
+		
+		a{
+			text-decoration:none;
+			
+			&:hover{
+				text-decoration:underline;
+			}
+		}
 	}
 }
 

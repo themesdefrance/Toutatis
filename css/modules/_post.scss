@@ -88,8 +88,61 @@
 	font-weight:bold;
 }
 
-.entry-title blockquote{
-	display:inline;
+
+.entry-quote{
+	background: $heading-font-color;
+	margin-bottom:10px;
+	transition:.2s background ease-out;
+	
+	a{
+		color:#fff;
+		display:block;
+		padding: 30px;
+		text-decoration:none;
+		
+	}
+	
+	&:hover{
+		background: $main-color;
+	}
+	
+	.entry-title {
+		
+		color:#fff;
+		margin: 0;
+		
+		blockquote{
+			
+			a{		
+				margin-bottom:0;
+				@extend %quote;
+			}
+		}
+	}
+	
+	.entry-quote-author{
+		display:block;
+		color:#fff;
+		font-style:italic;
+		a{
+			padding-top: 0;
+		}
+	}	
+}
+
+.single .entry-quote{
+	
+	padding:30px;
+	
+	&:hover{
+		background:$heading-font-color;
+	}
+	
+	blockquote{
+		
+		padding-bottom: 30px;
+		@extend %quote;
+	}
 }
 
 .entry-header-meta{
@@ -244,16 +297,6 @@
 	.readmore{
 		font-weight: bold;
 	}
-}
-
-.entry-content.quote blockquote{
-	margin: 0;
-}
-
-.entry-quote-author{
-	margin-bottom:10px;
-	display:block;
-	font-style:italic;
 }
 
 .entry-footer{

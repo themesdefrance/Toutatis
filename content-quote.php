@@ -1,5 +1,5 @@
-<?php $quote 		= "“" . get_post_meta($post->ID, '_intro_quote_meta', true) . "”"; ?>
-<?php $author_quote = get_post_meta($post->ID, '_intro_quote_author_meta', true); ?>
+<?php $quote 		= sanitize_text_field(get_post_meta($post->ID, '_intro_quote_meta', true)); ?>
+<?php $author_quote = sanitize_text_field(get_post_meta($post->ID, '_intro_quote_author_meta', true)); ?>
 
 <article <?php post_class('post'); ?> itemscope itemtype="http://schema.org/Article">
 
@@ -15,25 +15,31 @@
 					
 				</h1><!--END .entry-title-->
 				
+				<div class="entry-quote-author"><?php echo $author_quote; ?></div>
+				
 			<?php else: ?>
 				
 				<h2 class="entry-title" itemprop="name">
 				
 					<blockquote>
 						
-						<a href="<?php the_permalink(); ?>" title="<?php echo $quote; ?>">
-						
-							<?php echo $quote; ?>
-							
-						</a>
+						<a href="<?php the_permalink(); ?>" title="<?php echo $quote; ?>"><?php echo $quote; ?></a>
 					
 					</blockquote>
 					
 				</h2><!--END .entry-title-->
 				
-			<?php endif; ?>
-			
-			<span class="entry-quote-author"><?php echo $author_quote; ?></span>
+				<div class="entry-quote-author">
+				
+					<a href="<?php the_permalink(); ?>" title="<?php echo $quote; ?>">
+						
+						<?php echo $author_quote; ?>
+						
+					</a>
+					
+				</div>
+				
+			<?php endif; ?>			
 			
 		</div><!--END .entry-quote-->
 		

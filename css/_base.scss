@@ -35,3 +35,15 @@ input[type='submit'],
 input[type='button']{
 	@extend %button;
 }
+
+%quote{
+	&:before{
+		content: '“';
+		font-size:40px;
+	}
+	
+	&:after{
+		content: '”';
+		font-size:40px;
+	}
+}

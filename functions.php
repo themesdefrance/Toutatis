@@ -197,6 +197,7 @@ if(!function_exists('intro_user_styles')){
 			.widget_calendar #next a,
 			.widget_calendar #prev a,
 			.search-form .submit-btn,
+			.entry-quote:hover,
 			.entry-content th,
 			.entry-thumbnail:hover,
 			.entry-pagination,
@@ -222,13 +223,12 @@ if(!function_exists('intro_user_styles')){
 			}
 
 			.site-header .sub-menu a,
+			#site-breadcrumbs a,
 			.entry-header-meta a,
 			.entry-content a,
 			.footer a,
 			.post-header-title a:hover,
 			.post-header-meta a,
-			.entry-content ul > li:before,
-			.entry-content ol > li:before,
 			.entry-content a,
 			.post-footer-meta a,
 			.comment-author a,
@@ -253,8 +253,11 @@ if(!function_exists('intro_user_styles')){
 			}
 
 			.entry-thumbnail a.entry-permalink:hover,
-			.entry-thumbnail a.entry-permalink:hover:before{
-				color:<?php echo $contrast; ?>
+			.entry-thumbnail a.entry-permalink:hover:before,
+			.entry-quote,
+			.entry-quote-author,
+			.entry-quote a:hover{
+				color:<?php echo $contrast; ?> !important;
 			}
 
 

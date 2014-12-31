@@ -1284,6 +1284,13 @@ img, table, td, blockquote, code, pre, textarea, input, video {
   .button:hover, .comment-form input[type="submit"]:hover, input[type='submit']:hover, input[type='button']:hover, .widget_calendar #next a:hover, .widget_calendar #prev a:hover {
     text-decoration: none; }
 
+.entry-quote .entry-title blockquote a:before, .single .entry-quote blockquote:before {
+  content: '“';
+  font-size: 40px; }
+.entry-quote .entry-title blockquote a:after, .single .entry-quote blockquote:after {
+  content: '”';
+  font-size: 40px; }
+
 .site-wrapper {
   position: relative;
   overflow: hidden;
@@ -1410,6 +1417,10 @@ img, table, td, blockquote, code, pre, textarea, input, video {
   .header-bar #site-breadcrumbs {
     margin: 10px 0;
     font-size: 14px; }
+    .header-bar #site-breadcrumbs a {
+      text-decoration: none; }
+      .header-bar #site-breadcrumbs a:hover {
+        text-decoration: underline; }
 
 /*
 .site-header .search-wrapper,
@@ -1631,8 +1642,35 @@ body.admin-bar .site-header {
   line-height: 39px;
   font-weight: bold; }
 
-.entry-title blockquote {
-  display: inline; }
+.entry-quote {
+  background: #38455b;
+  margin-bottom: 10px;
+  transition: 0.2s background ease-out; }
+  .entry-quote a {
+    color: #fff;
+    display: block;
+    padding: 30px;
+    text-decoration: none; }
+  .entry-quote:hover {
+    background: #ff625b; }
+  .entry-quote .entry-title {
+    color: #fff;
+    margin: 0; }
+    .entry-quote .entry-title blockquote a {
+      margin-bottom: 0; }
+  .entry-quote .entry-quote-author {
+    display: block;
+    color: #fff;
+    font-style: italic; }
+    .entry-quote .entry-quote-author a {
+      padding-top: 0; }
+
+.single .entry-quote {
+  padding: 30px; }
+  .single .entry-quote:hover {
+    background: #38455b; }
+  .single .entry-quote blockquote {
+    padding-bottom: 30px; }
 
 .entry-header-meta {
   color: #777777;
@@ -1728,14 +1766,6 @@ body.admin-bar .site-header {
     text-align: center; }
   .entry-content .readmore {
     font-weight: bold; }
-
-.entry-content.quote blockquote {
-  margin: 0; }
-
-.entry-quote-author {
-  margin-bottom: 10px;
-  display: block;
-  font-style: italic; }
 
 .entry-footer {
   margin-top: 20px; }
