@@ -1,4 +1,4 @@
-<?php $link = get_post_meta($post->ID, '_intro_link_meta', true); ?>
+<?php $link = esc_url_raw(get_post_meta($post->ID, '_intro_link_meta', true)); ?>
 
 <article <?php post_class('post'); ?> itemscope itemtype="http://schema.org/Article">
 
@@ -10,7 +10,7 @@
 				
 				<h1 class="entry-title">
 					
-					<a href="<?php echo $link; ?>" title="<?php the_title(); ?>" rel="external">
+					<a href="<?php echo $link; ?>" title="<?php the_title(); ?>" rel="external" target="_blank">
 						
 						<?php the_title(); ?>
 						
@@ -22,7 +22,7 @@
 			
 				<h2 class="entry-title">
 					
-					<a href="<?php echo $link; ?>" title="<?php the_title(); ?>">
+					<a href="<?php echo $link; ?>" title="<?php the_title(); ?>" rel="external" target="_blank">
 					
 						<?php the_title(); ?>
 						

@@ -198,10 +198,13 @@ if(!function_exists('intro_user_styles')){
 			.widget_calendar #prev a,
 			.search-form .submit-btn,
 			.entry-quote:hover,
+			.entry-link:hover,
 			.entry-content th,
 			.entry-thumbnail:hover,
 			.entry-pagination,
-			.pagination,
+			.pagination span,
+			.pagination a.current,
+			.pagination a:hover,
 			.site-header .sub-menu a:hover,
 			.back-to-top{
 				background: <?php echo $color; ?>;
@@ -256,10 +259,12 @@ if(!function_exists('intro_user_styles')){
 			.entry-thumbnail a.entry-permalink:hover:before,
 			.entry-quote,
 			.entry-quote-author,
-			.entry-quote a:hover{
-				color:<?php echo $contrast; ?> !important;
+			.entry-quote a:hover,
+			.entry-link,
+			.entry-link a:hover,
+			.pagination a:hover{
+				color:<?php echo $contrast; ?>;
 			}
-
 
 			</style>
 		<?php }

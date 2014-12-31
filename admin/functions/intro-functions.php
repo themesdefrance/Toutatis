@@ -25,7 +25,7 @@ if (!function_exists('intro_excerpt')){
 		// Create a custom excerpt without shortcodes, images and iframes
 		$content = strip_shortcodes(strip_tags(get_the_content(), '<img><iframe>'));
 		
-		return '<p>' . wp_trim_words( $content , $length ) . '</p>';
+		return apply_filters('the_content', wpautop(wp_trim_words( $content , $length )));
 	}
 }
 
@@ -96,7 +96,8 @@ if (!function_exists('intro_posts_nav')){
 		$output .= $before;
 		
 		// Previous Post Link
-		if ($extremes && get_previous_posts_link()) previous_posts_link();
+		if ($extremes && get_previous_posts_link())
+			$output.= get_previous_posts_link('<i class="typcn typcn-chevron-left"></i>');
 	
 		// Link to first page, plus ellipses if necessary */
 		if (!in_array(1, $links)){
@@ -105,8 +106,8 @@ if (!function_exists('intro_posts_nav')){
 			else
 				$output .= sprintf($linkTemplate, esc_url(get_pagenum_link(1)), '1');
 			
-			echo $separator;
-			if (!in_array(2, $links)) $output .= '…'.$separator;
+			$output.= $separator;
+			if (!in_array(2, $links)) $output .= '<i class="nothere"></i>'.$separator;
 		}
 	
 		// Link to current page, plus 2 pages in either direction if necessary
@@ -122,20 +123,21 @@ if (!function_exists('intro_posts_nav')){
 	
 		// Link to last page, plus ellipses if necessary
 		if (!in_array($max, $links)){
-			if (!in_array($max-1, $links)) $output .= '…'.$separator;
+			if (!in_array($max-1, $links)) $output .= '<i class="nothere">…</i>'.$separator;
 	
 			if ($paged == $max)
 				$output .= sprintf($current, $link);
 			else
 				$output .= sprintf($linkTemplate, esc_url(get_pagenum_link($max)), $max);
 		}
-		
+	
+		// Next Post Link
+		if ($extremes && get_next_posts_link())
+			$output.= get_next_posts_link('<i class="typcn typcn-chevron-right"></i>');
+			
 		$output .= $after;
 		
 		echo apply_filters('intro_post_nav', $output);
-	
-		// Next Post Link
-		if ($extremes && get_next_posts_link()) next_posts_link();
 	}
 }
 

@@ -8,6 +8,8 @@
 	padding-bottom: 5px;
 }
 
+/* Classic thumbnails */
+
 .entry-thumbnail{
 	position:relative;
 	overflow:hidden;
@@ -70,14 +72,6 @@
 	opacity:1;
 }
 
-.entry-title{
-
-	a{
-		transition: color 0.2s ease-out;
-	}
-
-}
-
 .entry-title,
 .entry-title a{
 	color: $heading-font-color;
@@ -85,9 +79,12 @@
 	margin-bottom: 10px;
 	font-size: 28px;
 	line-height:39px;
+	letter-spacing: -0.5px;
 	font-weight:bold;
+	transition: color 0.2s ease-out;
 }
 
+/* Quote format */
 
 .entry-quote{
 	background: $heading-font-color;
@@ -99,7 +96,7 @@
 		display:block;
 		padding: 30px;
 		text-decoration:none;
-		
+		transition:.2s color ease-out;
 	}
 	
 	&:hover{
@@ -142,6 +139,27 @@
 		
 		padding-bottom: 30px;
 		@extend %quote;
+	}
+}
+
+/* Link format */
+
+.entry-link{
+	
+	background: $heading-font-color;
+	transition:.2s background ease-out;
+	
+	a{	
+		padding:30px;
+		color:#fff;
+		display: block;
+		
+		transition:.2s color ease-out;
+		
+		@extend .typcn;
+		&:after{
+			content:'\e09c';
+		}
 	}
 }
 

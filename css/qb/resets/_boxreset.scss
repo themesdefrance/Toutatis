@@ -51,9 +51,11 @@ img{
 }
 
 a{
+	
 	//Addresses `outline` inconsistency between Chrome and other browsers.
 	&:focus{
-		outline: thin dotted;
+		//outline: thin dotted;
+		outline: 0;
 	}
 	
 	//Improves readability when focused and also mouse hovered in all browsers.

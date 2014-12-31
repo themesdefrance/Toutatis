@@ -25,7 +25,7 @@
 				endif;
 			?>
 			
-			<?php intro_posts_nav(false, '', '<div class="pagination">', '</div>'); ?>
+			<?php intro_posts_nav(true, '', '<div class="pagination">', '</div>'); ?>
 			
 		</main>
 		

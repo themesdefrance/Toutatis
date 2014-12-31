@@ -10,7 +10,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: 
 Text Domain: intro
 */
-.typcn:before, .entry-thumbnail .entry-permalink:before {
+.typcn:before, .entry-thumbnail .entry-permalink:before, .entry-link a:before, .typcn:after, .entry-thumbnail .entry-permalink:after, .entry-link a:after {
   font-family: 'typicons';
   font-style: normal;
   font-weight: normal;
@@ -1054,7 +1054,7 @@ img {
   border: 0; }
 
 a:focus {
-  outline: thin dotted; }
+  outline: 0; }
 a:active, a:hover {
   outline: 0; }
 
@@ -1596,6 +1596,7 @@ body.admin-bar .site-header {
   margin-bottom: 20px;
   padding-bottom: 5px; }
 
+/* Classic thumbnails */
 .entry-thumbnail {
   position: relative;
   overflow: hidden;
@@ -1641,18 +1642,18 @@ body.admin-bar .site-header {
           filter: none;
   opacity: 1; }
 
-.entry-title a {
-  -webkit-transition: color 0.2s ease-out;
-          transition: color 0.2s ease-out; }
-
 .entry-title, .entry-title a {
   color: #38455b;
   text-decoration: none;
   margin-bottom: 10px;
   font-size: 28px;
   line-height: 39px;
-  font-weight: bold; }
+  letter-spacing: -0.5px;
+  font-weight: bold;
+  -webkit-transition: color 0.2s ease-out;
+          transition: color 0.2s ease-out; }
 
+/* Quote format */
 .entry-quote {
   background: #38455b;
   margin-bottom: 10px;
@@ -1662,7 +1663,9 @@ body.admin-bar .site-header {
     color: #fff;
     display: block;
     padding: 30px;
-    text-decoration: none; }
+    text-decoration: none;
+    -webkit-transition: 0.2s color ease-out;
+            transition: 0.2s color ease-out; }
   .entry-quote:hover {
     background: #ff625b; }
   .entry-quote .entry-title {
@@ -1683,6 +1686,20 @@ body.admin-bar .site-header {
     background: #38455b; }
   .single .entry-quote blockquote {
     padding-bottom: 30px; }
+
+/* Link format */
+.entry-link {
+  background: #38455b;
+  -webkit-transition: 0.2s background ease-out;
+          transition: 0.2s background ease-out; }
+  .entry-link a {
+    padding: 30px;
+    color: #fff;
+    display: block;
+    -webkit-transition: 0.2s color ease-out;
+            transition: 0.2s color ease-out; }
+    .entry-link a:after {
+      content: '\e09c'; }
 
 .entry-header-meta {
   color: #777777;
@@ -1999,18 +2016,19 @@ body.admin-bar .site-header {
 .pagination {
   display: inline-block;
   margin: 20px 0 80px; }
-  .pagination > span, .pagination > a {
+  .pagination > span, .pagination > a, .pagination > i.nothere {
     display: inline-block;
     color: inherit;
     text-decoration: none;
     padding: 4px 10px;
     font-family: 'Quicksand';
     font-size: 18px;
-    -webkit-transition: 0.2s color ease-out;
-            transition: 0.2s color ease-out;
-    opacity: 0.6; }
-    .pagination > span.current, .pagination > span:hover, .pagination > a.current, .pagination > a:hover {
-      opacity: 1; }
+    font-weight: bold;
+    width: 30px;
+    text-align: center; }
+    .pagination > span i:before, .pagination > a i:before, .pagination > i.nothere i:before {
+      width: auto;
+      height: auto; }
 
 .post-pagination {
   margin: 15px 0;
