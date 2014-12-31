@@ -296,7 +296,7 @@ body.admin-bar .site-header{
 	@extend %grid-col;
 	
 	@include width-above(701px){
-		width: 33.3%;
+		width: 33.33333333%;
 	}
 	@include width-below(700px){
 		width: 50%;
