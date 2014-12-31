@@ -2,16 +2,16 @@
 class IntroSocial extends WP_Widget{
 	
 	private $reseaux = array(
-		'facebook'=>'social-facebook-circular',
-		'twitter'=>'social-twitter-circular',
-		'youtube'=>'social-youtube-circular',
-		'google-plus'=>'social-google-plus-circular',
-		'vimeo'=>'social-vimeo-circular',
-		'linkedin'=>'social-linkedin-circular',
-		'pinterest'=>'social-pinterest-circular',
-		'instagram'=>'social-instagram-circular',
-		'dribbble'=>'social-dribbble-circular',
-		'rss'=>'rss-outline'
+		'facebook'=>'social-facebook',
+		'twitter'=>'social-twitter',
+		'youtube'=>'social-youtube',
+		'google-plus'=>'social-google-plus',
+		'vimeo'=>'social-vimeo',
+		'linkedin'=>'social-linkedin',
+		'pinterest'=>'social-pinterest',
+		'instagram'=>'social-instagram',
+		'dribbble'=>'social-dribbble',
+		'rss'=>'rss'
 	);
 	
 	private $error = false;

@@ -1273,7 +1273,7 @@ html {
 img, table, td, blockquote, code, pre, textarea, input, video {
   max-width: 100%; }
 
-.button, .comment-form input[type="submit"], html a.button, input[type='submit'], input[type='button'], .widget_calendar #next a, .widget_calendar #prev a {
+.button, .comment-form input[type="submit"], html a.button, input[type='submit'], input[type='button'], .widget_calendar #next a, .widget_calendar #prev a, .widget_introcalltoaction a.button {
   background: #ff625b;
   border: none;
   color: #fff;
@@ -1281,7 +1281,7 @@ img, table, td, blockquote, code, pre, textarea, input, video {
   padding: 6px 16px;
   font-family: 'Quicksand';
   transition: background 0.2s ease-out; }
-  .button:hover, .comment-form input[type="submit"]:hover, input[type='submit']:hover, input[type='button']:hover, .widget_calendar #next a:hover, .widget_calendar #prev a:hover {
+  .button:hover, .comment-form input[type="submit"]:hover, input[type='submit']:hover, input[type='button']:hover, .widget_calendar #next a:hover, .widget_calendar #prev a:hover, .widget_introcalltoaction a.button:hover {
     text-decoration: none; }
 
 .entry-quote .entry-title blockquote a:before, .single .entry-quote blockquote:before {
@@ -1887,19 +1887,24 @@ body.admin-bar .site-header {
   text-decoration: none; }
 
 .widget {
-  margin-bottom: 30px;
-  padding-bottom: 30px;
-  border-bottom: 1px solid #f1f1f1; }
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  line-height: 1.6; }
   .widget ul, .widget ol {
     list-style: none; }
   .widget ul li {
-    padding-bottom: 5px;
-    margin-bottom: 10px; }
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(56, 69, 91, 0.1); }
+    .widget ul li:first-child {
+      padding-top: 0; }
     .widget ul li:last-child {
       padding-bottom: 0;
-      margin-bottom: 0; }
+      border-bottom: none; }
   .widget a {
     text-decoration: none; }
+    .widget a:hover {
+      text-decoration: underline; }
   .widget table {
     width: 100%; }
   .widget td {
@@ -1908,19 +1913,20 @@ body.admin-bar .site-header {
     max-width: 100%; }
 
 .widget > h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #333; }
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #38455b;
+  font-weight: bold;
+  text-transform: uppercase; }
 
 .widget_search {
-  position: relative;
-  padding: 8px 0 30px; }
+  position: relative; }
   .widget_search .search-field {
     width: 100%;
     padding: 4px 40px 4px 10px;
     line-height: 32px; }
   .widget_search .reset-btn {
-    right: 15%;
+    right: 42px;
     top: 6px; }
   .widget_search .submit-btn {
     width: 40px;
@@ -1943,15 +1949,14 @@ body.admin-bar .site-header {
     text-align: center;
     padding-bottom: 5px; }
 
-.widget_tag_cloud a {
+.widget_tag_cloud .tagcloud a {
   display: inline-block;
-  color: #b2b2b2;
-  background: #f1f1f1;
-  padding: 6px 8px;
-  margin: 2px 0; }
-  .widget_tag_cloud a:hover {
-    color: #999999;
-    background: #e4e4e4; }
+  color: #38455b;
+  border: 2px solid #38455b;
+  padding: 4px 8px;
+  margin: 4px 0; }
+  .widget_tag_cloud .tagcloud a:hover {
+    text-decoration: none; }
 
 .widget_calendar caption {
   font-family: 'Quicksand';
@@ -1975,6 +1980,8 @@ body.admin-bar .site-header {
   width: 100%;
   height: 100%; }
 
+.widget_rss h3 a {
+  color: #38455b; }
 .widget_rss ul li a.rsswidget {
   display: block;
   margin-bottom: 5px; }
@@ -1983,24 +1990,34 @@ body.admin-bar .site-header {
 .widget_rss .rssSummary {
   margin: 5px 0; }
 
-.widget_introcalltoaction .cta-description p {
-  margin-bottom: 10px;
-  line-height: 1.42; }
-.widget_introcalltoaction a.button {
-  display: inline-block; }
+.widget_introcalltoaction {
+  background: #F5F5F5;
+  padding: 20px; }
+  .widget_introcalltoaction .cta-description p {
+    margin-bottom: 10px;
+    line-height: 1.42; }
+  .widget_introcalltoaction a.button {
+    display: inline-block; }
 
 .widget_introsocial ul {
   overflow: hidden; }
   .widget_introsocial ul li {
     float: left;
     padding: 5px;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    border: none; }
+    .widget_introsocial ul li:first-child {
+      padding-top: 5px; }
+    .widget_introsocial ul li:last-child {
+      padding-bottom: 5px; }
     .widget_introsocial ul li a {
       font-size: 26px; }
+      .widget_introsocial ul li a:hover {
+        text-decoration: none; }
 
 .pagination {
   display: inline-block;
-  margin: 20px 0 80px; }
+  margin: 20px 0; }
   .pagination > span, .pagination > a, .pagination > i.nothere {
     display: inline-block;
     color: inherit;

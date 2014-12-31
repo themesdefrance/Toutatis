@@ -189,11 +189,54 @@ if(!function_exists('intro_user_styles')){
 		}
 		?>
 			<style type="text/css">
+				
+			.site-header .sub-menu a,
+			#site-breadcrumbs a,
+			.entry-header-meta a,
+			.entry-content a,
+			.footer a,
+			.post-header-title a:hover,
+			.post-header-meta a,
+			.entry-content a,
+			.post-footer-meta a,
+			.comment-author a,
+			.comment-reply-link,
+			.widget a,
+			.comment-form .logged-in-as a,
+			.post-header-title:before,
+			.widget > h3:before{
+				color: <?php echo $color; ?>;
+			}	
+			
+			.content a:hover,
+			.footer a:hover,
+			.post-header-meta a:hover,
+			.entry-content a:hover,
+			.post-footer-meta a:hover,
+			.comment-author a:hover,
+			.comment-reply-link:hover,
+			.widget a:hover,
+			.comment-form .logged-in-as a:hover{
+				color: <?php echo $complement; ?>;
+			}
+
+			.entry-thumbnail a.entry-permalink:hover,
+			.entry-thumbnail a.entry-permalink:hover:before,
+			.entry-quote,
+			.entry-quote-author,
+			.entry-quote a:hover,
+			.entry-link,
+			.entry-link a:hover,
+			.pagination a:hover{
+				color:<?php echo $contrast; ?>;
+			}
+			
 			.button,
 			.comment-form input[type="submit"],
 			html a.button,
 			input[type='submit'],
 			input[type='button'],
+			.widget_tag_cloud a:hover,
 			.widget_calendar #next a,
 			.widget_calendar #prev a,
 			.search-form .submit-btn,
@@ -224,46 +267,8 @@ if(!function_exists('intro_user_styles')){
 				background: <?php echo $complement; ?>;
 				color: <?php echo $contrast; ?>;
 			}
-
-			.site-header .sub-menu a,
-			#site-breadcrumbs a,
-			.entry-header-meta a,
-			.entry-content a,
-			.footer a,
-			.post-header-title a:hover,
-			.post-header-meta a,
-			.entry-content a,
-			.post-footer-meta a,
-			.comment-author a,
-			.comment-reply-link,
-			.widget a,
-			.comment-form .logged-in-as a,
-			.post-header-title:before,
-			.widget > h3:before{
-				color: <?php echo $color; ?>;
-			}
-
-			.content a:hover,
-			.footer a:hover,
-			.post-header-meta a:hover,
-			.entry-content a:hover,
-			.post-footer-meta a:hover,
-			.comment-author a:hover,
-			.comment-reply-link:hover,
-			.widget a:hover,
-			.comment-form .logged-in-as a:hover{
-				color: <?php echo $complement; ?>;
-			}
-
-			.entry-thumbnail a.entry-permalink:hover,
-			.entry-thumbnail a.entry-permalink:hover:before,
-			.entry-quote,
-			.entry-quote-author,
-			.entry-quote a:hover,
-			.entry-link,
-			.entry-link a:hover,
-			.pagination a:hover{
-				color:<?php echo $contrast; ?>;
+			.widget_tag_cloud a:hover{
+				border-color:<?php echo $color; ?>;	
 			}
 
 			</style>
