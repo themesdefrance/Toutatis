@@ -38,7 +38,7 @@ class IntroSocial extends WP_Widget{
 			if (isset($instance[$reseau]) && !empty($instance[$reseau])){
 				?>
 				<li>
-					<a href="<?php echo $instance[$reseau]; ?>" title="<?php echo $reseau; ?>" class="typcn typcn-<?php echo $icon; ?>">
+					<a href="<?php echo $instance[$reseau]; ?>" title="<?php echo $reseau; ?>" class="typcn typcn-<?php echo $icon; ?>" target="_blank">
 						
 					</a>
 				</li>

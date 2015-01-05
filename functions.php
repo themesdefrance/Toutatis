@@ -231,7 +231,7 @@ if(!function_exists('intro_user_styles')){
 			.entry-link,
 			.entry-link a:hover,
 			.pagination a:hover,
-			.widget_introsocial ul li a{
+			.footer-bar .widget_introsocial ul li a{
 				color:<?php echo $contrast; ?>;
 			}
 			
