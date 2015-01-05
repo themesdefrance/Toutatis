@@ -2,7 +2,7 @@
 
 	<?php if(has_tag() && is_single()){ ?>
 	
-		<span class="post-footer-meta" itemscope="keywords">
+		<span class="entry-footer-meta" itemscope="keywords">
 		
 			<?php echo get_the_tag_list(apply_filters('intro_before_post_tags', ''),' | ',apply_filters('intro_after_post_tags', '')); ?>
 		

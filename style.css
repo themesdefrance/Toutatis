@@ -1134,6 +1134,9 @@ input[type='text'], input[type='email'], input[type='url'], input[type='tel'], i
   padding: 4px 10px;
   border: 1px solid transparent;
   background: #f1f1f1; }
+  input[type='text']:focus, input[type='email']:focus, input[type='url']:focus, input[type='tel']:focus, input[type='number']:focus, input[type='date']:focus, textarea:focus, select:focus {
+    border-color: #ff625b;
+    box-shadow: 0 0 5px #ff625b; }
 
 button, input {
   line-height: normal; }
@@ -1805,7 +1808,11 @@ body.admin-bar .site-header {
   margin-top: 20px; }
 
 .entry-comments {
-  padding: 0 50px 50px 50px; }
+  padding: 0 0 50px; }
+
+.comments-title {
+  padding: 20px 0 40px;
+  font-weight: bold; }
 
 .comment-form {
   margin: 20px 0; }
@@ -1816,21 +1823,18 @@ body.admin-bar .site-header {
 
 .comment-form label {
   padding-bottom: 10px;
-  display: block;
-  font-size: 20px;
-  color: rgba(0, 0, 0, 0.6); }
+  display: none;
+  font-size: 18px;
+  font-weight: bold; }
 
 .comment-form input[type="text"], .comment-form input[type="email"], .comment-form input[type="url"] {
   position: relative;
-  z-index: 100;
   width: 100%;
-  line-height: 20px;
-  padding: 4px 10px;
-  background: none;
-  border: none;
-  height: 32px; }
-  .comment-form input[type="text"]:focus, .comment-form input[type="email"]:focus, .comment-form input[type="url"]:focus {
-    background: inherit; }
+  max-width: none;
+  line-height: 1.6;
+  padding: 10px 15px;
+  background: #F1F1F1;
+  border: none; }
 
 .comment-form .comment-form-comment {
   background: transparent; }
@@ -1842,31 +1846,41 @@ body.admin-bar .site-header {
   background: #F1F1F1;
   border: none;
   margin: 0;
-  padding: 4px 10px; }
+  padding: 10px 15px;
+  line-height: 1.6; }
 
 .comment-form .form-submit {
   text-align: right;
   background: transparent; }
 
 .comment-form input[type="submit"] {
-  margin-right: 0; }
+  margin-right: 0;
+  padding: 15px;
+  width: 100%; }
 
 .comment-form .logged-in-as {
-  background: transparent;
+  font-weight: bold;
   padding: 0;
   margin: 10px 0; }
   .comment-form .logged-in-as a {
     text-decoration: none; }
 
 .comment-list {
-  list-style: none; }
+  list-style: none;
+  margin-top: 60px; }
   .comment-list .children {
     list-style: none;
-    margin-left: 20%;
+    margin-left: 8%;
+    padding-left: 3%;
+    border-left: 2px solid rgba(56, 69, 91, 0.1);
     margin-top: 50px; }
 
 .comment {
   margin-bottom: 30px; }
+
+.comment-waiting {
+  display: block;
+  padding: 30px 0; }
 
 .comment-aside {
   float: left;
@@ -1881,30 +1895,43 @@ body.admin-bar .site-header {
   width: 85%;
   padding-left: 20px; }
 
-.comment-author {
-  font-family: 'Quicksand';
-  font-size: 22px;
-  margin-bottom: 30px; }
-  .comment-author a {
-    font-style: normal;
-    text-decoration: none; }
-  .comment-author cite {
-    font-style: normal; }
+.comment-header {
+  font-weight: bold;
+  color: #777777;
+  margin-bottom: 10px; }
+  .comment-header .comment-author {
+    font-family: 'Quicksand';
+    font-size: 20px; }
+    .comment-header .comment-author a {
+      font-style: normal;
+      text-decoration: none; }
+      .comment-header .comment-author a:hover {
+        text-decoration: underline; }
+    .comment-header .comment-author cite {
+      font-style: normal; }
+  .comment-header .comment-date {
+    font-size: 14px; }
+
+.comment-content {
+  font-size: 16px;
+  line-height: 1.6; }
 
 .comment-footer {
-  margin-top: 15px;
-  padding-bottom: 5px;
-  border-bottom-width: 1px;
-  border-bottom-style: solid; }
-  .comment-footer .comment-date {
-    display: inline-block;
-    opacity: 0.6; }
+  margin-top: 10px; }
   .comment-footer .reply {
     float: right;
     padding-right: 4px; }
 
 .comment-reply-link {
+  text-decoration: none;
+  font-weight: bold; }
+  .comment-reply-link:hover {
+    text-decoration: underline; }
+
+#respond a {
   text-decoration: none; }
+  #respond a:hover {
+    text-decoration: underline; }
 
 .widget {
   margin-bottom: 20px;

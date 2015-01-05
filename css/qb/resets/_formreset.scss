@@ -25,6 +25,11 @@ input[type='text'],input[type='email'], input[type='url'], input[type='tel'], in
 	padding: 4px 10px;
 	border: 1px solid transparent;
 	background: #f1f1f1;
+	
+	&:focus{
+		border-color: $main-color;
+		box-shadow: 0 0 5px $main-color;
+	}
 }
 
 //Addresses Firefox 4+ setting `line-height` on `input` using `!important` in the UA stylesheet.

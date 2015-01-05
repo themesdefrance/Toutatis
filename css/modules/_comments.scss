@@ -1,5 +1,10 @@
 .entry-comments{
-	padding:0 50px 50px 50px;
+	padding:0 0 50px;
+}
+
+.comments-title{
+	padding: 20px 0 40px;
+	font-weight:bold;
 }
 
 .comment-form{
@@ -13,26 +18,21 @@
 
 .comment-form label{
 	padding-bottom: 10px;
-	display:block;
-	font-size: 20px;
-	color: rgba(black, .6);
+	display:none;
+	font-size: 18px;
+	font-weight:bold;
 
 }
 .comment-form input[type="text"],
 .comment-form input[type="email"],
 .comment-form input[type="url"]{
 	position: relative;
-	z-index: 100;
 	width: 100%;
-	line-height:20px;
-	padding: 4px 10px;
-	background: none;
+	max-width:none;
+	line-height:1.6;
+	padding: 10px 15px;
+	background: #F1F1F1;
 	border: none;
-	height:32px;
-		
-	&:focus{
-		background: inherit;
-	}
 }
 .comment-form .comment-form-comment{
 	background: transparent;
@@ -44,7 +44,8 @@
 	background: #F1F1F1;
 	border: none;
 	margin:0;
-	padding: 4px 10px;
+	padding: 10px 15px;
+	line-height: 1.6;
 }
 .comment-form .form-submit{
 	text-align: right;
@@ -53,9 +54,11 @@
 .comment-form input[type="submit"]{
 	@extend .button;
 	margin-right:0;
+	padding: 15px;
+	width:100%;
 }
 .comment-form .logged-in-as{
-	background: transparent;
+	font-weight: bold;
 	padding: 0;
 	margin: 10px 0;
 	
@@ -66,10 +69,13 @@
 
 .comment-list{
 	list-style: none;
+	margin-top: 60px;
 	
 	.children{
 		list-style: none;
-		margin-left: 20%;
+		margin-left: 8%;
+		padding-left: 3%;
+		border-left: 2px solid rgba(56, 69, 91, 0.1);
 		margin-top: 50px;
 	}
 }
@@ -78,6 +84,12 @@
 	@extend .clearfix;
 	margin-bottom: 30px;
 }
+
+.comment-waiting{
+	display: block;
+	padding: 30px 0;
+}
+
 .comment-aside{
 	float: left;
 	width: 15%;
@@ -93,31 +105,43 @@
 	width: 85%;
 	padding-left: 20px;
 }
-.comment-author{
-	font-family: $heading-font;
-	font-size: 22px;
-	margin-bottom: 30px;
+
+.comment-header{
+	font-weight:bold;
+	color:#777777;
+	margin-bottom: 10px;
 	
-	a{
-		font-style: normal;
-		@extend %custom-color;
-		text-decoration: none;
+	.comment-author{
+		font-family: $heading-font;
+		font-size: 20px;
+		
+		a{
+			font-style: normal;
+			@extend %custom-color;
+			text-decoration: none;
+			
+			&:hover{
+				text-decoration:underline;
+			}
+		}
+		cite{
+			font-style: normal;
+		}
 	}
-	cite{
-		font-style: normal;
-	}
-}
-.comment-footer{
-	margin-top: 15px;
-	padding-bottom: 5px;
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
-	@extend %custom-border;
 	
 	.comment-date{
-		display: inline-block;
-		opacity: .6;
+		font-size: 14px;
 	}
+}
+
+.comment-content{
+	font-size:16px;
+	line-height:1.6;
+}
+
+.comment-footer{	
+	margin-top:10px;
+	
 	.reply{
 		float: right;
 		padding-right: 4px;
@@ -126,4 +150,18 @@
 .comment-reply-link{
 	@extend %custom-color;
 	text-decoration: none;
+	font-weight: bold;
+	
+	&:hover{
+		text-decoration: underline;
+	}
+
+}
+
+#respond a{
+	text-decoration:none;
+	
+	&:hover{
+		text-decoration:underline;
+	}
 }

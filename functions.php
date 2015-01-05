@@ -200,7 +200,8 @@ if(!function_exists('intro_user_styles')){
 			.post-header-title a:hover,
 			.post-header-meta a,
 			.entry-content a,
-			.post-footer-meta a,
+			.entry-footer-meta a,
+			#respond a,
 			.comment-author a,
 			.comment-reply-link,
 			.widget a,
@@ -273,7 +274,15 @@ if(!function_exists('intro_user_styles')){
 				color: <?php echo $contrast; ?>;
 			}			
 			
-			.widget_tag_cloud a:hover{
+			.widget_tag_cloud a:hover,
+			input[type='text']:focus,
+			input[type='email']:focus,
+			input[type='url']:focus,
+			input[type='tel']:focus,
+			input[type='number']:focus,
+			input[type='date']:focus,
+			textarea:focus,
+			select:focus{
 				border-color:<?php echo $color; ?>;	
 			}
 

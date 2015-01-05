@@ -159,29 +159,32 @@ if (!function_exists('intro_comment')){
 		default :
 		?>
 		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-			<article id="comment-<?php comment_ID(); ?>" class="comment">
+			<article id="comment-<?php comment_ID(); ?>" class="comment" itemprop="comment" itemscope="itemscope" itemtype="http://schema.org/UserComments">
+				
+				<?php if ($comment->comment_approved == '0') : ?>
+					<em class="comment-waiting"><?php echo apply_filters('intro_comment_waiting_moderation', __('Your comment is waiting for moderation.', 'intro')); ?></em>
+				<?php endif; ?>
+				
 				<aside class="comment-aside">
-					<?php if ($comment->comment_approved == '0') : ?>
-						<em><?php echo apply_filters('intro_comment_waiting_moderation', __('Your comment is waiting for moderation.', 'intro')); ?></em>
-					<?php endif; ?>
 					<?php echo get_avatar($comment, 80); ?>
 				</aside>
 				
 				<div class="comment-main">
 					<header class="comment-header">
-						<div class="comment-author vcard">
+						<span class="comment-author vcard" itemprop="creator" itemscope="itemscope" itemtype="http://schema.org/Person">
 							<?php echo apply_filters('intro_comment_author', sprintf(__('%s', 'intro'), sprintf(__('<cite class="fn">%s</cite>', 'intro'), get_comment_author_link()))); ?>
-						</div>
+						</span>
+						<time class="comment-date" datetime="<?php the_time('c'); ?>" itemprop="commentTime" >
+							<?php echo apply_filters('intro_comment_date', sprintf(__('Published on %s at %s', 'intro'),get_comment_date(),get_comment_time('H:i'))); ?>
+						</time>
 					</header>
 		 
-					<div class="post-content">
+					<div class="comment-content" itemprop="commentText">
 						<?php comment_text(); ?>
 					</div>
 					
 					<footer class="comment-footer">
-						<div class="comment-date">
-							<?php echo apply_filters('intro_comment_date', sprintf(__('Published on %s at %s', 'intro'),get_comment_date(),get_comment_time('H:i'))); ?>
-						</div>
+						
 						<div class="reply">
 							<?php 
 							comment_reply_link(array_merge($args, 
@@ -190,7 +193,7 @@ if (!function_exists('intro_comment')){
 										'reply_text'=>apply_filters('intro_comment_reply', __('Reply', 'intro'))))); 
 							?>
 						</div>
-					<footer>
+					</footer>
 				</div>
 			</article>
 		<?php
