@@ -36,9 +36,15 @@
 						<a href="<?php echo home_url(); ?>" title="<?php echo bloginfo('name'); ?>" class="logo-text">
 							<?php echo bloginfo('name'); ?>
 						</a>
+						
+						<a id="toggle-menu-icon" class="typcn typcn-th-menu"></a>
+						
 					</div><!--END .intro-logo-->
 					
 					<nav class="main-menu" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+						
+						
+						
 						<?php
 						wp_nav_menu(array(
 							'theme_location' => 'primary',

@@ -48,12 +48,7 @@ $menu-width: 280px;
 	@extend .clearfix;
 	
 	@include width-below($grid-collapse-below){
-		width: $menu-width;
-		height: 100%;
-		position: absolute;
-		top: 0;
-		left: -$menu-width;
-		background: #333;
+		
 	}
 	
 	.intro-logo{
@@ -61,6 +56,11 @@ $menu-width: 280px;
 		float: left;
 		text-align: left;
 		padding: 33px 0;
+		
+		@include width-below($grid-collapse-below){
+			width:100%;
+			padding: 20px 0;
+		}
 		
 		a.logo-text{
 			font-size: 26px;
@@ -70,7 +70,29 @@ $menu-width: 280px;
 			letter-spacing: -1px;
 		}
 	}
-
+	
+	#toggle-menu-icon{
+		display: none;
+		
+		@include width-below($grid-collapse-below){
+			z-index: 100;
+			display: block;
+			color:$heading-font-color;
+			font-size: 26px;
+			float:right;
+			padding:0;
+			margin: -2px 0 0 0;
+			cursor:pointer;
+			opacity:1;
+			max-height: 36px;
+			transition: .1s opacity ease-in;
+			&:hover{
+				opacity:0.8;
+			}	
+		}
+		
+	}
+	
 	.main-menu{
 		width: 70%;
 		float: left;
@@ -78,6 +100,8 @@ $menu-width: 280px;
 		
 		@include width-below($grid-collapse-below){
 			text-align: left;
+			float:none;
+			width:100%;
 		}
 		
 		ul.top-level-menu{
@@ -85,24 +109,49 @@ $menu-width: 280px;
 			z-index: 10;
 			position: relative;
 			float:right;
+			
+			@include width-below($grid-collapse-below){
+				float:none;
+				display: none;
+				width:100%;
+				overflow:hidden;
+			}
+			
+			@include width-above($grid-collapse-below){
+				display: block !important;
+			}
 		}
 		
 		li{
 			display: inline-block;
+			position: relative;
 			padding:0 10px;
 			
 			@include width-below($grid-collapse-below){
-				display: block;		
+				display: block;	
+				padding:0;	
 			}
 			
 			&:last-child {
 				padding-right: 0;
 			}
 			
-			&.current-menu-item a,
-			&:hover a{
-				color:$main-color;
-				border-bottom-color:$main-color;
+			&:hover {
+				> a{
+					color:$main-color;
+					border-bottom-color:$main-color;
+				}
+				
+				.sub-menu{
+					display:block;
+				}
+			}
+			
+			@include width-above($grid-collapse-below){
+				&.current-menu-item a{
+					color:$main-color;
+					border-bottom-color:$main-color;
+				}
 			}
 		}
 		
@@ -116,7 +165,8 @@ $menu-width: 280px;
 			
 			@include width-below($grid-collapse-below){
 				display: block;
-				color: #fff;
+				padding: 20px 0px 17px;
+				border-color: transparent !important;
 			}
 		}
 	}
@@ -128,24 +178,35 @@ $menu-width: 280px;
 	left: 0;
 	right: 0;
 	top: 100%;
-	padding-top: 1px;
+	margin-top: 1px;
 	display: none;
+	min-width: 200px;
+	border:1px solid rgba(56, 69, 91, 0.1);
+	border-top:none;
 	
 	@include width-below($grid-collapse-below){
 		display: block;
 		position: static;
-		background: #333;
 		padding-top: 0;
+		border:none;
+		border-left: 2px solid rgba(56, 69, 91, 0.1);
 	}
 	
 	li{
 		opacity: 1;
+		display: inline-block;
+		width: 100%;
+		
+		&:hover > a{
+			border-bottom-color:transparent !important;
+		}
+		
 	}
 	a{
+		color: $heading-font-color;
 		font-size: 14px;
 		padding:12px 10px 14px 10px;
-		transition: .2s background ease-out, 
-					.2s color ease-out;
+		transition: .2s color ease-out;
 	}
 }
 .site-header .sub-menu a{
@@ -153,13 +214,8 @@ $menu-width: 280px;
 	font-size: 16px;
 	
 	@include width-below($grid-collapse-below){
-		color: #fff !important;
 		padding-left: 30px;
 		opacity: 1;
-	}
-
-	&:hover{
-		@extend %custom-bg;
 	}
 }
 

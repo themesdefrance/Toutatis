@@ -190,13 +190,13 @@ if(!function_exists('intro_user_styles')){
 		?>
 			<style type="text/css">
 				
-			.site-header .sub-menu a,
+			.site-header .main-menu li:hover > a,
 			#site-breadcrumbs a,
 			.entry-header-meta a,
 			.entry-content a,
 			.footer a,
 			.footer-wrapper .footer-bar a:hover,
-			.widget_introsocial ul li a:hover,
+			.widget_introsocial ul li a,
 			.post-header-title a:hover,
 			.post-header-meta a,
 			.entry-content a,
@@ -219,6 +219,7 @@ if(!function_exists('intro_user_styles')){
 			.comment-author a:hover,
 			.comment-reply-link:hover,
 			.widget a:hover,
+			.widget_introsocial ul li a:hover,
 			.comment-form .logged-in-as a:hover{
 				color: <?php echo $complement; ?>;
 			}
@@ -252,7 +253,6 @@ if(!function_exists('intro_user_styles')){
 			.pagination span,
 			.pagination a.current,
 			.pagination a:hover,
-			.site-header .sub-menu a:hover,
 			.back-to-top{
 				background: <?php echo $color; ?>;
 				color: <?php echo $contrast; ?>;

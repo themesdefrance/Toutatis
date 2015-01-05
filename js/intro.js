@@ -24,29 +24,30 @@ $(function(){
 			if ($(window).scrollTop() > $(window).height()) $toTop.fadeIn();
 			else $toTop.fadeOut();
 		});
+		
+		$('.entry-video, .widget-video').fitVids();
+		
+		$("#toggle-menu-icon").click(function() {
+		  $(".top-level-menu").slideToggle(400);
+		  return false;
+		});
+		
+		$( window ).resize( function() {
+			if (menuTimeout) clearTimeout(menuTimeout);
+			menuTimeout = setTimeout(recalculateMenuSize, 100);
+		} );
 
-		$(document).ready(function(){
-		    $('.entry-video, .widget-video').fitVids();
-		  });
+		var recalculateMenuSize = function(){
+			var browserWidth = $( window ).width();
 
-		//things dependant on window size
-		/*var resizeTimeout;
-
-		function windowSizeChanged(){
-			//usingflyout menu or not?
-			var previousState = useJsMenu;
-			useJsMenu = ($('.menu-wrapper .sub-menu').css('position') === 'absolute');
-
-			if (previousState != useJsMenu){
-				(useJsMenu) ? $('.menu-wrapper .sub-menu').hide() : $('.menu-wrapper .sub-menu').show();
+			if ( browserWidth > 800 ) {
+				$(".top-level-menu").show();
+			}else{
+				$(".top-level-menu").hide();
 			}
-
 		}
-
-		$(window).resize(function(){
-			if (resizeTimeout) clearTimeout(resizeTimeout);
-			resizeTimeout = setTimeout(windowSizeChanged, 100);
-		});*/
+		
+	
 
 	});
 });

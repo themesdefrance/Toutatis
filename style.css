@@ -1327,48 +1327,82 @@ img, table, td, blockquote, code, pre, textarea, input, video {
   width: 100%;
   font-weight: bold;
   border-bottom: 1px solid rgba(56, 69, 91, 0.1); }
-  @media only screen and (max-width: 800px) {
-    .site-header {
-      width: 280px;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: -280px;
-      background: #333; } }
   .site-header .intro-logo {
     width: 30%;
     float: left;
     text-align: left;
     padding: 33px 0; }
+    @media only screen and (max-width: 800px) {
+      .site-header .intro-logo {
+        width: 100%;
+        padding: 20px 0; } }
     .site-header .intro-logo a.logo-text {
       font-size: 26px;
       color: #38455b;
       text-decoration: none;
       text-transform: uppercase;
       letter-spacing: -1px; }
+  .site-header #toggle-menu-icon {
+    display: none; }
+    @media only screen and (max-width: 800px) {
+      .site-header #toggle-menu-icon {
+        z-index: 100;
+        display: block;
+        color: #38455b;
+        font-size: 26px;
+        float: right;
+        padding: 0;
+        margin: -2px 0 0 0;
+        cursor: pointer;
+        opacity: 1;
+        max-height: 36px;
+        -webkit-transition: 0.1s opacity ease-in;
+                transition: 0.1s opacity ease-in; }
+        .site-header #toggle-menu-icon:hover {
+          opacity: 0.8; } }
   .site-header .main-menu {
     width: 70%;
     float: left;
     font-family: 'Quicksand'; }
     @media only screen and (max-width: 800px) {
       .site-header .main-menu {
-        text-align: left; } }
+        text-align: left;
+        float: none;
+        width: 100%; } }
     .site-header .main-menu ul.top-level-menu {
       list-style: none;
       z-index: 10;
       position: relative;
       float: right; }
+      @media only screen and (max-width: 800px) {
+        .site-header .main-menu ul.top-level-menu {
+          float: none;
+          display: none;
+          width: 100%;
+          overflow: hidden; } }
+      @media only screen and (min-width: 800px) {
+        .site-header .main-menu ul.top-level-menu {
+          display: block !important; } }
     .site-header .main-menu li {
       display: inline-block;
+      position: relative;
       padding: 0 10px; }
       @media only screen and (max-width: 800px) {
         .site-header .main-menu li {
-          display: block; } }
+          display: block;
+          padding: 0; } }
       .site-header .main-menu li:last-child {
         padding-right: 0; }
-      .site-header .main-menu li.current-menu-item a, .site-header .main-menu li:hover a {
+      .site-header .main-menu li:hover > a {
         color: #ff625b;
         border-bottom-color: #ff625b; }
+      .site-header .main-menu li:hover .sub-menu {
+        display: block; }
+      @media only screen and (min-width: 800px) {
+        .site-header .main-menu li.current-menu-item a {
+          color: #ff625b;
+          border-bottom-color: #ff625b; }
+ }
     .site-header .main-menu a {
       display: inline-block;
       color: #38455b;
@@ -1379,7 +1413,8 @@ img, table, td, blockquote, code, pre, textarea, input, video {
       @media only screen and (max-width: 800px) {
         .site-header .main-menu a {
           display: block;
-          color: #fff; } }
+          padding: 20px 0px 17px;
+          border-color: transparent !important; } }
 
 .site-header .sub-menu {
   position: absolute;
@@ -1387,27 +1422,35 @@ img, table, td, blockquote, code, pre, textarea, input, video {
   left: 0;
   right: 0;
   top: 100%;
-  padding-top: 1px;
-  display: none; }
+  margin-top: 1px;
+  display: none;
+  min-width: 200px;
+  border: 1px solid rgba(56, 69, 91, 0.1);
+  border-top: none; }
   @media only screen and (max-width: 800px) {
     .site-header .sub-menu {
       display: block;
       position: static;
-      background: #333;
-      padding-top: 0; } }
+      padding-top: 0;
+      border: none;
+      border-left: 2px solid rgba(56, 69, 91, 0.1); } }
   .site-header .sub-menu li {
-    opacity: 1; }
+    opacity: 1;
+    display: inline-block;
+    width: 100%; }
+    .site-header .sub-menu li:hover > a {
+      border-bottom-color: transparent !important; }
   .site-header .sub-menu a {
+    color: #38455b;
     font-size: 14px;
     padding: 12px 10px 14px 10px;
-    -webkit-transition: 0.2s background ease-out, 0.2s color ease-out;
-            transition: 0.2s background ease-out, 0.2s color ease-out; }
+    -webkit-transition: 0.2s color ease-out;
+            transition: 0.2s color ease-out; }
 
 .site-header .sub-menu a {
   font-size: 16px; }
   @media only screen and (max-width: 800px) {
     .site-header .sub-menu a {
-      color: #fff !important;
       padding-left: 30px;
       opacity: 1; } }
 
