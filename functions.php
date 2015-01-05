@@ -247,7 +247,6 @@ if(!function_exists('intro_user_styles')){
 			.search-form .submit-btn,
 			.entry-quote:hover,
 			.entry-link:hover,
-			.entry-content th,
 			.entry-thumbnail:hover,
 			.entry-pagination,
 			.pagination span,
@@ -267,7 +266,6 @@ if(!function_exists('intro_user_styles')){
 			.widget_calendar #prev a:hover,
 			.widget_introcalltoaction a.button:hover,
 			.search-form .submit-btn:hover,
-			.entry-content th:hover,
 			.entry-pagination:hover,
 			.back-to-top:hover{
 				background: <?php echo $complement; ?>;

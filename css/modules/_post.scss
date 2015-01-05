@@ -191,7 +191,11 @@
 	img{
 		height:auto;
 	}
-
+	
+	h1,h2,h3,h4,h5,h6{
+		font-weight:bold;
+	}
+	
 	h1{
 		font-size: 36px;
 		margin-bottom: 14px;
@@ -204,7 +208,11 @@
 		font-size: 24px;
 		margin-bottom: 8px;
 	}
-	h4,h5,h6{
+	h4{
+		font-size: 20px;
+		margin-bottom: 6px;
+	}
+	h5,h6{
 		font-size: 18px;
 		margin-bottom: 6px;
 	}
@@ -218,20 +226,21 @@
 	p{
 		margin-bottom: 10px;
 	}
+	
+	ul,ol{
+		padding-left:20px;
+	}
+	
 	//no margins for nested lists
 	ul ul,
 	ul ol,
 	ol ul,
 	ol ol{
 		margin-bottom: 0;
-
-		li{
-			margin-left: 25px;
-		}
 	}
 
 	li{
-		list-style-position: outside;
+		list-style-position: inside;
 		margin-bottom: 5px;
 	}
 	a{
@@ -260,30 +269,26 @@
 	}
 	th{
 		text-align:center;
-		@extend %custom-bg;
-		font-size: 20px;
-		font-weight: 400;
-		font-family: $heading-font;
 	}
 	td,
 	th{
-		padding: 8px 4px;
+		padding: 10px 5px;
 	}
 	pre{
 		line-height: 1.1;
+		margin-bottom:10px;
 	}
 	blockquote{
 		font-family: $heading-font;
 		font-size: 24px;
-		line-height: 1.3;
-		margin: 30px 0;
-
-
+		margin: 30px 0 30px 30px;
+		line-height: 1.4;
 
 		p:before{
 			content:'“';
 			font-size: 24px;
-			position: relative;
+			font-weight: bold;
+			padding-right: 10px;
 		}
 
 		cite{
@@ -292,6 +297,7 @@
 			font-size: 16px;
 			margin-top: 20px;
 			font-style: normal;
+			font-weight:bold;
 		}
 	}
 	.alignright{
@@ -307,8 +313,7 @@
 		margin:5px auto 5px auto;
 	}
 	.wp-caption-text{
-		padding: 2px 0;
-		color: #8d8d8d;
+		color: #777;
 		text-align:center;
 	}
 
