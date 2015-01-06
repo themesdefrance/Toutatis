@@ -24,7 +24,7 @@
 										echo strip_tags(get_option("intro_footer_left"), '<strong><a><em><img>');
 										
 									else:
-										printf(__('<strong>%s</strong> - Galopin by <a href="https://www.themesdefrance.fr/" target="_blank">Themes de France</a>', 'intro'),date('Y'));
+										printf(__('<strong>%s</strong> - Intro by <a href="https://www.themesdefrance.fr/" target="_blank">Themes de France</a>', 'intro'),date('Y'));
 									endif;
 								 ?>
 							</div><!-- END .footnote .col-1-2 -->

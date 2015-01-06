@@ -1329,7 +1329,7 @@ img, table, td, blockquote, code, pre, textarea, input, video {
     width: 30%;
     float: left;
     text-align: left;
-    padding: 33px 0; }
+    padding: 30px 0; }
     @media only screen and (max-width: 800px) {
       .site-header .intro-logo {
         width: 100%;
@@ -1339,7 +1339,11 @@ img, table, td, blockquote, code, pre, textarea, input, video {
       color: #38455b;
       text-decoration: none;
       text-transform: uppercase;
-      letter-spacing: -1px; }
+      letter-spacing: -1px;
+      padding: 3px 0;
+      display: inline-block; }
+    .site-header .intro-logo a.logo-img img {
+      max-height: 35px; }
   .site-header #toggle-menu-icon {
     display: none; }
     @media only screen and (max-width: 800px) {
@@ -1354,9 +1358,7 @@ img, table, td, blockquote, code, pre, textarea, input, video {
         cursor: pointer;
         opacity: 1;
         max-height: 36px;
-        transition: 0.1s opacity ease-in; }
-        .site-header #toggle-menu-icon:hover {
-          opacity: 0.8; } }
+        transition: 0.1s color ease-in; } }
   .site-header .main-menu {
     width: 70%;
     float: left;

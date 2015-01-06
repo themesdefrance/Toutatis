@@ -191,6 +191,9 @@ if(!function_exists('intro_user_styles')){
 			<style type="text/css">
 				
 			.site-header .main-menu li:hover > a,
+			.site-header .main-menu li.current-menu-item a,
+			.site-header a.logo-text:hover,
+			#toggle-menu-icon:hover,
 			#site-breadcrumbs a,
 			.entry-header-meta a,
 			.entry-content a,
@@ -281,7 +284,13 @@ if(!function_exists('intro_user_styles')){
 			input[type='date']:focus,
 			textarea:focus,
 			select:focus{
-				border-color:<?php echo $color; ?>;	
+				border-color:<?php echo $color; ?>;
+				box-shadow: 0 0 5px <?php echo $color; ?>;
+			}
+			
+			.site-header .main-menu li.current-menu-item a,
+			.site-header .main-menu li:hover > a{
+				border-bottom-color:<?php echo $color; ?>;	
 			}
 
 			</style>
@@ -328,18 +337,26 @@ if(!function_exists('intro_edd')){
 add_action('admin_init', 'intro_edd');
 
 ////////////////////////////////////
-// Etendard notifications
+// Intro notifications
 ////////////////////////////////////
 
 if(!function_exists('intro_admin_notice')){
 	function intro_admin_notice(){
 		global $current_user;
         $user_id = $current_user->ID;
-
-		if(!get_option('intro_license_status')){
-			echo '<div class="error"><p>';
-			_e("In order to get updates, please enter your licence that you received by email.", 'intro');
-			echo '</p></div>';
+		
+		if(current_user_can('level_10')){
+		
+			if(!get_option('intro_license_status')){
+				
+				if ( ! get_user_meta($user_id, 'ignore_purchaseintro_notice') ) {
+					echo '<div class="error"><p>';
+					
+						printf(__("To get Intro support and automatic updates, <a href='%s' target='__blank'>purchase a licence key on Themes de France</a> | <a href='%s'>I'm not interested</a>", 'intro'), 'https://www.themesdefrance.fr/themes/intro/#acheter?utm_source=theme&utm_medium=noticelink&utm_campaign=intro', '?ignore_notice=purchaseintro');
+					
+					echo '</p></div>';
+				}
+			}
 		}
 	}
 }

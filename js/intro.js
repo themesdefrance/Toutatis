@@ -32,11 +32,13 @@ $(function(){
 		  return false;
 		});
 		
+		var menuTimeout;
+		
 		$( window ).resize( function() {
 			if (menuTimeout) clearTimeout(menuTimeout);
 			menuTimeout = setTimeout(recalculateMenuSize, 100);
 		} );
-
+		
 		var recalculateMenuSize = function(){
 			var browserWidth = $( window ).width();
 

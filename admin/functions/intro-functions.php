@@ -336,3 +336,54 @@ if (!function_exists('intro_archives')){
 		return $result;
 	}
 }
+
+// Addons tab content
+
+// bbPress addon
+if(!function_exists('intro_addons_bbpress')){
+	function intro_addons_bbpress($form){
+		
+		$form->startWrapper('tr');
+	
+			$form->startWrapper('th');
+			
+				$form->component('raw', __('Intro bbPress Addon', 'intro'));
+			
+			$form->endWrapper('th');
+	
+			$form->startWrapper('td');
+				
+				if(!function_exists('intro_bbpress_styles')):
+				
+					$form->component('raw', __('Intro bbPress Addon bring custom CSS styling to Intro to get a perfect bbPress integration.', 'intro') . '<br><br>');
+					
+					$form->component('link',
+									 'https://www.themesdefrance.fr/module-bbpress-intro/?utm_source=Intro&utm_medium=bouton&utm_content=Intro_bbPress&utm_campaign=IntroAdmin',
+									 __('Get Intro bbPress Addon', 'intro'),
+									 array(
+										 'class'=>array('button', 'button-primary'),
+										 'target'=>'_blank'
+									 ));
+				else:
+					$form->component('description', __('Intro bbPress Addon is installed. Thanks for using it !', 'intro'));
+					
+					$form->component('description', __('If you have some time, help us to improve it by giving some feedback.', 'intro') . '<br><br>');
+					
+					$form->component('link',
+									 'https://www.themesdefrance.fr/temoignage/?produit=Intro%20bbPress&utm_source=Intro&utm_medium=bouton&utm_content=Intro_bbPress&utm_campaign=IntroAdmin',
+									 __('Give feedback on Intro bbPress Addon', 'intro'),
+									 array(
+										 'class'=>array('button'),
+										 'target'=>'_blank'
+									 ));
+					
+				endif;
+			
+			$form->endWrapper('td');
+		
+		$form->endWrapper('tr');
+		
+	
+	}
+}
+add_action('intro_addons_tab', 'intro_addons_bbpress', 10, 1);

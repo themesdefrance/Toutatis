@@ -33,9 +33,20 @@
 				<div class="wrapper">
 				
 					<div class="intro-logo">
-						<a href="<?php echo home_url(); ?>" title="<?php echo bloginfo('name'); ?>" class="logo-text">
-							<?php echo bloginfo('name'); ?>
-						</a>
+						
+						<?php if(get_option('intro_logo')) : ?>
+						
+							<a href="<?php echo home_url(); ?>" class="logo-img">	
+								<img src="<?php echo esc_url(get_option('intro_logo')); ?>" alt="<?php echo bloginfo('name'); ?>">
+							</a>
+						
+						<?php else: ?>
+						
+							<a href="<?php echo home_url(); ?>" title="<?php echo bloginfo('name'); ?>" class="logo-text">
+								<?php echo bloginfo('name'); ?>
+							</a>
+						
+						<?php endif; ?>
 						
 						<a id="toggle-menu-icon" class="typcn typcn-th-menu"></a>
 						

@@ -55,7 +55,7 @@ $menu-width: 280px;
 		width: 30%;
 		float: left;
 		text-align: left;
-		padding: 33px 0;
+		padding: 30px 0;
 		
 		@include width-below($grid-collapse-below){
 			width:100%;
@@ -68,6 +68,12 @@ $menu-width: 280px;
 			text-decoration: none;
 			text-transform: uppercase;
 			letter-spacing: -1px;
+			padding: 3px 0;
+			display: inline-block;
+		}
+		
+		a.logo-img img{
+			max-height: 35px;
 		}
 	}
 	
@@ -85,10 +91,7 @@ $menu-width: 280px;
 			cursor:pointer;
 			opacity:1;
 			max-height: 36px;
-			transition: .1s opacity ease-in;
-			&:hover{
-				opacity:0.8;
-			}	
+			transition: .1s color ease-in;
 		}
 		
 	}
