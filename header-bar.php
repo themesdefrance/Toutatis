@@ -1,3 +1,5 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
+
 <?php do_action('intro_before_header_bar'); ?>
 
 <section class="header-bar">

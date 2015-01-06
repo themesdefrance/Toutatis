@@ -1,3 +1,5 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
+
 <?php $sidebar = apply_filters('intro_show_sidebar', get_option('intro_show_sidebar')); ?>
 
 <?php get_header(); ?>

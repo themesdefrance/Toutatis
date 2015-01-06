@@ -1,3 +1,5 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
+
 <?php
 class EDD_SL_Theme_Updater {
 	private $remote_api_url;

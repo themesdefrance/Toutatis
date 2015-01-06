@@ -1,3 +1,5 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
+
 <footer class="entry-footer">
 	
 	<?php do_action('intro_top_footer_post'); ?>

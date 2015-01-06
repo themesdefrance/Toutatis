@@ -5,6 +5,8 @@ Template Name: Fullwidth
 __('Fullwidth','intro');
 ?>
 
+<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
+
 <?php get_header(); ?>
 
 <?php do_action('intro_before_main'); ?>

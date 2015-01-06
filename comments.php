@@ -1,3 +1,5 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
+
 <?php if (post_password_required()) return; ?>
 
 <?php do_action('intro_before_comments'); ?>

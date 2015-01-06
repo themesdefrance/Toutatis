@@ -1,3 +1,5 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
+
 <?php $quote 		= sanitize_text_field(get_post_meta($post->ID, '_intro_quote_meta', true)); ?>
 <?php $author_quote = sanitize_text_field(get_post_meta($post->ID, '_intro_quote_author_meta', true)); ?>
 

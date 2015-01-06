@@ -1,3 +1,5 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
+
 <?php do_action('intro_before_post'); ?>
 
 <article <?php post_class('post'); ?> itemscope="itemscope" itemtype="http://schema.org/Article">

@@ -1,3 +1,5 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
+
 <?php
 
 define('INTRO_STORE_URL', 'https://www.themesdefrance.fr');

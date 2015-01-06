@@ -1,3 +1,5 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
+
 <?php
 	$post_header_date     = apply_filters('intro_post_header_date', true);
 	$post_header_author   = apply_filters('intro_post_header_author', true);

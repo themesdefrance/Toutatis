@@ -1,3 +1,5 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
+
 			<section class="footer-wrapper">
 					
 				<div class="wrapper">

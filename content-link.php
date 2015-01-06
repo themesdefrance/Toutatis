@@ -1,3 +1,5 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
+
 <?php $link = esc_url(get_post_meta($post->ID, '_intro_link_meta', true)); ?>
 
 <?php do_action('intro_before_post'); ?>

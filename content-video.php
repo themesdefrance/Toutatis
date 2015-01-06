@@ -1,3 +1,5 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
+
 <?php $video_link = get_post_meta($post->ID, '_intro_video_meta', true); ?>
 
 <?php do_action('intro_before_post'); ?>
