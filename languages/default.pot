@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Intro\n"
-"POT-Creation-Date: 2014-11-10 18:02+0100\n"
-"PO-Revision-Date: 2014-11-10 18:02+0100\n"
+"POT-Creation-Date: 2015-01-06 09:22+0100\n"
+"PO-Revision-Date: 2015-01-06 09:22+0100\n"
 "Last-Translator: Alex Thèmes de France <alex@themesdefrance.fr>\n"
 "Language-Team: Thèmes de France <bonjour@themesdefrance.fr>\n"
 "Language: en_US\n"
@@ -20,77 +20,96 @@ msgstr ""
 msgid "Oops, there is nothing here..."
 msgstr ""
 
-#: ../404.php:25
+#: ../404.php:24
 #, php-format
 msgid ""
 "The page you requested does not seem to exist. You can go back to <a href="
 "\"%s\">the home page</a> or browse the archives :"
 msgstr ""
 
-#: ../comments.php:20
+#: ../comments.php:22
 msgid "Previous comments"
 msgstr ""
 
-#: ../comments.php:23
+#: ../comments.php:25
 msgid "Next comments"
 msgstr ""
 
-#: ../comments.php:30
+#: ../comments.php:33
 msgid "Be the first to post a comment."
 msgstr ""
 
-#: ../comments.php:37
+#: ../comments.php:41
 msgid "Comments are closed."
 msgstr ""
 
-#: ../content-body.php:14 ../content-body.php:35 ../content.php:16
+#: ../content-body.php:15 ../content-body.php:32
 msgid "Read more"
 msgstr ""
 
-#: ../content-footer-meta.php:19
+#: ../content-footer.php:19
 msgid "Pages:"
 msgstr ""
 
-#: ../content-header-meta.php:15
+#: ../content-header.php:15
 msgid "Published "
 msgstr ""
 
-#: ../content-header-meta.php:19
+#: ../content-header.php:19
 msgid "on"
 msgstr ""
 
-#: ../content-header-meta.php:29
+#: ../content-header.php:29
 msgid "by"
 msgstr ""
 
-#: ../content-header-meta.php:42
+#: ../content-header.php:41
 msgid "in"
 msgstr ""
 
-#: ../content-header-meta.php:48
+#: ../content-header.php:51
 msgid "No Comment"
 msgstr ""
 
-#: ../content-header-meta.php:48
+#: ../content-header.php:51
 msgid "One Comment"
 msgstr ""
 
-#: ../content-header-meta.php:48
+#: ../content-header.php:51
 msgid "% Comments"
 msgstr ""
 
-#: ../content-header-meta.php:52
+#: ../content-header.php:57
 msgid "Edit"
 msgstr ""
 
-#: ../footer.php:33 ../admin/index.php:26
+#: ../content-none.php:19
 #, php-format
 msgid ""
-"<strong>%s</strong> - Galopin by <a href=\"https://www.themesdefrance.fr/\" "
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: ../content-none.php:23
+msgid ""
+"Sorry but no post match what you are looking for. Try some new keywords "
+"below :"
+msgstr ""
+
+#: ../content-none.php:28
+#, php-format
+msgid ""
+"Sorry but no post match what you are looking for. You should <a href=\"%1$s"
+"\">go back to the homepage</a> and start again."
+msgstr ""
+
+#: ../footer.php:27 ../admin/index.php:52
+#, php-format
+msgid ""
+"<strong>%s</strong> - Intro by <a href=\"https://www.themesdefrance.fr/\" "
 "target=\"_blank\">Themes de France</a>"
 msgstr ""
 
-#: ../footer.php:56
+#: ../footer.php:50
 msgid "Back to the top"
 msgstr ""
 
@@ -102,7 +121,7 @@ msgstr ""
 msgid "Footer menu"
 msgstr ""
 
-#: ../functions.php:49 ../admin/index.php:50
+#: ../functions.php:49 ../admin/index.php:44
 msgid "Sidebar"
 msgstr ""
 
@@ -110,7 +129,7 @@ msgstr ""
 msgid "Add widgets in the sidebar."
 msgstr ""
 
-#: ../functions.php:59 ../admin/index.php:23
+#: ../functions.php:59 ../admin/index.php:49
 msgid "Footer"
 msgstr ""
 
@@ -118,88 +137,86 @@ msgstr ""
 msgid "Add widgets in the footer."
 msgstr ""
 
-#: ../functions.php:85
+#: ../functions.php:88
 msgid "Post width"
 msgstr ""
 
-#: ../functions.php:86
+#: ../functions.php:89
 msgid "Fullpage width"
 msgstr ""
 
-#: ../functions.php:136 ../admin/index.php:5
+#: ../functions.php:139 ../admin/index.php:2
 msgid "Intro Settings"
 msgstr ""
 
-#: ../functions.php:144
+#: ../functions.php:147
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
 
-#: ../functions.php:288
+#: ../functions.php:332
 msgid "Themes de France"
 msgstr ""
 
-#: ../functions.php:306
+#: ../functions.php:355
+#, php-format
 msgid ""
-"In order to get updates, please enter your licence that you received by "
-"email."
+"To get Intro support and automatic updates, <a href='%s' "
+"target='__blank'>purchase a licence key on Themes de France</a> | <a "
+"href='%s'>I'm not interested</a>"
 msgstr ""
 
-#: ../header-bar.php:6
+#: ../header-bar.php:7 ../header-bar.php:62
+msgid "Blog"
+msgstr ""
+
+#: ../header-bar.php:16
 msgid "Posts from "
 msgstr ""
 
-#: ../header-bar.php:12
+#: ../header-bar.php:22
 msgid "Posts tagged by "
 msgstr ""
 
-#: ../header-bar.php:18
+#: ../header-bar.php:28
 #, php-format
 msgid "Search results for : %s"
 msgstr ""
 
-#: ../header-bar.php:26
+#: ../header-bar.php:36
 #, php-format
-msgid "Posts by %s"
+msgid "About %s"
 msgstr ""
 
-#: ../header-bar.php:33
+#: ../header-bar.php:42
 msgid "Archives from "
 msgstr ""
 
-#: ../header-bar.php:37 ../header-bar.php:41
+#: ../header-bar.php:46 ../header-bar.php:50
 msgid "Archives for "
 msgstr ""
 
-#: ../header-bar.php:45
+#: ../header-bar.php:54
 msgid "Archives"
 msgstr ""
 
-#: ../header-bar.php:53 ../header-bar.php:59
-msgid "Blog"
-msgstr ""
-
-#: ../header.php:30
+#: ../header.php:27
 msgid "Your browser is <em>too old !"
 msgstr ""
 
-#: ../header.php:30
+#: ../header.php:27
 msgid "Update your browser"
 msgstr ""
 
-#: ../header.php:30
+#: ../header.php:27
 msgid "or"
 msgstr ""
 
-#: ../header.php:30
+#: ../header.php:27
 msgid "Install Google Chrome Frame"
 msgstr ""
 
-#: ../header.php:30
+#: ../header.php:27
 msgid "to display this website correctly"
-msgstr ""
-
-#: ../index.php:30 ../template-fullwidth.php:27
-msgid "Sorry but no post match what you are looking for."
 msgstr ""
 
 #: ../searchform.php:3 ../searchform.php:4
@@ -228,142 +245,209 @@ msgid ""
 "a>."
 msgstr ""
 
-#: ../admin/index.php:8
+#: ../admin/index.php:9
 msgid "General"
 msgstr ""
 
-#: ../admin/index.php:9
-msgid "Appearance"
+#: ../admin/index.php:10
+msgid "Addons"
 msgstr ""
 
-#: ../admin/index.php:24
+#: ../admin/index.php:22
+msgid "License"
+msgstr ""
+
+#: ../admin/index.php:23
+msgid ""
+"Purchase a licence key in order to receive Intro updates and get access to "
+"support. Then paste it in the field above."
+msgstr ""
+
+#: ../admin/index.php:23
+msgid "Get Intro updates & support"
+msgstr ""
+
+#: ../admin/index.php:31
+msgid "Main color"
+msgstr ""
+
+#: ../admin/index.php:32
+msgid "This color will be used across your website for buttons, links, etc."
+msgstr ""
+
+#: ../admin/index.php:36
+msgid "Logo"
+msgstr ""
+
+#: ../admin/index.php:37
+msgid ""
+"Upload a logo to display in the header (if you don't have a logo, the name "
+"of your website will be displayed instead)."
+msgstr ""
+
+#: ../admin/index.php:45
+msgid "Display a sidebar on the content's right across your website."
+msgstr ""
+
+#: ../admin/index.php:50
 msgid ""
 "Left footer content. The following HTML tags are allowed : &lt;a href=&quot;"
 "LINK&quot;&gt;TEXT_LINK&lt;/a&gt;, &lt;strong&gt;BOLD_TEXT&lt;/strong&gt;, "
 "&lt;em&gt;ITALIC_TEXT&lt;/em&gt;, &lt;img src=&quot;IMAGE_URL&quot;&gt;."
 msgstr ""
 
-#: ../admin/index.php:42
-msgid "Main color"
-msgstr ""
-
-#: ../admin/index.php:43
-msgid "This color will be used across your website for buttons, links, etc."
-msgstr ""
-
-#: ../admin/index.php:51
-msgid ""
-"Display a sidebar on the content's right across your website in all no-"
-"masonry pages."
-msgstr ""
-
-#: ../admin/index.php:55
+#: ../admin/index.php:57
 msgid "Additionnal CSS"
 msgstr ""
 
-#: ../admin/index.php:56
+#: ../admin/index.php:58
 msgid ""
 "CSS rules added in this field will be added to your site. If you have too "
-"many updates, you should download and install the child theme from <a href="
-"\"https://www.themesdefrance.fr/\" target=\"_blank\">your Themes de France "
-"account</a>."
+"many updates, you should download and install the Intro child theme from"
 msgstr ""
 
-#: ../admin/index.php:62
+#: ../admin/index.php:58
+msgid "your Themes de France account"
+msgstr ""
+
+#: ../admin/index.php:71
+msgid ""
+"Do you know that Intro can be extended with addons ? Check the addons "
+"available below :"
+msgstr ""
+
+#: ../admin/index.php:85
 msgid "Save changes"
 msgstr ""
 
-#: ../admin/index.php:70
+#: ../admin/index.php:96
 msgid "Any questions on Intro ? Go to the"
 msgstr ""
 
-#: ../admin/index.php:70
+#: ../admin/index.php:96
 msgid "Themes de France support page."
 msgstr ""
 
-#: ../admin/index.php:70
+#: ../admin/index.php:100
+msgid "In order to get support, you need to purchase"
+msgstr ""
+
+#: ../admin/index.php:100
+msgid "the full version."
+msgstr ""
+
+#: ../admin/index.php:104
 msgid "If you like Intro, you should"
 msgstr ""
 
-#: ../admin/index.php:70
+#: ../admin/index.php:104
 msgid "follow us on Facebook"
 msgstr ""
 
-#: ../admin/Cocorico/plugins/CocoricoComponents.php:180
+#: ../admin/Cocorico/plugins/CocoricoComponents.php:181
 msgid "Save all changes"
 msgstr ""
 
-#: ../admin/Cocorico/plugins/CocoricoComponents.php:274
+#: ../admin/Cocorico/plugins/CocoricoComponents.php:275
 msgid "Select"
 msgstr ""
 
-#: ../admin/Cocorico/plugins/CocoricoComponents.php:321
+#: ../admin/Cocorico/plugins/CocoricoComponents.php:322
 msgid "Delete"
 msgstr ""
 
-#: ../admin/functions/intro-functions.php:52
+#: ../admin/functions/intro-functions.php:43
 msgid "Set up the main menu"
 msgstr ""
 
-#: ../admin/functions/intro-functions.php:160
+#: ../admin/functions/intro-functions.php:154
 msgid "Pingback:"
 msgstr ""
 
-#: ../admin/functions/intro-functions.php:171
+#: ../admin/functions/intro-functions.php:165
 msgid "Your comment is waiting for moderation."
 msgstr ""
 
-#: ../admin/functions/intro-functions.php:179
+#: ../admin/functions/intro-functions.php:175
 #, php-format
 msgid "%s"
 msgstr ""
 
-#: ../admin/functions/intro-functions.php:179
+#: ../admin/functions/intro-functions.php:175
 #, php-format
 msgid "<cite class=\"fn\">%s</cite>"
 msgstr ""
 
-#: ../admin/functions/intro-functions.php:189
+#: ../admin/functions/intro-functions.php:178
 #, php-format
 msgid "Published on %s at %s"
 msgstr ""
 
-#: ../admin/functions/intro-functions.php:196
+#: ../admin/functions/intro-functions.php:193
 msgid "Reply"
 msgstr ""
 
-#: ../admin/functions/intro-functions.php:219
+#: ../admin/functions/intro-functions.php:216
 #, php-format
 msgid "Reply to %s"
 msgstr ""
 
-#: ../admin/functions/intro-functions.php:220
+#: ../admin/functions/intro-functions.php:217
 msgid "Post comment"
 msgstr ""
 
-#: ../admin/functions/intro-functions.php:227
+#: ../admin/functions/intro-functions.php:221
+#: ../admin/functions/intro-functions.php:224
 msgid "Name"
 msgstr ""
 
-#: ../admin/functions/intro-functions.php:227
-#: ../admin/functions/intro-functions.php:234
+#: ../admin/functions/intro-functions.php:224
+#: ../admin/functions/intro-functions.php:231
 msgid "required"
 msgstr ""
 
-#: ../admin/functions/intro-functions.php:234
+#: ../admin/functions/intro-functions.php:228
+#: ../admin/functions/intro-functions.php:231
 msgid "Email"
 msgstr ""
 
-#: ../admin/functions/intro-functions.php:240
+#: ../admin/functions/intro-functions.php:234
+#: ../admin/functions/intro-functions.php:237
 msgid "Website"
 msgstr ""
 
-#: ../admin/functions/intro-functions.php:243
+#: ../admin/functions/intro-functions.php:240
 msgid "Comment"
 msgstr ""
 
-#: ../admin/functions/intro-functions.php:303
+#: ../admin/functions/intro-functions.php:300
 msgid "There is no archives to display."
+msgstr ""
+
+#: ../admin/functions/intro-functions.php:350
+msgid "Intro bbPress Addon"
+msgstr ""
+
+#: ../admin/functions/intro-functions.php:358
+msgid ""
+"Intro bbPress Addon bring custom CSS styling to Intro to get a perfect "
+"bbPress integration."
+msgstr ""
+
+#: ../admin/functions/intro-functions.php:362
+msgid "Get Intro bbPress Addon"
+msgstr ""
+
+#: ../admin/functions/intro-functions.php:368
+msgid "Intro bbPress Addon is installed. Thanks for using it !"
+msgstr ""
+
+#: ../admin/functions/intro-functions.php:370
+msgid "If you have some time, help us to improve it by giving some feedback."
+msgstr ""
+
+#: ../admin/functions/intro-functions.php:374
+msgid "Give feedback on Intro bbPress Addon"
 msgstr ""
 
 #: ../admin/metaboxes/post-formats.php:8
