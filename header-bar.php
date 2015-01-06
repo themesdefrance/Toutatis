@@ -1,6 +1,10 @@
+<?php do_action('intro_before_header_bar'); ?>
+
 <section class="header-bar">
 	
 	<div class="wrapper">
+		
+		<?php do_action('intro_top_header_bar'); ?>
 		
 		<?php if(is_single()){ ?>
 		
@@ -66,7 +70,11 @@
 		<?php if ( function_exists('yoast_breadcrumb') ) {
 				yoast_breadcrumb('<div id="site-breadcrumbs">','</div>');
 				} ?>
-		
+	
+		<?php do_action('intro_bottom_header_bar'); ?>
+	
 	</div><!--END .wrapper-->
 
 </section><!--END .header-bar-->
+
+<?php do_action('intro_after_header_bar'); ?>

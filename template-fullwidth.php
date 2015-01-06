@@ -7,9 +7,13 @@ __('Fullwidth','intro');
 
 <?php get_header(); ?>
 
+<?php do_action('intro_before_main'); ?>
+
 <section class="content">
 	
-	<div class="wrapper">	
+	<div class="wrapper">
+		
+		<?php do_action('intro_top_main'); ?>
 				
 		<main class="main-content col-1-1" role="main" itemprop="mainContentOfPage">
 			
@@ -34,8 +38,12 @@ __('Fullwidth','intro');
 		
 		<?php intro_posts_nav(false, '', '<div class="pagination">', '</div>'); ?>
 		
+		<?php do_action('intro_bottom_main'); ?>
+		
 	</div> <!-- END .wrapper -->
 
 </section> <!-- END .content -->
+
+<?php do_action('intro_after_main'); ?>
 
 <?php get_footer(); ?>

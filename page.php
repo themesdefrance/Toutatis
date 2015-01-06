@@ -1,29 +1,29 @@
-<?php $sidebar = get_option('intro_show_sidebar'); ?>
+<?php $sidebar = apply_filters('intro_show_sidebar', get_option('intro_show_sidebar')); ?>
 
 <?php get_header(); ?>
 
+<?php do_action('intro_before_main'); ?>
+
 <section class="content">
 
-	<div class="wrapper<?php if ($sidebar) echo ' grid'; ?>">	
+	<div class="wrapper">
+		
+		<?php do_action('intro_top_main'); ?>
 		
 		<main class="main-content<?php if ($sidebar) echo ' col-2-3'; ?>" role="main" itemprop="mainContentOfPage">
 				
 			<?php 
 				
-				if(have_posts()) :
-			
-					while (have_posts()) : the_post();
-							
-						get_template_part('content', 'page');
-					
-					endwhile;
+				while (have_posts()) : the_post();
+						
+					get_template_part('content', 'page');
 				
-				endif;
+				endwhile;
 			?>
 			
 			<?php intro_posts_nav(false, '', '<div class="pagination">', '</div>'); ?>
 			
-		</main>
+		</main><!-- END .main-content -->
 		
 		<?php if ($sidebar){ ?>
 		
@@ -35,8 +35,12 @@
 		
 		<?php } ?>
 		
+		<?php do_action('intro_bottom_main'); ?>
+		
 	</div> <!-- END .wrapper -->
 
 </section> <!-- END .content -->
+
+<?php do_action('intro_after_main'); ?>
 
 <?php get_footer(); ?>

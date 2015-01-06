@@ -1,12 +1,18 @@
 <?php $video_link = get_post_meta($post->ID, '_intro_video_meta', true); ?>
 
-<article <?php post_class('post'); ?> itemscope itemtype="http://schema.org/Article">
+<?php do_action('intro_before_post'); ?>
 
+<article <?php post_class('post'); ?> itemscope itemtype="http://schema.org/Article">
+	
+	<?php do_action('intro_top_post'); ?>
+	
 	<header class="entry-header">
+		
+		<?php do_action('intro_top_header_post'); ?>
 	
 		<div class="entry-video">
 									
-			<?php echo wp_oembed_get( $video_link); ?>
+			<?php echo wp_oembed_get(esc_url($video_link)); ?>
 			
 		</div><!--END .entry-video-->
 		
@@ -30,18 +36,16 @@
 		
 		<?php get_template_part('content', 'header'); ?>
 		
-	</header>
-	
-	<div class="entry-content">
+		<?php do_action('intro_bottom_header_post'); ?>
 		
-		<?php get_template_part( 'content', 'body' ); ?>	
+	</header><!-- END .entry-header -->
+	
+	<?php get_template_part('content', 'body'); ?>
 
-	</div><!--END .entry-content-->
-	
-	<footer class="entry-footer">
-	
-		<?php get_template_part( 'content', 'footer' ); ?>
-		
-	</footer><!--END .entry-footer-->
-	
-</article>
+	<?php get_template_part('content', 'footer'); ?>
+
+	<?php do_action('intro_bottom_post'); ?>
+
+</article><!-- END .post -->
+
+<?php do_action('intro_after_post'); ?>

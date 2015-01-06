@@ -18,12 +18,12 @@
 					
 			</h1>
 		
-	</header> <!--END .entry-header-->
+	</header><!--END .entry-header-->
 	
 	<div class="entry-content" itemprop="articleBody">
 		
 		<?php the_content(); ?>
 
-	</div> <!--END .entry-content-->
+	</div><!--END .entry-content-->
 	
-</article> <!--END article -->
+</article><!--END page -->

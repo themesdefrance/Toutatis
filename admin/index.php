@@ -15,8 +15,6 @@ $form->startWrapper('tab', 'general');
 
 $form->startForm();
 
-$description_license = 
-
 $form->setting(array('type'=>'text',
 					 'name'=>substr(INTRO_LICENSE_KEY, strlen(INTRO_COCORICO_PREFIX)),
 					 'label'=>__("License", 'intro'),

@@ -14,12 +14,12 @@ if (!function_exists('intro_excerpt')){
 		
 		// Do we have an excerpt ?
 		if(has_excerpt())
-			return apply_filters('the_excerpt', wpautop(get_the_excerpt()));
+			return apply_filters('the_excerpt', wpautop(strip_shortcodes(strip_tags(get_the_excerpt(), '<img><iframe>'))));
 		
 		// Do we have a read more tag ?
 		if(strpos( $post->post_content, '<!--more-->' )){
 			$content_arr = get_extended($post->post_content);
-			return apply_filters('the_excerpt', wpautop($content_arr['main']));
+			return apply_filters('the_excerpt', wpautop(strip_shortcodes(strip_tags($content_arr['main'], '<img><iframe>'))));
 		}
 		
 		// Create a custom excerpt without shortcodes, images and iframes

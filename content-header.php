@@ -32,7 +32,7 @@
 				<span class="fn" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
 					<a href="<?php echo get_author_posts_url(get_the_author_meta('ID')) ?>" itemprop="url" rel="author"><?php the_author_meta('display_name'); ?></a>
 				</span>
-			</span>
+			</span><!-- END .vcard.author -->
 
 		<?php
 		}

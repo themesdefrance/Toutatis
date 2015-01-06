@@ -1,9 +1,15 @@
 <?php $quote 		= sanitize_text_field(get_post_meta($post->ID, '_intro_quote_meta', true)); ?>
 <?php $author_quote = sanitize_text_field(get_post_meta($post->ID, '_intro_quote_author_meta', true)); ?>
 
-<article <?php post_class('post'); ?> itemscope itemtype="http://schema.org/Article">
+<?php do_action('intro_before_post'); ?>
 
+<article <?php post_class('post'); ?> itemscope itemtype="http://schema.org/Article">
+	
+	<?php do_action('intro_top_post'); ?>
+	
 	<header class="entry-header">
+		
+		<?php do_action('intro_top_header_post'); ?>
 		
 		<div class="entry-quote">
 		
@@ -45,18 +51,16 @@
 		
 		<?php get_template_part('content', 'header'); ?>
 		
+		<?php do_action('intro_bottom_header_post'); ?>
+		
 	</header><!--END .entry-header-->
 		
-	<div class="entry-content" itemprop="articleBody">
-		
-		<?php get_template_part('content', 'body'); ?>
-		
-	</div><!--END .entry-content-->
-	
-	<footer class="post-footer">
-	
-		<?php get_template_part('content', 'footer'); ?>
-		
-	</footer><!--END .entry-footer-->
-	
-</article>
+	<?php get_template_part('content', 'body'); ?>
+
+	<?php get_template_part('content', 'footer'); ?>
+
+	<?php do_action('intro_bottom_post'); ?>
+
+</article><!-- END .post -->
+
+<?php do_action('intro_after_post'); ?>
