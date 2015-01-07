@@ -1,10 +1,36 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
+<?php
+/**
+ * Display a call to action
+ *
+ * @package Intro
+ * @subpackage Widgets
+ * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * @since 1.0
+ */
+?>
 
 <?php
+
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 class IntroCalltoAction extends WP_Widget{
 	
+ 	/**
+	 * Error checking
+	 *
+	 * @var bool
+	 *
+	 * @since 1.0
+	 */
 	private $error = false;
 	
+	/**
+	 * Initializes the object instance
+	 *
+	 * @since 1.0
+	 * @return void
+	 */
 	public function __construct(){
 		parent::__construct(
 		
@@ -14,6 +40,16 @@ class IntroCalltoAction extends WP_Widget{
 		);
 	}
 	
+	/**
+	 * Display the widget on the website
+	 *
+	 * @param array $args     Display arguments including before_title, after_title,
+	 *                        before_widget, and after_widget.
+     * @param array $instance The settings for the particular instance of the widget.
+     *
+	 * @since 1.0
+	 * @return void
+	 */
 	public function widget($args, $instance){
 	
 		echo $args['before_widget'];
@@ -38,6 +74,14 @@ class IntroCalltoAction extends WP_Widget{
 		echo $args['after_widget'];
 	}
 	
+	/**
+	 * Display the widget form
+	 *
+     * @param array $instance The settings for the particular instance of the widget.
+     *
+	 * @since 1.0
+	 * @return void
+	 */
 	public function form($instance){
 		
 		$fields = array("title" => "", "link" => "", "description" => "", "label" => "");
@@ -79,6 +123,15 @@ class IntroCalltoAction extends WP_Widget{
 		
 	}
 	
+	/**
+	 * Update the widget settings
+	 *
+     * @param array $new_instance New settings for this instance as input by the user
+     * @param array $old_instance Old settings for this instance.
+     *
+	 * @since 1.0
+	 * @return array Settings to save or bool false to cancel saving.
+	 */
 	public function update($new_instance, $old_instance){
 		
 		$instance = array();
@@ -87,10 +140,15 @@ class IntroCalltoAction extends WP_Widget{
 		$instance['link'] = ( ! empty( $new_instance['link'] ) ) ? strip_tags( $new_instance['link'] ) : '';
 		$instance['label'] = ( ! empty( $new_instance['label'] ) ) ? strip_tags( $new_instance['label'] ) : '';
 		return $instance;
-		
 	}
 }
 
+/**
+ * Register the widget in order to make it accessible in the Appearance > Widgets page
+ *
+ * @since 1.0
+ * @return void
+ */
 if (!function_exists('intro_calltoaction_widget_init')){
 
 	function intro_calltoaction_widget_init(){

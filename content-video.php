@@ -1,3 +1,13 @@
+<?php
+/**
+ * The template for displaying video post formats
+ *
+ * @package Intro
+ * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * @since 1.0
+ */
+?>
+
 <?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
 
 <?php $video_link = get_post_meta($post->ID, '_intro_video_meta', true); ?>

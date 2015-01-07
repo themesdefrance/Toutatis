@@ -1,3 +1,16 @@
+<?php
+/**
+ * Easy Digital Downloads Software Licensing Theme Updater
+ * 
+ * This class contains a set of methods to check, activate and update this theme.
+ *
+ * @author Pippin Williamson
+ * @license		http://opensource.org/license/gpl-2.0.php GNU Public License
+ * @link 		http://easydigitaldownloads.com/extension/software-licenses
+ * @since 1.0
+ */
+?>
+
 <?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
 
 <?php

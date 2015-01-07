@@ -1,3 +1,13 @@
+<?php
+/**
+ * The template for displaying the header
+ *
+ * @package Intro
+ * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * @since 1.0
+ */
+?>
+
 <?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
 
 <!doctype html>

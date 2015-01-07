@@ -1,3 +1,13 @@
+<?php
+/**
+ * The template for displaying the search form
+ *
+ * @package Intro
+ * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * @since 1.0
+ */
+?>
+
 <?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
 
 <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">

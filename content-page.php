@@ -1,3 +1,13 @@
+<?php
+/**
+ * The template used for displaying page content
+ *
+ * @package Intro
+ * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * @since 1.0
+ */
+?>
+
 <?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
 
 <?php do_action('intro_before_page'); ?>
@@ -20,11 +30,7 @@
 			
 		<?php endif; ?>
 			
-			<h1 class="entry-title" itemprop="headline">
-				
-				<?php the_title(); ?>
-					
-			</h1>
+			<?php // The page title is displayed in header-bar.php ?>
 			
 		<?php do_action('intro_bottom_header_page'); ?>
 		

@@ -1,8 +1,24 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
+<?php
+/**
+ * Intro post formats metaboxes registering
+ *
+ * @package Intro
+ * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * @since 1.0
+ */
+?>
 
 <?php
+	
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit; 
 
-// Post metaboxes
+/**
+ * Register post formats metaboxes
+ *
+ * @since 1.0
+ * @return void
+ */
 if(!function_exists('intro_add_meta_boxes')){
 	function intro_add_meta_boxes(){
 		add_meta_box(
@@ -36,8 +52,13 @@ if(!function_exists('intro_add_meta_boxes')){
 add_action('admin_init', 'intro_add_meta_boxes');
 
 
-// Callback functions
-
+/**
+ * Link format callback functtion using the Cocorico Framework
+ *
+ * @link 		https://github.com/y-lohse/Cocorico
+ * @since 1.0
+ * @return void
+ */
 if(!function_exists('intro_link_callback')){
 	function intro_link_callback( $post ) {
 	
@@ -56,6 +77,13 @@ if(!function_exists('intro_link_callback')){
 	}
 }
 
+/**
+ * Quote format callback functtion using the Cocorico Framework
+ *
+ * @link 		https://github.com/y-lohse/Cocorico
+ * @since 1.0
+ * @return void
+ */
 if(!function_exists('intro_quote_callback')){
 	function intro_quote_callback( $post ) {
 		
@@ -82,6 +110,13 @@ if(!function_exists('intro_quote_callback')){
 	}
 }
 
+/**
+ * Video format callback functtion using the Cocorico Framework
+ *
+ * @link 		https://github.com/y-lohse/Cocorico
+ * @since 1.0
+ * @return void
+ */
 if(!function_exists('intro_video_callback')){
 	function intro_video_callback( $post ) {
 	
@@ -100,7 +135,12 @@ if(!function_exists('intro_video_callback')){
 	}
 }
 
-// Show the right metabox for each format
+/**
+ * Show the right metabox for each post format
+ *
+ * @since 1.0
+ * @return void
+ */
 if(!function_exists('intro_display_metaboxes')){
 	function intro_display_metaboxes() {
 	

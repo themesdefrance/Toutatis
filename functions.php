@@ -1,30 +1,47 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
+<?php
+/**
+ * Intro functions and definitions
+ *
+ * @package Intro
+ * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * @since 1.0
+ */
+?>
 
 <?php
+	
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
 
+// Define theme constants (relative to licensing)
 define('INTRO_STORE_URL', 'https://www.themesdefrance.fr');
 define('INTRO_THEME_NAME', 'Intro');
 define('INTRO_THEME_VERSION', '0.0.1');
 define('INTRO_LICENSE_KEY', 'intro_license_edd');
 
+// Include theme updater (relative to licensing)
 if(!class_exists('EDD_SL_Theme_Updater'))
 	include(dirname( __FILE__ ).'/admin/EDD_SL_Theme_Updater.php');
 
+// Define framework constant then load the Cocorico Framework
 define('INTRO_COCORICO_PREFIX', 'intro_');
 if(is_admin())
 	require_once 'admin/Cocorico/Cocorico.php';
 
-// Widgets
+// Load the widgets
 require_once 'admin/widgets/social.php';
 require_once 'admin/widgets/calltoaction.php';
 require_once 'admin/widgets/video.php';
 
-// Themes functions
+// Load other theme functions
 require_once 'admin/functions/intro-functions.php';
 
-//////////////////
-// Bootstraping //
-//////////////////
+/**
+ * Refresh the permalink structure
+ *
+ * @since 1.0
+ * @return void
+ */
 if (!function_exists('intro_activation')){
 	function intro_activation(){
 		global $wp_rewrite;
@@ -33,11 +50,16 @@ if (!function_exists('intro_activation')){
 }
 add_action('after_switch_theme', 'intro_activation');
 
-//Register menus, sidebars and image sizes
+/**
+ * Sets up theme defaults and registers support for various WordPress features.
+ *
+ * @since 1.0
+ * @return void
+ */
 if (!function_exists('intro_setup')){
 	function intro_setup(){
 
-		// Load language
+		// Load translation
 		load_theme_textdomain('intro', get_template_directory().'/languages');
 
 		// Register menus
@@ -46,7 +68,7 @@ if (!function_exists('intro_setup')){
 			'footer' => __('Footer menu', 'intro'),
 		) );
 
-		//Register sidebars
+		// Register sidebars
 		register_sidebar(array(
 			'name'          => __('Sidebar', 'intro'),
 			'id'            => 'blog',
@@ -84,7 +106,13 @@ if (!function_exists('intro_setup')){
 }
 add_action('after_setup_theme', 'intro_setup');
 
-//add custom image size to native dailogs
+/**
+ * Add custom image sizes in the WordPress Media Library
+ *
+ * @since 1.0
+ * @param array $sizes The current image sizes list
+ * @return array
+ */
 if (!function_exists('intro_image_size_names_choose')){
 	function intro_image_size_names_choose($sizes) {
 		$added = array('intro-post-thumbnail'=>__('Post width', 'intro'));
@@ -95,7 +123,12 @@ if (!function_exists('intro_image_size_names_choose')){
 }
 add_filter('image_size_names_choose', 'intro_image_size_names_choose');
 
-//register supported post formats
+/**
+ * Register supported post formats
+ *
+ * @since 1.0
+ * @return void
+ */
 if(!function_exists('intro_custom_format')){
 	function intro_custom_format() {
 		$cpts = array('post' => array('video', 'link', 'quote'));
@@ -106,7 +139,12 @@ if(!function_exists('intro_custom_format')){
 add_action( 'load-post.php', 'intro_custom_format' );
 add_action( 'load-post-new.php', 'intro_custom_format' );
 
-//enqueue styles & scripts
+/**
+ * Enqueue styles & scripts
+ *
+ * @since 1.0
+ * @return void
+ */
 if (!function_exists('intro_enqueue')){
 	function intro_enqueue(){
 
@@ -131,11 +169,12 @@ if (!function_exists('intro_enqueue')){
 }
 add_action('wp_enqueue_scripts', 'intro_enqueue');
 
-/////////////////////////
-////  Admin stuff   /////
-/////////////////////////
-
-// Add admin menu
+/**
+ * Register the theme options page in the administration
+ *
+ * @since 1.0
+ * @return void
+ */
 if (!function_exists('intro_admin_menu')){
 	function intro_admin_menu(){
 		add_theme_page(__('Intro Settings', 'intro'),__('Intro Settings', 'intro'), 'edit_theme_options', 'intro_options', 'intro_options');
@@ -143,6 +182,12 @@ if (!function_exists('intro_admin_menu')){
 }
 add_action('admin_menu', 'intro_admin_menu');
 
+/**
+ * Loads the theme options page
+ *
+ * @since 1.0
+ * @return void
+ */
 if (!function_exists('intro_options')){
 	function intro_options(){
 		if (!current_user_can('edit_theme_options')) {
@@ -153,7 +198,12 @@ if (!function_exists('intro_options')){
     }
 }
 
-// Custom CSS loading
+/**
+ * Custom CSS loading
+ *
+ * @since 1.0
+ * @return void
+ */
 if(!function_exists('intro_custom_styles')){
 	function intro_custom_styles(){
 		if (get_option("intro_custom_css")){
@@ -165,14 +215,23 @@ if(!function_exists('intro_custom_styles')){
 }
 add_action('wp_head', 'intro_custom_styles', 99);
 
-// Main intro color
+/**
+ * Applying the theme main color
+ *
+ * @since 1.0
+ * @return void
+ */
 if(!function_exists('intro_user_styles')){
 	function intro_user_styles(){
+		
+		// Get the main color defined by the user
 		if (get_option('intro_color')){
 
 			$color = apply_filters('intro_color', get_option('intro_color'));
-
+			
+			// Load color functions
 			require_once 'admin/functions/color-functions.php';
+			
 			$hsl = intro_RGBToHSL(intro_HTMLToRGB($color));
 			if ($hsl->lightness > 180){
 				$contrast = apply_filters('intro_color_contrast', '#333');
@@ -184,7 +243,8 @@ if(!function_exists('intro_user_styles')){
 			$hsl->lightness -= 30;
 			$complement = apply_filters('intro_color_complement', intro_HSLToHTML($hsl->hue, $hsl->saturation, $hsl->lightness));
 		}
-		else{ // Default color
+		else{
+			// If not, use the default colors
 			$color = '#ff625b';
 			$complement = '#D14949';
 			$contrast = '#fff';
@@ -301,17 +361,22 @@ if(!function_exists('intro_user_styles')){
 add_action('wp_head','intro_user_styles', 98);
 
 
-////////////////////////////////////
-// License activation
-////////////////////////////////////
-
+/**
+ * License activation stuff (from Easy Digital Downloads Software Licensing Addon)
+ * This function will activate the theme licence on Themes de France
+ * 
+ * @since 1.0
+ * @return void
+ */
 if(!function_exists('intro_edd')){
 	function intro_edd(){
 		$license = trim(get_option(INTRO_LICENSE_KEY));
 		$status = get_option('intro_license_status');
-
+		
+		// No license is activated yet
 		if (!$status){
-			//valider la license
+			
+			// Activate the license
 			$api_params = array(
 				'edd_action'=>'activate_license',
 				'license'=>$license,
@@ -319,7 +384,7 @@ if(!function_exists('intro_edd')){
 			);
 
 			$response = wp_remote_get(add_query_arg($api_params, INTRO_STORE_URL), array('timeout'=>15, 'sslverify'=>false));
-
+			
 			if (!is_wp_error($response)){
 				$license_data = json_decode(wp_remote_retrieve_body($response));
 				if ($license_data->license === 'valid') update_option('intro_license_status', true);
@@ -338,10 +403,12 @@ if(!function_exists('intro_edd')){
 }
 add_action('admin_init', 'intro_edd');
 
-////////////////////////////////////
-// Intro notifications
-////////////////////////////////////
-
+/**
+ * Display an admin notice if the licence isn't activated
+ * 
+ * @since 1.0
+ * @return void
+ */
 if(!function_exists('intro_admin_notice')){
 	function intro_admin_notice(){
 		global $current_user;

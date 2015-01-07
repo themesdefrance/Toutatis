@@ -1,3 +1,13 @@
+<?php
+/**
+ * The template for displaying 404 pages (not found)
+ *
+ * @package Intro
+ * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * @since 1.0
+ */
+?>
+
 <?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
 
 <?php get_header(); ?>

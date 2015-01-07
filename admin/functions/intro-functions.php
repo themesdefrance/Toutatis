@@ -1,11 +1,27 @@
-<?php 
+<?php
+/**
+ * Intro utility functions
+ *
+ * @package Intro
+ * @subpackage Functions
+ * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * @since 1.0
+ */
+?>
 
+<?php
+	
+// Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-/////////////////////////
-// Utility functions   //
-/////////////////////////
-
+/**
+ * Generate a custom excerpt
+ *
+ * @param int $length	Length of the wanted exerpt (in words)
+ *
+ * @since 1.0
+ * @return string
+ */
 if (!function_exists('intro_excerpt')){
 	function intro_excerpt($length){
 		global $post;
@@ -14,24 +30,32 @@ if (!function_exists('intro_excerpt')){
 		if($length==0)
 			return '';
 		
-		// Do we have an excerpt ?
+		// Do we have an excerpt ? (excerpt field in the post editor)
 		if(has_excerpt())
 			return apply_filters('the_excerpt', wpautop(strip_shortcodes(strip_tags(get_the_excerpt(), '<img><iframe>'))));
 		
-		// Do we have a read more tag ?
+		// Do we have a read more tag (<!--more-->) in the post content ?
 		if(strpos( $post->post_content, '<!--more-->' )){
 			$content_arr = get_extended($post->post_content);
 			return apply_filters('the_excerpt', wpautop(strip_shortcodes(strip_tags($content_arr['main'], '<img><iframe>'))));
 		}
 		
-		// Create a custom excerpt without shortcodes, images and iframes
+		// Get the post content without shortcodes or HTML tags
 		$content = strip_shortcodes(strip_tags(get_the_content(), '<img><iframe>'));
 		
+		// Create a custom excerpt based on the post content
 		return apply_filters('the_excerpt', wpautop(wp_trim_words( $content , $length )));
 	}
 }
 
-// Thanks to https://gist.github.com/tommcfarlin/f2310bfad60b60ae00bf#file-is-paginated-post-php
+/**
+ * Check if we are on a paginated post
+ *
+ * @link https://gist.github.com/tommcfarlin/f2310bfad60b60ae00bf#file-is-paginated-post-php
+ *
+ * @since 1.0
+ * @return void
+ */
 if (!function_exists('intro_is_paginated_post')){
 	function intro_is_paginated_post() {
 		global $multipage;
@@ -39,14 +63,24 @@ if (!function_exists('intro_is_paginated_post')){
 	}
 }
 
-// Function to call if no primary menu
+/**
+ * Display a custom message if the primary menu isn't setup
+ *
+ * @since 1.0
+ * @return void
+ */
 if (!function_exists('intro_nomenu')){
 	function intro_nomenu(){
 		echo '<ul class="top-level-menu"><li><a href="'.admin_url('nav-menus.php').'">'.__('Set up the main menu', 'intro').'</a></li></ul>';
 	}
 }
 
-// Function to call if no primary menu
+/**
+ * Display the right post thumbnail whether the sidebar is displayed or not
+ *
+ * @since 1.0
+ * @return void
+ */
 if (!function_exists('intro_post_thumbnail')){
 	function intro_post_thumbnail(){
 		
@@ -58,13 +92,20 @@ if (!function_exists('intro_post_thumbnail')){
 	}
 }
 
-//customized pagination links
+/**
+ * Display a numeric page navigation
+ *
+ * @param bool $extremes		Display or not previous & next links
+ * @param string $separator		Character to insert between each page
+ * @param string $before		Content to display before pagination
+ * @param string $after			Content to display after pagination
+ *
+ * @link http://www.wpbeginner.com/wp-themes/how-to-add-numeric-pagination-in-your-wordpress-theme/
+ *
+ * @since 1.0
+ * @return void
+ */
 if (!function_exists('intro_posts_nav')){
-	//derived from http://www.wpbeginner.com/wp-themes/how-to-add-numeric-pagination-in-your-wordpress-theme/
-	/*
-	 @param $extremes : display or not previous & next links
-	 @param $separator : string to insert between each page
-	*/
 	
 	function intro_posts_nav($extremes=true, $separator='|', $before = '', $after){
 		if (is_singular()) return;
@@ -143,7 +184,18 @@ if (!function_exists('intro_posts_nav')){
 	}
 }
 
-// Borrowed from http://themeshaper.com/2012/11/04/the-wordpress-theme-comments-template/
+/**
+ * Display a numeric page navigation
+ *
+ * @param object $comment 	Comment to display.
+ * @param array  $args    	An array of arguments.
+ * @param int    $depth   	Depth of comment.
+ *
+ * @link http://themeshaper.com/2012/11/04/the-wordpress-theme-comments-template/
+ *
+ * @since 1.0
+ * @return void
+ */
 if (!function_exists('intro_comment')){
 	function intro_comment($comment, $args, $depth){
 		$GLOBALS['comment'] = $comment;
@@ -204,6 +256,12 @@ if (!function_exists('intro_comment')){
 	}
 }
 
+/**
+ * Comment form arguments
+ *
+ * @since 1.0
+ * @return array
+ */
 if (!function_exists('intro_comment_form_args')){
 	function intro_comment_form_args(){
 		
@@ -243,58 +301,27 @@ if (!function_exists('intro_comment_form_args')){
 		);
 		
 		return $comment_args;
-			
 	}	
 }
 
-//relies on the Cocorico Social plugin : https://wordpress.org/plugins/cocorico-social/
-if (!function_exists('intro_social')){
-	function intro_social(){
-		$export = '';
-		
-		if (function_exists('coco_social_share')){
-			$networks =  get_option('cocosocial_networks_blocks');
-			
-			if (is_array($networks)){
-			
-				foreach ($networks as $network=>$enabled){
-					if (!$enabled) continue;
-					
-					switch ($network){
-						case 'twitter':
-							if (trim(get_option('cocosocial_twitter_username')) !== ''){
-								$export .= '<li><a href="https://twitter.com/'.get_option('cocosocial_twitter_username').'" class="typcn typcn-social-twitter-circular"></a></li>';
-							}
-							break;
-						case 'email':
-						case 'viadeo':
-							//sorry, no viadeo support because wedon't have an icon for it
-							//and email doesnt make too much sense here
-							break;
-						default:
-							$url = get_option('cocosocial_'.$network.'_url');
-							if (trim($url) !== ''){
-								$icon = $network;
-								if ($network == 'googleplus') $icon = 'google-plus';
-	
-								$export .= '<li><a href="'.esc_url($url).'" class="typcn typcn-social-'.$icon.'-circular"></a></li>';
-							}
-							break;
-					}
-				}
-			}
-		}
-		
-		return $export;
-	}
-}
-
-// Based on the Compact Archives plugin https://wordpress.org/plugins/compact-archives/
+/**
+ * Display the archives in a beautiful way
+ *
+ * @param string $style 	Style for displaying the archives (initial | block | numeric)
+ * @param string $before   	Content to display before archives.
+ * @param string $after   	Content to display after archives.
+ *
+ * @link https://wordpress.org/plugins/compact-archives/
+ *
+ * @since 1.0
+ * @return string
+ */
 if (!function_exists('intro_archives')){
 	function intro_archives( $style='block', $before='<li>', $after='</li>' ) {
 		global $wpdb;
 		
-		setlocale(LC_ALL,get_locale()); // set localization language
+		// Set localization language
+		setlocale(LC_ALL,get_locale());
 		
 		$results = $wpdb->get_results("SELECT DISTINCT YEAR(post_date) AS year, MONTH(post_date) AS month FROM " . $wpdb->posts . " WHERE post_type='post' AND post_status='publish' AND post_password='' ORDER BY year DESC, month DESC");
 		
@@ -339,9 +366,14 @@ if (!function_exists('intro_archives')){
 	}
 }
 
-// Addons tab content
-
-// bbPress addon
+/**
+ * Add content for the bbPress Addon in the theme options' Addons tab
+ *
+ * @param object $form	Cocorico form object
+ *
+ * @since 1.0
+ * @return void
+ */
 if(!function_exists('intro_addons_bbpress')){
 	function intro_addons_bbpress($form){
 		
@@ -355,6 +387,7 @@ if(!function_exists('intro_addons_bbpress')){
 	
 			$form->startWrapper('td');
 				
+				// If Intro bbPress addon isn't available, tell about it
 				if(!function_exists('intro_bbpress_styles')):
 				
 					$form->component('raw', __('Intro bbPress Addon bring custom CSS styling to Intro to get a perfect bbPress integration.', 'intro') . '<br><br>');
@@ -366,6 +399,7 @@ if(!function_exists('intro_addons_bbpress')){
 										 'class'=>array('button', 'button-primary'),
 										 'target'=>'_blank'
 									 ));
+				// Or ask for feedback
 				else:
 					$form->component('description', __('Intro bbPress Addon is installed. Thanks for using it !', 'intro'));
 					
@@ -384,7 +418,6 @@ if(!function_exists('intro_addons_bbpress')){
 			$form->endWrapper('td');
 		
 		$form->endWrapper('tr');
-		
 	
 	}
 }

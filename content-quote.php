@@ -1,3 +1,13 @@
+<?php
+/**
+ * The template for displaying quote post formats
+ *
+ * @package Intro
+ * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * @since 1.0
+ */
+?>
+
 <?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
 
 <?php $quote 		= sanitize_text_field(get_post_meta($post->ID, '_intro_quote_meta', true)); ?>

@@ -1,6 +1,27 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
+<?php
+/**
+ * Intro color functions
+ *
+ * @package Intro
+ * @subpackage Functions
+ * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * @since 1.0
+ */
+?>
 
 <?php
+	
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
+
+/**
+ * Convert HTML color code to RGB color code
+ *
+ * @param string $htmlCode	HTML Color code
+ *
+ * @since 1.0
+ * @return string
+ */
 function intro_HTMLToRGB($htmlCode)
 {
 	if($htmlCode[0] == '#') $htmlCode = substr($htmlCode, 1);
@@ -16,6 +37,14 @@ function intro_HTMLToRGB($htmlCode)
 	return $b + ($g << 0x8) + ($r << 0x10);
 }
 
+/**
+ * Convert RGB color code to HSL color code
+ *
+ * @param string $RGB	RGB Color code
+ *
+ * @since 1.0
+ * @return string
+ */
 function intro_RGBToHSL($RGB) {
 	$r = 0xFF & ($RGB >> 0x10);
 	$g = 0xFF & ($RGB >> 0x8);
@@ -58,6 +87,17 @@ function intro_RGBToHSL($RGB) {
 	return (object) Array('hue' => $h, 'saturation' => $s, 'lightness' => $l);
 }
 
+/**
+ * Convert HSL color code to RGB or RGBA color code
+ *
+ * @param string $h		Hue value
+ * @param string $s		Saturation value
+ * @param string $l		Lightness value
+ * @param string $o		Opacity
+ *
+ * @since 1.0
+ * @return string
+ */
 function intro_HSLToHTML($h, $s, $l, $o = 1) {
 	$h = ((float)$h) / 255.0;
 	$s = ((float)$s) / 255.0;

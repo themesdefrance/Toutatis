@@ -1,3 +1,13 @@
+<?php
+/**
+ * The template for displaying the header bar (between the header and the main content)
+ *
+ * @package Intro
+ * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * @since 1.0
+ */
+?>
+
 <?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
 
 <?php do_action('intro_before_header_bar'); ?>
@@ -14,23 +24,23 @@
 			
 		<?php }else if(is_page()){ ?>
 		
-			<h1 class="header-bar-title"><?php echo get_the_title(); ?></h1>
+			<h1 class="header-bar-title" itemprop="headline"><?php echo get_the_title(); ?></h1>
 			
 		<?php }else if(is_category()){ ?>
 		
-			<h1 class="header-bar-title">
+			<h1 class="header-bar-title" itemprop="headline">
 				<?php single_cat_title(_e('Posts from ', 'intro')); ?>
 			</h1>
 		
 		<?php }else if(is_tag()){ ?>
 		
-			<h1 class="header-bar-title">
+			<h1 class="header-bar-title" itemprop="headline">
 				<?php single_tag_title(_e('Posts tagged by ', 'intro')); ?>
 			</h1>
 			
 		<?php }else if(is_search()){ ?>
 		
-			<h1 class="header-bar-title">
+			<h1 class="header-bar-title" itemprop="headline">
 				<?php printf( __( 'Search results for : %s', 'intro' ), get_search_query() ); ?>
 			</h1>
 		
@@ -38,12 +48,12 @@
 	
 			<?php $author = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author)); ?>
 			
-			<h1 class="header-bar-title">
+			<h1 class="header-bar-title" itemprop="headline">
 				<?php printf( __( 'About %s', 'intro' ), $author->display_name ); ?>
 			</h1>
 		
 		<?php }else if(is_archive()){ ?>
-			<h1 class="header-bar-title">
+			<h1 class="header-bar-title" itemprop="headline">
 				<?php if (is_day()) { 
 						_e('Archives from ', 'intro');
 						the_time(get_option('date_format'));
@@ -65,7 +75,7 @@
 		
 		<?php }else{ ?>
 			
-			<h1 class="header-bar-title"><?php echo apply_filters('intro_headerbar_single', __('Blog', 'intro')); ?></h1>
+			<h1 class="header-bar-title" itemprop="headline"><?php echo apply_filters('intro_headerbar_single', __('Blog', 'intro')); ?></h1>
 			
 		<?php } ?>
 		

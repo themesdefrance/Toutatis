@@ -1,3 +1,13 @@
+<?php
+/**
+ * The template for displaying link post formats
+ *
+ * @package Intro
+ * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * @since 1.0
+ */
+?>
+
 <?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
 
 <?php $link = esc_url(get_post_meta($post->ID, '_intro_link_meta', true)); ?>

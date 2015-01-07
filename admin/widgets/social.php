@@ -1,8 +1,28 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
+<?php
+/**
+ * Display social networking links
+ *
+ * @package Intro
+ * @subpackage Widgets
+ * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * @since 1.0
+ */
+?>
 
 <?php
+	
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 class IntroSocial extends WP_Widget{
 	
+	/**
+	 * Social networks available
+	 *
+	 * @var array
+	 *
+	 * @since 1.0
+	 */
 	private $reseaux = array(
 		'facebook'=>'social-facebook',
 		'twitter'=>'social-twitter',
@@ -16,9 +36,30 @@ class IntroSocial extends WP_Widget{
 		'rss'=>'rss'
 	);
 	
+	/**
+	 * Error checking
+	 *
+	 * @var bool
+	 *
+	 * @since 1.0
+	 */
 	private $error = false;
+	
+	/**
+	 * How many fields have to be displayed by default
+	 *
+	 * @var int
+	 *
+	 * @since 1.0
+	 */
 	private $hideAfter = 3;
 	
+	/**
+	 * Initializes the object instance
+	 *
+	 * @since 1.0
+	 * @return void
+	 */
 	public function __construct(){
 		parent::__construct(
 			'IntroSocial',
@@ -27,6 +68,16 @@ class IntroSocial extends WP_Widget{
 		);
 	}
 	
+	/**
+	 * Display the widget on the website
+	 *
+	 * @param array $args     Display arguments including before_title, after_title,
+	 *                        before_widget, and after_widget.
+     * @param array $instance The settings for the particular instance of the widget.
+     *
+	 * @since 1.0
+	 * @return void
+	 */
 	public function widget($args, $instance){
 		echo $args['before_widget'];
 		
@@ -52,6 +103,14 @@ class IntroSocial extends WP_Widget{
 		echo $args['after_widget'];
 	}
 	
+	/**
+	 * Display the widget form
+	 *
+     * @param array $instance The settings for the particular instance of the widget.
+     *
+	 * @since 1.0
+	 * @return void
+	 */
 	public function form($instance){
 		$fields = array_merge(array('title'), array_keys($this->reseaux));
 		
@@ -98,6 +157,15 @@ class IntroSocial extends WP_Widget{
 		echo '</div>';//closing more div
 	}
 	
+	/**
+	 * Update the widget settings
+	 *
+     * @param array $new_instance New settings for this instance as input by the user
+     * @param array $old_instance Old settings for this instance.
+     *
+	 * @since 1.0
+	 * @return array Settings to save or bool false to cancel saving.
+	 */
 	public function update($new_instance, $old_instance){
 		
 		foreach ($this->reseaux as $reseau){
@@ -111,7 +179,12 @@ class IntroSocial extends WP_Widget{
 	}
 }
 
-
+/**
+ * Register the widget in order to make it accessible in the Appearance > Widgets page
+ *
+ * @since 1.0
+ * @return void
+ */
 if (!function_exists('intro_widgets_init')){
 	function intro_widgets_init(){
 		register_widget('IntroSocial');
