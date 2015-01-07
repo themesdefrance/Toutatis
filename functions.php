@@ -1,8 +1,8 @@
 <?php
 /**
- * Intro functions and definitions
+ * Toutatis functions and definitions
  *
- * @package Intro
+ * @package Toutatis
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since 1.0
  */
@@ -14,17 +14,17 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 // Define theme constants (relative to licensing)
-define('INTRO_STORE_URL', 'https://www.themesdefrance.fr');
-define('INTRO_THEME_NAME', 'Intro');
-define('INTRO_THEME_VERSION', '0.0.1');
-define('INTRO_LICENSE_KEY', 'intro_license_edd');
+define('TOUTATIS_STORE_URL', 'https://www.themesdefrance.fr');
+define('TOUTATIS_THEME_NAME', 'Toutatis');
+define('TOUTATIS_THEME_VERSION', '0.0.1');
+define('TOUTATIS_LICENSE_KEY', 'toutatis_license_edd');
 
 // Include theme updater (relative to licensing)
 if(!class_exists('EDD_SL_Theme_Updater'))
 	include(dirname( __FILE__ ).'/admin/EDD_SL_Theme_Updater.php');
 
 // Define framework constant then load the Cocorico Framework
-define('INTRO_COCORICO_PREFIX', 'intro_');
+define('TOUTATIS_COCORICO_PREFIX', 'toutatis_');
 if(is_admin())
 	require_once 'admin/Cocorico/Cocorico.php';
 
@@ -34,7 +34,7 @@ require_once 'admin/widgets/calltoaction.php';
 require_once 'admin/widgets/video.php';
 
 // Load other theme functions
-require_once 'admin/functions/intro-functions.php';
+require_once 'admin/functions/toutatis-functions.php';
 
 /**
  * Refresh the permalink structure
@@ -42,13 +42,13 @@ require_once 'admin/functions/intro-functions.php';
  * @since 1.0
  * @return void
  */
-if (!function_exists('intro_activation')){
-	function intro_activation(){
+if (!function_exists('toutatis_activation')){
+	function toutatis_activation(){
 		global $wp_rewrite;
 		$wp_rewrite->flush_rules();
 	}
 }
-add_action('after_switch_theme', 'intro_activation');
+add_action('after_switch_theme', 'toutatis_activation');
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -56,23 +56,23 @@ add_action('after_switch_theme', 'intro_activation');
  * @since 1.0
  * @return void
  */
-if (!function_exists('intro_setup')){
-	function intro_setup(){
+if (!function_exists('toutatis_setup')){
+	function toutatis_setup(){
 
 		// Load translation
-		load_theme_textdomain('intro', get_template_directory().'/languages');
+		load_theme_textdomain('toutatis', get_template_directory().'/languages');
 
 		// Register menus
 		register_nav_menus( array(
-			'primary'   => __('Main menu', 'intro'),
-			'footer' => __('Footer menu', 'intro'),
+			'primary'   => __('Main menu', 'toutatis'),
+			'footer' => __('Footer menu', 'toutatis'),
 		) );
 
 		// Register sidebars
 		register_sidebar(array(
-			'name'          => __('Sidebar', 'intro'),
+			'name'          => __('Sidebar', 'toutatis'),
 			'id'            => 'blog',
-			'description'   => __('Add widgets in the sidebar.', 'intro'),
+			'description'   => __('Add widgets in the sidebar.', 'toutatis'),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3>',
@@ -80,9 +80,9 @@ if (!function_exists('intro_setup')){
 		));
 
 		register_sidebar(array(
-			'name'          => __('Footer', 'intro'),
+			'name'          => __('Footer', 'toutatis'),
 			'id'            => 'footer',
-			'description'   => __('Add widgets in the footer.', 'intro'),
+			'description'   => __('Add widgets in the footer.', 'toutatis'),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3>',
@@ -96,15 +96,15 @@ if (!function_exists('intro_setup')){
 		add_theme_support( 'title-tag' );
 
 		// Set images sizes
-		add_image_size('intro-post-thumbnail', 720, 445, true);
-		add_image_size('intro-post-thumbnail-full', 1140, 605, true);
+		add_image_size('toutatis-post-thumbnail', 720, 445, true);
+		add_image_size('toutatis-post-thumbnail-full', 1140, 605, true);
 
 		// Add Meta boxes for post formats
 		require_once 'admin/metaboxes/post-formats.php';
 
 	}
 }
-add_action('after_setup_theme', 'intro_setup');
+add_action('after_setup_theme', 'toutatis_setup');
 
 /**
  * Add custom image sizes in the WordPress Media Library
@@ -113,15 +113,15 @@ add_action('after_setup_theme', 'intro_setup');
  * @param array $sizes The current image sizes list
  * @return array
  */
-if (!function_exists('intro_image_size_names_choose')){
-	function intro_image_size_names_choose($sizes) {
-		$added = array('intro-post-thumbnail'=>__('Post width', 'intro'));
-		$added = array('intro-post-thumbnail-full'=>__('Fullpage width', 'intro'));
+if (!function_exists('toutatis_image_size_names_choose')){
+	function toutatis_image_size_names_choose($sizes) {
+		$added = array('toutatis-post-thumbnail'=>__('Post width', 'toutatis'));
+		$added = array('toutatis-post-thumbnail-full'=>__('Fullpage width', 'toutatis'));
 		$newsizes = array_merge($sizes, $added);
 		return $newsizes;
 	}
 }
-add_filter('image_size_names_choose', 'intro_image_size_names_choose');
+add_filter('image_size_names_choose', 'toutatis_image_size_names_choose');
 
 /**
  * Register supported post formats
@@ -129,15 +129,15 @@ add_filter('image_size_names_choose', 'intro_image_size_names_choose');
  * @since 1.0
  * @return void
  */
-if(!function_exists('intro_custom_format')){
-	function intro_custom_format() {
+if(!function_exists('toutatis_custom_format')){
+	function toutatis_custom_format() {
 		$cpts = array('post' => array('video', 'link', 'quote'));
 		$current_post_type = $GLOBALS['typenow'];
 		if ($current_post_type == 'post') add_theme_support('post-formats', $cpts[$GLOBALS['typenow']]);
 	}
 }
-add_action( 'load-post.php', 'intro_custom_format' );
-add_action( 'load-post-new.php', 'intro_custom_format' );
+add_action( 'load-post.php', 'toutatis_custom_format' );
+add_action( 'load-post-new.php', 'toutatis_custom_format' );
 
 /**
  * Enqueue styles & scripts
@@ -145,16 +145,16 @@ add_action( 'load-post-new.php', 'intro_custom_format' );
  * @since 1.0
  * @return void
  */
-if (!function_exists('intro_enqueue')){
-	function intro_enqueue(){
+if (!function_exists('toutatis_enqueue')){
+	function toutatis_enqueue(){
 
 		$theme = wp_get_theme();
 
 		wp_register_script('fitvids', get_template_directory_uri().'/js/min/jquery.fitvids.min.js', array('jquery'), false, true);
 
-		wp_register_script('intro', get_template_directory_uri().'/js/min/intro.min.js', array('jquery'), false, true);
+		wp_register_script('toutatis', get_template_directory_uri().'/js/min/toutatis.min.js', array('jquery'), false, true);
 
-		wp_enqueue_style( 'intro-fonts', '//fonts.googleapis.com/css?family=Quicksand:400,700&subset=latin,latin-ext');
+		wp_enqueue_style( 'toutatis-fonts', '//fonts.googleapis.com/css?family=Quicksand:400,700&subset=latin,latin-ext');
 
 		//main stylesheet
 		wp_enqueue_style('stylesheet', get_stylesheet_directory_uri().'/style.css', array(), false);
@@ -164,10 +164,10 @@ if (!function_exists('intro_enqueue')){
 
 		wp_enqueue_script('fitvids');
 
-		wp_enqueue_script('intro');
+		wp_enqueue_script('toutatis');
 	}
 }
-add_action('wp_enqueue_scripts', 'intro_enqueue');
+add_action('wp_enqueue_scripts', 'toutatis_enqueue');
 
 /**
  * Register the theme options page in the administration
@@ -175,12 +175,12 @@ add_action('wp_enqueue_scripts', 'intro_enqueue');
  * @since 1.0
  * @return void
  */
-if (!function_exists('intro_admin_menu')){
-	function intro_admin_menu(){
-		add_theme_page(__('Intro Settings', 'intro'),__('Intro Settings', 'intro'), 'edit_theme_options', 'intro_options', 'intro_options');
+if (!function_exists('toutatis_admin_menu')){
+	function toutatis_admin_menu(){
+		add_theme_page(__('Toutatis Settings', 'toutatis'),__('Toutatis Settings', 'toutatis'), 'edit_theme_options', 'toutatis_options', 'toutatis_options');
 	}
 }
-add_action('admin_menu', 'intro_admin_menu');
+add_action('admin_menu', 'toutatis_admin_menu');
 
 /**
  * Loads the theme options page
@@ -188,8 +188,8 @@ add_action('admin_menu', 'intro_admin_menu');
  * @since 1.0
  * @return void
  */
-if (!function_exists('intro_options')){
-	function intro_options(){
+if (!function_exists('toutatis_options')){
+	function toutatis_options(){
 		if (!current_user_can('edit_theme_options')) {
 			wp_die(__('You do not have sufficient permissions to access this page.'));
 		}
@@ -204,16 +204,16 @@ if (!function_exists('intro_options')){
  * @since 1.0
  * @return void
  */
-if(!function_exists('intro_custom_styles')){
-	function intro_custom_styles(){
-		if (get_option("intro_custom_css")){
+if(!function_exists('toutatis_custom_styles')){
+	function toutatis_custom_styles(){
+		if (get_option("toutatis_custom_css")){
 			echo '<style type="text/css">';
-			echo strip_tags(stripslashes(get_option("intro_custom_css")));
+			echo strip_tags(stripslashes(get_option("toutatis_custom_css")));
 			echo '</style>';
 		}
 	}
 }
-add_action('wp_head', 'intro_custom_styles', 99);
+add_action('wp_head', 'toutatis_custom_styles', 99);
 
 /**
  * Applying the theme main color
@@ -221,27 +221,27 @@ add_action('wp_head', 'intro_custom_styles', 99);
  * @since 1.0
  * @return void
  */
-if(!function_exists('intro_user_styles')){
-	function intro_user_styles(){
+if(!function_exists('toutatis_user_styles')){
+	function toutatis_user_styles(){
 		
 		// Get the main color defined by the user
-		if (get_option('intro_color')){
+		if (get_option('toutatis_color')){
 
-			$color = apply_filters('intro_color', get_option('intro_color'));
+			$color = apply_filters('toutatis_color', get_option('toutatis_color'));
 			
 			// Load color functions
 			require_once 'admin/functions/color-functions.php';
 			
-			$hsl = intro_RGBToHSL(intro_HTMLToRGB($color));
+			$hsl = toutatis_RGBToHSL(toutatis_HTMLToRGB($color));
 			if ($hsl->lightness > 180){
-				$contrast = apply_filters('intro_color_contrast', '#333');
+				$contrast = apply_filters('toutatis_color_contrast', '#333');
 			}
 			else{
-				$contrast = apply_filters('intro_color_contrast', '#fff');
+				$contrast = apply_filters('toutatis_color_contrast', '#fff');
 			}
 
 			$hsl->lightness -= 30;
-			$complement = apply_filters('intro_color_complement', intro_HSLToHTML($hsl->hue, $hsl->saturation, $hsl->lightness));
+			$complement = apply_filters('toutatis_color_complement', toutatis_HSLToHTML($hsl->hue, $hsl->saturation, $hsl->lightness));
 		}
 		else{
 			// If not, use the default colors
@@ -261,7 +261,7 @@ if(!function_exists('intro_user_styles')){
 			.entry-content a,
 			.footer a,
 			.footer-wrapper .footer-bar a:hover,
-			.widget_introsocial ul li a,
+			.widget_toutatissocial ul li a,
 			.post-header-title a:hover,
 			.post-header-meta a,
 			.entry-content a,
@@ -284,7 +284,7 @@ if(!function_exists('intro_user_styles')){
 			.comment-author a:hover,
 			.comment-reply-link:hover,
 			.widget a:hover,
-			.widget_introsocial ul li a:hover,
+			.widget_toutatissocial ul li a:hover,
 			.comment-form .logged-in-as a:hover{
 				color: <?php echo $complement; ?>;
 			}
@@ -297,7 +297,7 @@ if(!function_exists('intro_user_styles')){
 			.entry-link,
 			.entry-link a:hover,
 			.pagination a:hover,
-			.footer-bar .widget_introsocial ul li a{
+			.footer-bar .widget_toutatissocial ul li a{
 				color:<?php echo $contrast; ?>;
 			}
 			
@@ -309,7 +309,7 @@ if(!function_exists('intro_user_styles')){
 			.widget_tag_cloud a:hover,
 			.widget_calendar #next a,
 			.widget_calendar #prev a,
-			.widget_introcalltoaction a.button,
+			.widget_toutatiscalltoaction a.button,
 			.search-form .submit-btn,
 			.entry-quote:hover,
 			.entry-link:hover,
@@ -329,7 +329,7 @@ if(!function_exists('intro_user_styles')){
 			input[type='button']:hover,
 			.widget_calendar #next a:hover,
 			.widget_calendar #prev a:hover,
-			.widget_introcalltoaction a.button:hover,
+			.widget_toutatiscalltoaction a.button:hover,
 			.search-form .submit-btn:hover,
 			.entry-pagination:hover,
 			.back-to-top:hover{
@@ -358,7 +358,7 @@ if(!function_exists('intro_user_styles')){
 			</style>
 		<?php }
 }
-add_action('wp_head','intro_user_styles', 98);
+add_action('wp_head','toutatis_user_styles', 98);
 
 
 /**
@@ -368,10 +368,10 @@ add_action('wp_head','intro_user_styles', 98);
  * @since 1.0
  * @return void
  */
-if(!function_exists('intro_edd')){
-	function intro_edd(){
-		$license = trim(get_option(INTRO_LICENSE_KEY));
-		$status = get_option('intro_license_status');
+if(!function_exists('toutatis_edd')){
+	function toutatis_edd(){
+		$license = trim(get_option(TOUTATIS_LICENSE_KEY));
+		$status = get_option('toutatis_license_status');
 		
 		// No license is activated yet
 		if (!$status){
@@ -380,28 +380,28 @@ if(!function_exists('intro_edd')){
 			$api_params = array(
 				'edd_action'=>'activate_license',
 				'license'=>$license,
-				'item_name'=>urlencode(INTRO_THEME_NAME)
+				'item_name'=>urlencode(TOUTATIS_THEME_NAME)
 			);
 
-			$response = wp_remote_get(add_query_arg($api_params, INTRO_STORE_URL), array('timeout'=>15, 'sslverify'=>false));
+			$response = wp_remote_get(add_query_arg($api_params, TOUTATIS_STORE_URL), array('timeout'=>15, 'sslverify'=>false));
 			
 			if (!is_wp_error($response)){
 				$license_data = json_decode(wp_remote_retrieve_body($response));
-				if ($license_data->license === 'valid') update_option('intro_license_status', true);
+				if ($license_data->license === 'valid') update_option('toutatis_license_status', true);
 			}
 		}
 
 		$edd_updater = new EDD_SL_Theme_Updater(array(
-				'remote_api_url'=> INTRO_STORE_URL,
-				'version' 	=> INTRO_THEME_VERSION,
+				'remote_api_url'=> TOUTATIS_STORE_URL,
+				'version' 	=> TOUTATIS_THEME_VERSION,
 				'license' 	=> $license,
-				'item_name' => INTRO_THEME_NAME,
-				'author'	=> __('Themes de France','intro')
+				'item_name' => TOUTATIS_THEME_NAME,
+				'author'	=> __('Themes de France','toutatis')
 			)
 		);
 	}
 }
-add_action('admin_init', 'intro_edd');
+add_action('admin_init', 'toutatis_edd');
 
 /**
  * Display an admin notice if the licence isn't activated
@@ -409,19 +409,19 @@ add_action('admin_init', 'intro_edd');
  * @since 1.0
  * @return void
  */
-if(!function_exists('intro_admin_notice')){
-	function intro_admin_notice(){
+if(!function_exists('toutatis_admin_notice')){
+	function toutatis_admin_notice(){
 		global $current_user;
         $user_id = $current_user->ID;
 		
 		if(current_user_can('level_10')){
 		
-			if(!get_option('intro_license_status')){
+			if(!get_option('toutatis_license_status')){
 				
-				if ( ! get_user_meta($user_id, 'ignore_purchaseintro_notice') ) {
+				if ( ! get_user_meta($user_id, 'ignore_purchasetoutatis_notice') ) {
 					echo '<div class="error"><p>';
 					
-						printf(__("To get Intro support and automatic updates, <a href='%s' target='__blank'>purchase a licence key on Themes de France</a> | <a href='%s'>I'm not interested</a>", 'intro'), 'https://www.themesdefrance.fr/themes/intro/#acheter?utm_source=theme&utm_medium=noticelink&utm_campaign=intro', '?ignore_notice=purchaseintro');
+						printf(__("To get Toutatis support and automatic updates, <a href='%s' target='__blank'>purchase a licence key on Themes de France</a> | <a href='%s'>I'm not interested</a>", 'toutatis'), 'https://www.themesdefrance.fr/themes/toutatis/#acheter?utm_source=theme&utm_medium=noticelink&utm_campaign=toutatis', '?ignore_notice=purchasetoutatis');
 					
 					echo '</p></div>';
 				}
@@ -429,4 +429,4 @@ if(!function_exists('intro_admin_notice')){
 		}
 	}
 }
-add_action('admin_notices', 'intro_admin_notice');
+add_action('admin_notices', 'toutatis_admin_notice');

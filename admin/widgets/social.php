@@ -2,7 +2,7 @@
 /**
  * Display social networking links
  *
- * @package Intro
+ * @package Toutatis
  * @subpackage Widgets
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since 1.0
@@ -14,7 +14,7 @@
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-class IntroSocial extends WP_Widget{
+class ToutatisSocial extends WP_Widget{
 	
 	/**
 	 * Social networks available
@@ -62,9 +62,9 @@ class IntroSocial extends WP_Widget{
 	 */
 	public function __construct(){
 		parent::__construct(
-			'IntroSocial',
-			__('Intro - Social', 'intro'),
-			array('description'=>__('Display links to your social profiles.', 'intro'),)
+			'ToutatisSocial',
+			__('Toutatis - Social', 'toutatis'),
+			array('description'=>__('Display links to your social profiles.', 'toutatis'),)
 		);
 	}
 	
@@ -123,7 +123,7 @@ class IntroSocial extends WP_Widget{
 		
 		if ($this->error){
 			echo '<div class="error">';
-			_e('Please enter a valid url', 'intro');
+			_e('Please enter a valid url', 'toutatis');
 			echo '</div>';
 		}
 		
@@ -136,13 +136,13 @@ class IntroSocial extends WP_Widget{
 		foreach ($fields as $count=>$field){
 			if ($count === $this->hideAfter+1):?>
 			<div>
-				<a href="#" class="introsocial-toggle-link">
+				<a href="#" class="toutatissocial-toggle-link">
 				</a>
 				<h4>
-					<?php _e('More networks', 'intro'); ?>
+					<?php _e('More networks', 'toutatis'); ?>
 				</h4>
 			</div>
-			<div class="introsocial-toggle <?php echo $open; ?>">
+			<div class="toutatissocial-toggle <?php echo $open; ?>">
 			<?php endif; ?>
 			
 			<?php $value = (isset($instance[$field])) ? $instance[$field] : ''; ?>
@@ -185,9 +185,9 @@ class IntroSocial extends WP_Widget{
  * @since 1.0
  * @return void
  */
-if (!function_exists('intro_widgets_init')){
-	function intro_widgets_init(){
-		register_widget('IntroSocial');
+if (!function_exists('toutatis_widgets_init')){
+	function toutatis_widgets_init(){
+		register_widget('ToutatisSocial');
 	}
 }
-add_action('widgets_init', 'intro_widgets_init');
+add_action('widgets_init', 'toutatis_widgets_init');

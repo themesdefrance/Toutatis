@@ -1,8 +1,8 @@
 <?php
 /**
- * Intro post formats metaboxes registering
+ * Toutatis post formats metaboxes registering
  *
- * @package Intro
+ * @package Toutatis
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since 1.0
  */
@@ -19,37 +19,37 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @since 1.0
  * @return void
  */
-if(!function_exists('intro_add_meta_boxes')){
-	function intro_add_meta_boxes(){
+if(!function_exists('toutatis_add_meta_boxes')){
+	function toutatis_add_meta_boxes(){
 		add_meta_box(
-					'intro_link',
-					__('Link', 'intro'),
-					'intro_link_callback',
+					'toutatis_link',
+					__('Link', 'toutatis'),
+					'toutatis_link_callback',
 					 'post',
 					 'normal',
 					 'high'
 					 );
 					 
 		add_meta_box(
-					'intro_quote',
-					__('Quote', 'intro'),
-					'intro_quote_callback',
+					'toutatis_quote',
+					__('Quote', 'toutatis'),
+					'toutatis_quote_callback',
 					 'post',
 					 'normal',
 					 'high'
 					 );
 		
 		add_meta_box(
-					'intro_video',
-					__('Video', 'intro'),
-					'intro_video_callback',
+					'toutatis_video',
+					__('Video', 'toutatis'),
+					'toutatis_video_callback',
 					 'post',
 					 'normal',
 					 'high'
 					 );
 	}
 }
-add_action('admin_init', 'intro_add_meta_boxes');
+add_action('admin_init', 'toutatis_add_meta_boxes');
 
 
 /**
@@ -59,16 +59,16 @@ add_action('admin_init', 'intro_add_meta_boxes');
  * @since 1.0
  * @return void
  */
-if(!function_exists('intro_link_callback')){
-	function intro_link_callback( $post ) {
+if(!function_exists('toutatis_link_callback')){
+	function toutatis_link_callback( $post ) {
 	
-		$form = new Cocorico(INTRO_COCORICO_PREFIX, false);
+		$form = new Cocorico(TOUTATIS_COCORICO_PREFIX, false);
 		$form->startForm();
 		
 		$form->setting(array('type'=>'url',
 						 'name'=>'_link_meta',
-						 'label'=>__('Link to feature', 'intro'),
-						 'description' => __('Add a link to feature for this post. You\'re free to talk about it in the post content.','intro')
+						 'label'=>__('Link to feature', 'toutatis'),
+						 'description' => __('Add a link to feature for this post. You\'re free to talk about it in the post content.','toutatis')
 						 )
 					  );
 		
@@ -84,23 +84,23 @@ if(!function_exists('intro_link_callback')){
  * @since 1.0
  * @return void
  */
-if(!function_exists('intro_quote_callback')){
-	function intro_quote_callback( $post ) {
+if(!function_exists('toutatis_quote_callback')){
+	function toutatis_quote_callback( $post ) {
 		
-		$form = new Cocorico(INTRO_COCORICO_PREFIX, false);
+		$form = new Cocorico(TOUTATIS_COCORICO_PREFIX, false);
 		$form->startForm();
 		
 		$form->setting(array('type'=>'text',
 						 'name'=>'_quote_meta',
-						 'label'=>__('Quote to feature', 'intro'),
-						 'description' => __('Add some wise words and talk about it in the post content.','intro')
+						 'label'=>__('Quote to feature', 'toutatis'),
+						 'description' => __('Add some wise words and talk about it in the post content.','toutatis')
 						 )
 					  );
 		
 		$form->setting(array('type'=>'text',
 						 'name'=>'_quote_author_meta',
-						 'label'=>__('Quote author (optional)', 'intro'),
-						 'description' => __('Be nice and don\'t forget to credit the quote author.','intro')
+						 'label'=>__('Quote author (optional)', 'toutatis'),
+						 'description' => __('Be nice and don\'t forget to credit the quote author.','toutatis')
 						 )
 					  );
 		
@@ -117,16 +117,16 @@ if(!function_exists('intro_quote_callback')){
  * @since 1.0
  * @return void
  */
-if(!function_exists('intro_video_callback')){
-	function intro_video_callback( $post ) {
+if(!function_exists('toutatis_video_callback')){
+	function toutatis_video_callback( $post ) {
 	
-		$form = new Cocorico(INTRO_COCORICO_PREFIX, false);
+		$form = new Cocorico(TOUTATIS_COCORICO_PREFIX, false);
 		$form->startForm();
 		
 		$form->setting(array('type'=>'url',
 						 'name'=>'_video_meta',
-						 'label'=>__('Video to feature', 'intro'),
-						 'description' => __('Add a video link from Youtube, Dailymotion or Vimeo.','intro')
+						 'label'=>__('Video to feature', 'toutatis'),
+						 'description' => __('Add a video link from Youtube, Dailymotion or Vimeo.','toutatis')
 						 )
 					  );
 		
@@ -141,8 +141,8 @@ if(!function_exists('intro_video_callback')){
  * @since 1.0
  * @return void
  */
-if(!function_exists('intro_display_metaboxes')){
-	function intro_display_metaboxes() {
+if(!function_exists('toutatis_display_metaboxes')){
+	function toutatis_display_metaboxes() {
 	
 	    if ( get_post_type() == "post" ){ ?>
 	    
@@ -153,9 +153,9 @@ if(!function_exists('intro_display_metaboxes')){
 		            var link_radio = $('#post-format-link'),
 		            	quote_radio = $('#post-format-quote'),
 		            	video_radio = $('#post-format-video'),
-		            	link_metabox = $('#intro_link'),
-		            	quote_metabox = $('#intro_quote'),
-		            	video_metabox = $('#intro_video'),
+		            	link_metabox = $('#toutatis_link'),
+		            	quote_metabox = $('#toutatis_quote'),
+		            	video_metabox = $('#toutatis_video'),
 		            	all_formats = $('#post-formats-select input');
 			            
 		            hideAllMetaBoxes();
@@ -199,4 +199,4 @@ if(!function_exists('intro_display_metaboxes')){
 	}
 }
 // Add inline js in admin
-add_action( 'admin_print_scripts', 'intro_display_metaboxes',1000);
+add_action( 'admin_print_scripts', 'toutatis_display_metaboxes',1000);

@@ -1,14 +1,14 @@
 /*!
-Theme Name: Intro
-Theme URI: https://www.themesdefrance.fr/intro
+Theme Name: Toutatis
+Theme URI: https://www.themesdefrance.fr/themes/toutatis
 Author: Themes de France
 Author URI: https://www.themesdefrance.fr
 Description:
-Version: 0.001
+Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: 
-Text Domain: intro
+Text Domain: toutatis
 */
 .typcn:before, .entry-thumbnail .entry-permalink:before, .entry-link a:before, .typcn:after, .entry-thumbnail .entry-permalink:after, .entry-link a:after {
   font-family: 'typicons';
@@ -1172,7 +1172,7 @@ html {
   font-size: 16px;
   color: #333; }
 
-.clearfix:before, [class*='col-']:before, .wrapper:before, .site-header:before, .footer-bar:before, .post:before, .entry-content:before, .comment:before, .widget_introsocial ul:before, .clearfix:after, [class*='col-']:after, .wrapper:after, .site-header:after, .footer-bar:after, .post:after, .entry-content:after, .comment:after, .widget_introsocial ul:after {
+.clearfix:before, [class*='col-']:before, .wrapper:before, .site-header:before, .footer-bar:before, .post:before, .entry-content:before, .comment:before, .widget_toutatissocial ul:before, .clearfix:after, [class*='col-']:after, .wrapper:after, .site-header:after, .footer-bar:after, .post:after, .entry-content:after, .comment:after, .widget_toutatissocial ul:after {
   content: " ";
   display: table;
   clear: both; }
@@ -1276,7 +1276,7 @@ html {
 img, table, td, blockquote, code, pre, textarea, input, video {
   max-width: 100%; }
 
-.button, .comment-form input[type="submit"], html a.button, input[type='submit'], input[type='button'], .widget_calendar #next a, .widget_calendar #prev a, .widget_introcalltoaction a.button {
+.button, .comment-form input[type="submit"], html a.button, input[type='submit'], input[type='button'], .widget_calendar #next a, .widget_calendar #prev a, .widget_toutatiscalltoaction a.button {
   background: #ff625b;
   border: none;
   color: #fff;
@@ -1284,7 +1284,7 @@ img, table, td, blockquote, code, pre, textarea, input, video {
   padding: 6px 16px;
   font-family: 'Quicksand';
   transition: background 0.2s ease-out; }
-  .button:hover, .comment-form input[type="submit"]:hover, input[type='submit']:hover, input[type='button']:hover, .widget_calendar #next a:hover, .widget_calendar #prev a:hover, .widget_introcalltoaction a.button:hover {
+  .button:hover, .comment-form input[type="submit"]:hover, input[type='submit']:hover, input[type='button']:hover, .widget_calendar #next a:hover, .widget_calendar #prev a:hover, .widget_toutatiscalltoaction a.button:hover {
     text-decoration: none; }
 
 .entry-quote .entry-title blockquote a:before, .single .entry-quote blockquote:before {
@@ -1325,16 +1325,16 @@ img, table, td, blockquote, code, pre, textarea, input, video {
   width: 100%;
   font-weight: bold;
   border-bottom: 1px solid rgba(56, 69, 91, 0.1); }
-  .site-header .intro-logo {
+  .site-header .toutatis-logo {
     width: 30%;
     float: left;
     text-align: left;
     padding: 30px 0; }
     @media only screen and (max-width: 800px) {
-      .site-header .intro-logo {
+      .site-header .toutatis-logo {
         width: 100%;
         padding: 20px 0; } }
-    .site-header .intro-logo a.logo-text {
+    .site-header .toutatis-logo a.logo-text {
       font-size: 26px;
       color: #38455b;
       text-decoration: none;
@@ -1342,7 +1342,7 @@ img, table, td, blockquote, code, pre, textarea, input, video {
       letter-spacing: -1px;
       padding: 3px 0;
       display: inline-block; }
-    .site-header .intro-logo a.logo-img img {
+    .site-header .toutatis-logo a.logo-img img {
       max-height: 35px; }
   .site-header #toggle-menu-icon {
     display: none; }
@@ -1644,6 +1644,10 @@ body.admin-bar .site-header {
 .entry-header {
   margin-bottom: 20px;
   padding-bottom: 5px; }
+
+.page .entry-header {
+  margin-bottom: 0px;
+  padding-bottom: 0px; }
 
 /* Classic thumbnails */
 .entry-thumbnail {
@@ -2070,26 +2074,26 @@ body.admin-bar .site-header {
 .widget_rss .rssSummary {
   margin: 5px 0; }
 
-.widget_introcalltoaction .cta-description p {
+.widget_toutatiscalltoaction .cta-description p {
   margin-bottom: 10px;
   line-height: 1.42; }
-.widget_introcalltoaction a.button {
+.widget_toutatiscalltoaction a.button {
   display: inline-block; }
 
-.widget_introsocial ul {
+.widget_toutatissocial ul {
   overflow: hidden; }
-  .widget_introsocial ul li {
+  .widget_toutatissocial ul li {
     float: left;
     padding: 5px;
     margin-bottom: 0;
     border: none; }
-    .widget_introsocial ul li:first-child {
+    .widget_toutatissocial ul li:first-child {
       padding-top: 5px; }
-    .widget_introsocial ul li:last-child {
+    .widget_toutatissocial ul li:last-child {
       padding-bottom: 5px; }
-    .widget_introsocial ul li a {
+    .widget_toutatissocial ul li a {
       font-size: 26px; }
-      .widget_introsocial ul li a:hover {
+      .widget_toutatissocial ul li a:hover {
         text-decoration: none; }
 
 .footer-bar .widget > h3 {

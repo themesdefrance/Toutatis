@@ -1,35 +1,33 @@
 {
-  "name": "Intro",
-  "version": "0.0.1",
-  "description": "Intro is a starter WordPress theme by Themes de France",
+  "name": "Toutatis",
+  "version": "1.0.0",
+  "description": "Toutatis is the first theme based on Toutatis, the starter theme from Themes de France",
   "main": "index.php",
   "scripts": {
     "test": "test"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/themesdefrance/Intro.git"
+    "url": "https://github.com/themesdefrance/Toutatis.git"
   },
   "keywords": [
     "wordpress",
-    "theme",
-    "starter",
     "theme",
     "themesdefrance"
   ],
   "author": "Thèmes de France",
   "license": "GPL2",
   "bugs": {
-    "url": "https://github.com/themesdefrance/Intro/issues"
+    "url": "https://github.com/themesdefrance/Toutatis/issues"
   },
-  "homepage": "https://github.com/themesdefrance/Intro",
+  "homepage": "https://github.com/themesdefrance/Toutatis",
   "devDependencies": {
     "grunt": "^0.4.5",
-    "grunt-autoprefixer": "^2.0.0",
+    "grunt-autoprefixer": "^2.1.0",
     "grunt-contrib-compass": "^1.0.1",
     "grunt-contrib-copy": "^0.7.0",
     "grunt-contrib-sass": "^0.8.1",
-    "grunt-contrib-uglify": "^0.6.0",
+    "grunt-contrib-uglify": "^0.7.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-sass": "^0.17.0"
   }

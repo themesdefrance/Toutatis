@@ -1,10 +1,10 @@
-.introsocial-toggle{
+.toutatissocial-toggle{
 	display:none;
 }
-.introsocial-toggle.open{
+.toutatissocial-toggle.open{
 	display:block;
 }
-.introsocial-toggle-link{
+.toutatissocial-toggle-link{
 	display:block;
 	float:right;
 	background:url("images/arrows.png") no-repeat scroll 6px 0 transparent;

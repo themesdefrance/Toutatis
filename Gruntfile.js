@@ -40,7 +40,7 @@ module.exports = function(grunt) {
 		    },
 		    build: {
 		      files: {
-		        'js/min/intro.min.js': ['js/intro.js'],
+		        'js/min/toutatis.min.js': ['js/toutatis.js'],
 		        'js/min/jquery.fitvids.min.js': ['js/jquery.fitvids.js']
 		        
 		      }
@@ -49,8 +49,8 @@ module.exports = function(grunt) {
 		copy: {
 			build: {
 				expand: true,
-				src: ['**', '!.sass-cache', '!Intro/', '!node_modules/**', '!Gruntfile.js', '!README.md', '!package.json'],
-				dest: 'Intro/',
+				src: ['**', '!.sass-cache', '!Toutatis/', '!node_modules/**', '!Gruntfile.js', '!README.md', '!package.json'],
+				dest: 'Toutatis/',
 			}
 		}
 	});

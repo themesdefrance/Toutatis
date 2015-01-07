@@ -2,7 +2,7 @@
 /**
  * Display a call to action
  *
- * @package Intro
+ * @package Toutatis
  * @subpackage Widgets
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since 1.0
@@ -14,7 +14,7 @@
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-class IntroCalltoAction extends WP_Widget{
+class ToutatisCalltoAction extends WP_Widget{
 	
  	/**
 	 * Error checking
@@ -34,9 +34,9 @@ class IntroCalltoAction extends WP_Widget{
 	public function __construct(){
 		parent::__construct(
 		
-			'IntroCalltoAction',
-			__('Intro - Call to action', 'intro'),
-			array('description'=>__('Add a call to action in the sidebar.', 'intro'))
+			'ToutatisCalltoAction',
+			__('Toutatis - Call to action', 'toutatis'),
+			array('description'=>__('Add a call to action in the sidebar.', 'toutatis'))
 		);
 	}
 	
@@ -67,7 +67,7 @@ class IntroCalltoAction extends WP_Widget{
 			<?php if (isset($instance['label']) && $instance['label']!=""){
 					echo $instance['label'];
 				}else{
-					_e( 'Click here', 'intro');
+					_e( 'Click here', 'toutatis');
 				} ?>
 			</a>
 		<?php
@@ -104,19 +104,19 @@ class IntroCalltoAction extends WP_Widget{
 		?>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'intro' ); ?></label> 
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'toutatis' ); ?></label> 
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="url" value="<?php echo esc_attr( $fields['title'] ); ?>">
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'description' ); ?>"><?php _e( 'Call to action incentive:', 'intro' ); ?></label> 
+			<label for="<?php echo $this->get_field_id( 'description' ); ?>"><?php _e( 'Call to action incentive:', 'toutatis' ); ?></label> 
 			<textarea  class="widefat" id="<?php echo $this->get_field_id( 'description' ); ?>" name="<?php echo $this->get_field_name( 'description' ); ?>"><?php echo esc_attr( $fields['description'] ); ?></textarea>
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'link' ); ?>"><?php _e( 'Call to action destination (url):', 'intro' ); ?></label> 
+			<label for="<?php echo $this->get_field_id( 'link' ); ?>"><?php _e( 'Call to action destination (url):', 'toutatis' ); ?></label> 
 			<input class="widefat" id="<?php echo $this->get_field_id( 'link' ); ?>" name="<?php echo $this->get_field_name( 'link' ); ?>" type="url" value="<?php echo esc_attr( $fields['link'] ); ?>">
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'label' ); ?>"><?php _e( 'Button\'s label:' , 'intro' ); ?></label> 
+			<label for="<?php echo $this->get_field_id( 'label' ); ?>"><?php _e( 'Button\'s label:' , 'toutatis' ); ?></label> 
 			<input class="widefat" id="<?php echo $this->get_field_id( 'label' ); ?>" name="<?php echo $this->get_field_name( 'label' ); ?>" type="text" value="<?php echo esc_attr( $fields['label'] ); ?>">
 		</p>
 		<?php
@@ -149,11 +149,11 @@ class IntroCalltoAction extends WP_Widget{
  * @since 1.0
  * @return void
  */
-if (!function_exists('intro_calltoaction_widget_init')){
+if (!function_exists('toutatis_calltoaction_widget_init')){
 
-	function intro_calltoaction_widget_init(){
+	function toutatis_calltoaction_widget_init(){
 	
-		register_widget('IntroCalltoAction');
+		register_widget('ToutatisCalltoAction');
 	}
 }
-add_action('widgets_init', 'intro_calltoaction_widget_init');
+add_action('widgets_init', 'toutatis_calltoaction_widget_init');

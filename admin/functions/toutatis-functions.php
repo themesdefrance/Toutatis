@@ -1,8 +1,8 @@
 <?php
 /**
- * Intro utility functions
+ * Toutatis utility functions
  *
- * @package Intro
+ * @package Toutatis
  * @subpackage Functions
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since 1.0
@@ -22,8 +22,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @since 1.0
  * @return string
  */
-if (!function_exists('intro_excerpt')){
-	function intro_excerpt($length){
+if (!function_exists('toutatis_excerpt')){
+	function toutatis_excerpt($length){
 		global $post;
 		
 		// No excerpt needed
@@ -56,8 +56,8 @@ if (!function_exists('intro_excerpt')){
  * @since 1.0
  * @return void
  */
-if (!function_exists('intro_is_paginated_post')){
-	function intro_is_paginated_post() {
+if (!function_exists('toutatis_is_paginated_post')){
+	function toutatis_is_paginated_post() {
 		global $multipage;
 		return 0 !== $multipage;
 	}
@@ -69,9 +69,9 @@ if (!function_exists('intro_is_paginated_post')){
  * @since 1.0
  * @return void
  */
-if (!function_exists('intro_nomenu')){
-	function intro_nomenu(){
-		echo '<ul class="top-level-menu"><li><a href="'.admin_url('nav-menus.php').'">'.__('Set up the main menu', 'intro').'</a></li></ul>';
+if (!function_exists('toutatis_nomenu')){
+	function toutatis_nomenu(){
+		echo '<ul class="top-level-menu"><li><a href="'.admin_url('nav-menus.php').'">'.__('Set up the main menu', 'toutatis').'</a></li></ul>';
 	}
 }
 
@@ -81,13 +81,13 @@ if (!function_exists('intro_nomenu')){
  * @since 1.0
  * @return void
  */
-if (!function_exists('intro_post_thumbnail')){
-	function intro_post_thumbnail(){
+if (!function_exists('toutatis_post_thumbnail')){
+	function toutatis_post_thumbnail(){
 		
-		if(get_option('intro_show_sidebar'))
-			the_post_thumbnail('intro-post-thumbnail');
+		if(get_option('toutatis_show_sidebar'))
+			the_post_thumbnail('toutatis-post-thumbnail');
 		else
-			the_post_thumbnail('intro-post-thumbnail-full');
+			the_post_thumbnail('toutatis-post-thumbnail-full');
 		
 	}
 }
@@ -105,9 +105,9 @@ if (!function_exists('intro_post_thumbnail')){
  * @since 1.0
  * @return void
  */
-if (!function_exists('intro_posts_nav')){
+if (!function_exists('toutatis_posts_nav')){
 	
-	function intro_posts_nav($extremes=true, $separator='|', $before = '', $after){
+	function toutatis_posts_nav($extremes=true, $separator='|', $before = '', $after){
 		if (is_singular()) return;
 	
 		global $wp_query;
@@ -133,8 +133,8 @@ if (!function_exists('intro_posts_nav')){
 			$links[] = $paged + 1;
 		}
 		
-		$current = apply_filters('intro_post_nav_current', '<span class="current">%s</span>');
-		$linkTemplate = apply_filters('intro_post_nav_link', '<a href="%s">%s</a>');
+		$current = apply_filters('toutatis_post_nav_current', '<span class="current">%s</span>');
+		$linkTemplate = apply_filters('toutatis_post_nav_link', '<a href="%s">%s</a>');
 		
 		$output .= $before;
 		
@@ -180,7 +180,7 @@ if (!function_exists('intro_posts_nav')){
 			
 		$output .= $after;
 		
-		echo apply_filters('intro_post_nav', $output);
+		echo apply_filters('toutatis_post_nav', $output);
 	}
 }
 
@@ -196,8 +196,8 @@ if (!function_exists('intro_posts_nav')){
  * @since 1.0
  * @return void
  */
-if (!function_exists('intro_comment')){
-	function intro_comment($comment, $args, $depth){
+if (!function_exists('toutatis_comment')){
+	function toutatis_comment($comment, $args, $depth){
 		$GLOBALS['comment'] = $comment;
 		switch ($comment->comment_type) :
 			case 'pingback' :
@@ -205,7 +205,7 @@ if (!function_exists('intro_comment')){
 		?>
 		<li class="post pingback">
 			<p>
-				<?php echo apply_filters('intro_pingback', __('Pingback:', 'intro')); ?>
+				<?php echo apply_filters('toutatis_pingback', __('Pingback:', 'toutatis')); ?>
 				<?php comment_author_link(); ?>
 			</p>
 		<?php
@@ -216,7 +216,7 @@ if (!function_exists('intro_comment')){
 			<article id="comment-<?php comment_ID(); ?>" class="comment" itemprop="comment" itemscope="itemscope" itemtype="http://schema.org/UserComments">
 				
 				<?php if ($comment->comment_approved == '0') : ?>
-					<em class="comment-waiting"><?php echo apply_filters('intro_comment_waiting_moderation', __('Your comment is waiting for moderation.', 'intro')); ?></em>
+					<em class="comment-waiting"><?php echo apply_filters('toutatis_comment_waiting_moderation', __('Your comment is waiting for moderation.', 'toutatis')); ?></em>
 				<?php endif; ?>
 				
 				<aside class="comment-aside">
@@ -226,10 +226,10 @@ if (!function_exists('intro_comment')){
 				<div class="comment-main">
 					<header class="comment-header">
 						<span class="comment-author vcard" itemprop="creator" itemscope="itemscope" itemtype="http://schema.org/Person">
-							<?php echo apply_filters('intro_comment_author', sprintf(__('%s', 'intro'), sprintf(__('<cite class="fn">%s</cite>', 'intro'), get_comment_author_link()))); ?>
+							<?php echo apply_filters('toutatis_comment_author', sprintf(__('%s', 'toutatis'), sprintf(__('<cite class="fn">%s</cite>', 'toutatis'), get_comment_author_link()))); ?>
 						</span>
 						<time class="comment-date" datetime="<?php the_time('c'); ?>" itemprop="commentTime" >
-							<?php echo apply_filters('intro_comment_date', sprintf(__('Published on %s at %s', 'intro'),get_comment_date(),get_comment_time('H:i'))); ?>
+							<?php echo apply_filters('toutatis_comment_date', sprintf(__('Published on %s at %s', 'toutatis'),get_comment_date(),get_comment_time('H:i'))); ?>
 						</time>
 					</header>
 		 
@@ -244,7 +244,7 @@ if (!function_exists('intro_comment')){
 							comment_reply_link(array_merge($args, 
 								array(	'depth'=>$depth, 
 										'max_depth'=>$args['max_depth'],
-										'reply_text'=>apply_filters('intro_comment_reply', __('Reply', 'intro'))))); 
+										'reply_text'=>apply_filters('toutatis_comment_reply', __('Reply', 'toutatis'))))); 
 							?>
 						</div>
 					</footer>
@@ -262,8 +262,8 @@ if (!function_exists('intro_comment')){
  * @since 1.0
  * @return array
  */
-if (!function_exists('intro_comment_form_args')){
-	function intro_comment_form_args(){
+if (!function_exists('toutatis_comment_form_args')){
+	function toutatis_comment_form_args(){
 		
 		$commenter = wp_get_current_commenter();
 		$req = get_option( 'require_name_email' );
@@ -273,31 +273,31 @@ if (!function_exists('intro_comment_form_args')){
 			'comment_notes_before'=>'',
 			'comment_notes_after'=>'',
 			'title_reply'=>'',
-			'title_reply_to'=>apply_filters('intro_comment_reply_to', __('Reply to %s', 'intro')),
-			'label_submit'=>apply_filters('intro_comment_send', __('Post comment', 'intro')),
-			'fields' => apply_filters( 'intro_comment_form_default_fields', array(
+			'title_reply_to'=>apply_filters('toutatis_comment_reply_to', __('Reply to %s', 'toutatis')),
+			'label_submit'=>apply_filters('toutatis_comment_send', __('Post comment', 'toutatis')),
+			'fields' => apply_filters( 'toutatis_comment_form_default_fields', array(
 			    'author' =>
 			      '<p class="comment-form-author">' .
-			      '<label for="author">' . __( 'Name', 'intro' ) . '</label> ' .
+			      '<label for="author">' . __( 'Name', 'toutatis' ) . '</label> ' .
 			      '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
 			      '" size="30"' . $aria_req .
-			      ' placeholder="' . __('Name','intro') . ( $req ? ' (' . __( 'required', 'intro' ) . ')' : '' ) .'"/></p>',
+			      ' placeholder="' . __('Name','toutatis') . ( $req ? ' (' . __( 'required', 'toutatis' ) . ')' : '' ) .'"/></p>',
 			
 			    'email' =>
 			      '<p class="comment-form-email">' .
-			      '<label for="email">' . __( 'Email', 'intro' ) . '</label> ' .
+			      '<label for="email">' . __( 'Email', 'toutatis' ) . '</label> ' .
 			      '<input id="email" name="email" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) .
 			      '" size="30"' . $aria_req .
-			      ' placeholder="' . __( 'Email', 'intro' ) . ( $req ? ' (' . __( 'required', 'intro' ) . ')' : '' ) .'"/></p>',
+			      ' placeholder="' . __( 'Email', 'toutatis' ) . ( $req ? ' (' . __( 'required', 'toutatis' ) . ')' : '' ) .'"/></p>',
 			
 			    'url' =>
-			      '<p class="comment-form-url"><label for="url">' . __( 'Website', 'intro' ) . '</label>' .
+			      '<p class="comment-form-url"><label for="url">' . __( 'Website', 'toutatis' ) . '</label>' .
 			      '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
 			      '" size="30"' .
-			      ' placeholder="' . __( 'Website', 'intro' ) . '"/></p>'
+			      ' placeholder="' . __( 'Website', 'toutatis' ) . '"/></p>'
 			   )
 			),
-			'comment_field' =>  apply_filters( 'intro_comment_form_default_comment_field','<p class="comment-form-comment"><label for="comment">' . __( 'Comment', 'intro' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="' . __('Comment','intro' ) .'"></textarea></p>')
+			'comment_field' =>  apply_filters( 'toutatis_comment_form_default_comment_field','<p class="comment-form-comment"><label for="comment">' . __( 'Comment', 'toutatis' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="' . __('Comment','toutatis' ) .'"></textarea></p>')
 		);
 		
 		return $comment_args;
@@ -316,8 +316,8 @@ if (!function_exists('intro_comment_form_args')){
  * @since 1.0
  * @return string
  */
-if (!function_exists('intro_archives')){
-	function intro_archives( $style='block', $before='<li>', $after='</li>' ) {
+if (!function_exists('toutatis_archives')){
+	function toutatis_archives( $style='block', $before='<li>', $after='</li>' ) {
 		global $wpdb;
 		
 		// Set localization language
@@ -326,7 +326,7 @@ if (!function_exists('intro_archives')){
 		$results = $wpdb->get_results("SELECT DISTINCT YEAR(post_date) AS year, MONTH(post_date) AS month FROM " . $wpdb->posts . " WHERE post_type='post' AND post_status='publish' AND post_password='' ORDER BY year DESC, month DESC");
 		
 		if (!$results) {
-			return $before.__('There is no archives to display.', 'intro').$after;
+			return $before.__('There is no archives to display.', 'toutatis').$after;
 		}
 		$dates = array();
 		foreach ($results as $result) {
@@ -374,40 +374,40 @@ if (!function_exists('intro_archives')){
  * @since 1.0
  * @return void
  */
-if(!function_exists('intro_addons_bbpress')){
-	function intro_addons_bbpress($form){
+if(!function_exists('toutatis_addons_bbpress')){
+	function toutatis_addons_bbpress($form){
 		
 		$form->startWrapper('tr');
 	
 			$form->startWrapper('th');
 			
-				$form->component('raw', __('Intro bbPress Addon', 'intro'));
+				$form->component('raw', __('Toutatis bbPress Addon', 'toutatis'));
 			
 			$form->endWrapper('th');
 	
 			$form->startWrapper('td');
 				
-				// If Intro bbPress addon isn't available, tell about it
-				if(!function_exists('intro_bbpress_styles')):
+				// If Toutatis bbPress addon isn't available, tell about it
+				if(!function_exists('toutatis_bbpress_styles')):
 				
-					$form->component('raw', __('Intro bbPress Addon bring custom CSS styling to Intro to get a perfect bbPress integration.', 'intro') . '<br><br>');
+					$form->component('raw', __('Toutatis bbPress Addon bring custom CSS styling to Toutatis to get a perfect bbPress integration.', 'toutatis') . '<br><br>');
 					
 					$form->component('link',
-									 'https://www.themesdefrance.fr/module-bbpress-intro/?utm_source=Intro&utm_medium=bouton&utm_content=Intro_bbPress&utm_campaign=IntroAdmin',
-									 __('Get Intro bbPress Addon', 'intro'),
+									 'https://www.themesdefrance.fr/module-bbpress-toutatis/?utm_source=Toutatis&utm_medium=bouton&utm_content=Toutatis_bbPress&utm_campaign=ToutatisAdmin',
+									 __('Get Toutatis bbPress Addon', 'toutatis'),
 									 array(
 										 'class'=>array('button', 'button-primary'),
 										 'target'=>'_blank'
 									 ));
 				// Or ask for feedback
 				else:
-					$form->component('description', __('Intro bbPress Addon is installed. Thanks for using it !', 'intro'));
+					$form->component('description', __('Toutatis bbPress Addon is installed. Thanks for using it !', 'toutatis'));
 					
-					$form->component('description', __('If you have some time, help us to improve it by giving some feedback.', 'intro') . '<br><br>');
+					$form->component('description', __('If you have some time, help us to improve it by giving some feedback.', 'toutatis') . '<br><br>');
 					
 					$form->component('link',
-									 'https://www.themesdefrance.fr/temoignage/?produit=Intro%20bbPress&utm_source=Intro&utm_medium=bouton&utm_content=Intro_bbPress&utm_campaign=IntroAdmin',
-									 __('Give feedback on Intro bbPress Addon', 'intro'),
+									 'https://www.themesdefrance.fr/temoignage/?produit=Toutatis%20bbPress&utm_source=Toutatis&utm_medium=bouton&utm_content=Toutatis_bbPress&utm_campaign=ToutatisAdmin',
+									 __('Give feedback on Toutatis bbPress Addon', 'toutatis'),
 									 array(
 										 'class'=>array('button'),
 										 'target'=>'_blank'
@@ -421,4 +421,4 @@ if(!function_exists('intro_addons_bbpress')){
 	
 	}
 }
-add_action('intro_addons_tab', 'intro_addons_bbpress', 10, 1);
+add_action('toutatis_addons_tab', 'toutatis_addons_bbpress', 10, 1);

@@ -2,7 +2,7 @@
 /**
  * The template for displaying the header
  *
- * @package Intro
+ * @package Toutatis
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since 1.0
  */
@@ -36,7 +36,7 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
-<!--[if lt IE 8]><p class=chromeframe><?php _e('Your browser is <em>too old !','intro'); ?></em> <a href="http://browsehappy.com/"><?php _e('Update your browser','intro'); ?></a> <?php _e('or','intro'); ?> <a href="http://www.google.com/chromeframe/?redirect=true"><?php _e('Install Google Chrome Frame','intro'); ?></a> <?php _e('to display this website correctly','intro'); ?>.</p><![endif]-->
+<!--[if lt IE 8]><p class=chromeframe><?php _e('Your browser is <em>too old !','toutatis'); ?></em> <a href="http://browsehappy.com/"><?php _e('Update your browser','toutatis'); ?></a> <?php _e('or','toutatis'); ?> <a href="http://www.google.com/chromeframe/?redirect=true"><?php _e('Install Google Chrome Frame','toutatis'); ?></a> <?php _e('to display this website correctly','toutatis'); ?>.</p><![endif]-->
 	
 	<div class="page-wrapper">
 			
@@ -44,12 +44,12 @@
 				
 				<div class="wrapper">
 				
-					<div class="intro-logo">
+					<div class="toutatis-logo">
 						
-						<?php if(get_option('intro_logo')) : ?>
+						<?php if(get_option('toutatis_logo')) : ?>
 						
 							<a href="<?php echo home_url(); ?>" class="logo-img">	
-								<img src="<?php echo esc_url(get_option('intro_logo')); ?>" alt="<?php echo bloginfo('name'); ?>">
+								<img src="<?php echo esc_url(get_option('toutatis_logo')); ?>" alt="<?php echo bloginfo('name'); ?>">
 							</a>
 						
 						<?php else: ?>
@@ -62,7 +62,7 @@
 						
 						<a id="toggle-menu-icon" class="typcn typcn-th-menu"></a>
 						
-					</div><!--END .intro-logo-->
+					</div><!--END .toutatis-logo-->
 					
 					<nav class="main-menu" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 						
@@ -74,7 +74,7 @@
 							'menu_class'     => 'top-level-menu',
 							'container'      => false,
 							'depth'          => 2,
-							'fallback_cb'    => 'intro_nomenu'
+							'fallback_cb'    => 'toutatis_nomenu'
 						));
 						?>
 					</nav><!--END .main-menu-->

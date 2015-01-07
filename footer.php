@@ -2,7 +2,7 @@
 /**
  * The template for displaying the footer
  *
- * @package Intro
+ * @package Toutatis
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since 1.0
  */
@@ -31,12 +31,12 @@
 							<div class="footnote col-1-2">
 								
 								<?php
-									if(get_option("intro_footer_left")):
+									if(get_option("toutatis_footer_left")):
 									
-										echo strip_tags(get_option("intro_footer_left"), '<strong><a><em><img>');
+										echo strip_tags(get_option("toutatis_footer_left"), '<strong><a><em><img>');
 										
 									else:
-										printf(__('<strong>%s</strong> - Intro by <a href="https://www.themesdefrance.fr/" target="_blank">Themes de France</a>', 'intro'),date('Y'));
+										printf(__('<strong>%s</strong> - Toutatis by <a href="https://www.themesdefrance.fr/" target="_blank">Themes de France</a>', 'toutatis'),date('Y'));
 									endif;
 								 ?>
 							</div><!-- END .footnote .col-1-2 -->
@@ -59,7 +59,7 @@
 					
 				</footer>
 				
-				<button id="back-to-top" title="<?php _e('Back to the top', 'intro'); ?>" class="back-to-top typcn typcn-arrow-up-thick"></button>
+				<button id="back-to-top" title="<?php _e('Back to the top', 'toutatis'); ?>" class="back-to-top typcn typcn-arrow-up-thick"></button>
 			
 			</section> <!-- END .footer-wrapper -->
 		

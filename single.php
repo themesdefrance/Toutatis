@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts and attachments
  *
- * @package Intro
+ * @package Toutatis
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since 1.0
  */
@@ -10,17 +10,17 @@
 
 <?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
 
-<?php $sidebar = apply_filters('intro_show_sidebar', get_option('intro_show_sidebar')); ?>
+<?php $sidebar = apply_filters('toutatis_show_sidebar', get_option('toutatis_show_sidebar')); ?>
 
 <?php get_header(); ?>
 
-<?php do_action('intro_before_main'); ?>
+<?php do_action('toutatis_before_main'); ?>
 
 <section class="content">
 
 	<div class="wrapper">
 		
-		<?php do_action('intro_top_main'); ?>	
+		<?php do_action('toutatis_top_main'); ?>	
 		
 		<main class="main-content<?php if ($sidebar) echo ' col-2-3'; ?>" role="main" itemprop="mainContentOfPage">
 		
@@ -32,7 +32,7 @@
 				
 					comments_template();
 					
-					intro_posts_nav(false, '','<div class="pagination">','</div>');
+					toutatis_posts_nav(false, '','<div class="pagination">','</div>');
 				
 				endwhile;
 			?>
@@ -49,12 +49,12 @@
 		
 		<?php endif; ?>
 		
-		<?php do_action('intro_bottom_main'); ?>
+		<?php do_action('toutatis_bottom_main'); ?>
 			
 	</div><!-- END .wrapper -->
 
 </section><!-- END .content -->
 
-<?php do_action('intro_after_main'); ?>
+<?php do_action('toutatis_after_main'); ?>
 
 <?php get_footer(); ?>

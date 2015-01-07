@@ -1,8 +1,8 @@
 <?php
 /**
- * Intro color functions
+ * Toutatis color functions
  *
- * @package Intro
+ * @package Toutatis
  * @subpackage Functions
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since 1.0
@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @since 1.0
  * @return string
  */
-function intro_HTMLToRGB($htmlCode)
+function toutatis_HTMLToRGB($htmlCode)
 {
 	if($htmlCode[0] == '#') $htmlCode = substr($htmlCode, 1);
     
@@ -45,7 +45,7 @@ function intro_HTMLToRGB($htmlCode)
  * @since 1.0
  * @return string
  */
-function intro_RGBToHSL($RGB) {
+function toutatis_RGBToHSL($RGB) {
 	$r = 0xFF & ($RGB >> 0x10);
 	$g = 0xFF & ($RGB >> 0x8);
 	$b = 0xFF & $RGB;
@@ -98,7 +98,7 @@ function intro_RGBToHSL($RGB) {
  * @since 1.0
  * @return string
  */
-function intro_HSLToHTML($h, $s, $l, $o = 1) {
+function toutatis_HSLToHTML($h, $s, $l, $o = 1) {
 	$h = ((float)$h) / 255.0;
 	$s = ((float)$s) / 255.0;
 	$l = ((float)$l) / 255.0;

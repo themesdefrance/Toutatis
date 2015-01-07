@@ -2,7 +2,7 @@
 /**
  * Display a video from Youtube, Dailymotion or Vimeo
  *
- * @package Intro
+ * @package Toutatis
  * @subpackage Widgets
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since 1.0
@@ -14,7 +14,7 @@
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-class IntroVideo extends WP_Widget{
+class ToutatisVideo extends WP_Widget{
 	
 	/**
 	 * Error checking
@@ -43,9 +43,9 @@ class IntroVideo extends WP_Widget{
 	public function __construct(){
 		parent::__construct(
 		
-			'IntroVideo',
-			__('Intro - Video', 'intro'),
-			array('description'=>__('Add a video from Youtube, Dailymotion or Vimeo.', 'intro'))
+			'ToutatisVideo',
+			__('Toutatis - Video', 'toutatis'),
+			array('description'=>__('Add a video from Youtube, Dailymotion or Vimeo.', 'toutatis'))
 		);
 	}
 	
@@ -75,7 +75,7 @@ class IntroVideo extends WP_Widget{
 					
 				<?php }else{ ?>
 					
-					<p><?php _e('To display a video, please add a Youtube, Dailymotion or Vimeo URL in the widget settings.', 'intro'); ?></p>
+					<p><?php _e('To display a video, please add a Youtube, Dailymotion or Vimeo URL in the widget settings.', 'toutatis'); ?></p>
 				
 				<?php } ?>
 			
@@ -95,13 +95,13 @@ class IntroVideo extends WP_Widget{
 		
 		if ($this->error){
 			echo '<div class="error">';
-			_e('Please enter a valid url', 'intro');
+			_e('Please enter a valid url', 'toutatis');
 			echo '</div>';
 		}
 		
 		if ($this->novideo){
 			echo '<div class="error">';
-			_e('This video url doesn\'t seem to exist.', 'intro');
+			_e('This video url doesn\'t seem to exist.', 'toutatis');
 			echo '</div>';
 		}
 		
@@ -118,11 +118,11 @@ class IntroVideo extends WP_Widget{
 		?>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'intro' ); ?></label> 
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'toutatis' ); ?></label> 
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $fields['title'] ); ?>">
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'video_link' ); ?>"><?php _e( 'Video URL (Youtube, Dailymotion or Vimeo):', 'intro' ); ?></label> 
+			<label for="<?php echo $this->get_field_id( 'video_link' ); ?>"><?php _e( 'Video URL (Youtube, Dailymotion or Vimeo):', 'toutatis' ); ?></label> 
 			<input  class="widefat" id="<?php echo $this->get_field_id( 'video_link' ); ?>" name="<?php echo $this->get_field_name( 'video_link' ); ?>" type="url" value="<?php echo esc_attr( $fields['video_link'] ); ?>">
 		</p>
 		<?php
@@ -168,11 +168,11 @@ class IntroVideo extends WP_Widget{
  * @since 1.0
  * @return void
  */
-if (!function_exists('intro_video_widget_init')){
+if (!function_exists('toutatis_video_widget_init')){
 
-	function intro_video_widget_init(){
+	function toutatis_video_widget_init(){
 	
-		register_widget('IntroVideo');
+		register_widget('ToutatisVideo');
 	}
 }
-add_action('widgets_init', 'intro_video_widget_init');
+add_action('widgets_init', 'toutatis_video_widget_init');
