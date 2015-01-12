@@ -9,7 +9,7 @@
 }
 
 .content{
-	padding-top: 50px;
+	padding:50px 0;
 	
 	@include width-below($grid-collapse-below){
 		padding-top: 0;
@@ -128,7 +128,6 @@ $menu-width: 280px;
 		li{
 			display: inline-block;
 			position: relative;
-			padding:0 10px;
 			
 			@include width-below($grid-collapse-below){
 				display: block;	
@@ -161,7 +160,7 @@ $menu-width: 280px;
 		a{
 			display: inline-block;
 			color: $heading-font-color;
-			padding:40px 0px 37px;
+			padding:40px 10px 37px;
 			border-bottom: 3px solid transparent;
 			text-decoration: none;
 			font-size: 16px;
@@ -194,13 +193,14 @@ $menu-width: 280px;
 		border:none;
 		border-left: 2px solid rgba(56, 69, 91, 0.1);
 	}
-	
+
 	li{
 		opacity: 1;
 		display: inline-block;
 		width: 100%;
 		
-		&:hover > a{
+		&:hover > a,
+		&.current-menu-item a{
 			border-bottom-color:transparent !important;
 		}
 		

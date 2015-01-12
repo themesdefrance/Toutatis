@@ -1300,7 +1300,7 @@ img, table, td, blockquote, code, pre, textarea, input, video {
   width: 100%; }
 
 .content {
-  padding-top: 50px; }
+  padding: 50px 0; }
   @media only screen and (max-width: 800px) {
     .content {
       padding-top: 0; } }
@@ -1384,8 +1384,7 @@ img, table, td, blockquote, code, pre, textarea, input, video {
           display: block !important; } }
     .site-header .main-menu li {
       display: inline-block;
-      position: relative;
-      padding: 0 10px; }
+      position: relative; }
       @media only screen and (max-width: 800px) {
         .site-header .main-menu li {
           display: block;
@@ -1405,7 +1404,7 @@ img, table, td, blockquote, code, pre, textarea, input, video {
     .site-header .main-menu a {
       display: inline-block;
       color: #38455b;
-      padding: 40px 0px 37px;
+      padding: 40px 10px 37px;
       border-bottom: 3px solid transparent;
       text-decoration: none;
       font-size: 16px; }
@@ -1437,7 +1436,7 @@ img, table, td, blockquote, code, pre, textarea, input, video {
     opacity: 1;
     display: inline-block;
     width: 100%; }
-    .site-header .sub-menu li:hover > a {
+    .site-header .sub-menu li:hover > a, .site-header .sub-menu li.current-menu-item a {
       border-bottom-color: transparent !important; }
   .site-header .sub-menu a {
     color: #38455b;
