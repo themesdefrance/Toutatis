@@ -32,16 +32,16 @@ if (!function_exists('toutatis_excerpt')){
 		
 		// Do we have an excerpt ? (excerpt field in the post editor)
 		if(has_excerpt())
-			return apply_filters('the_excerpt', wpautop(strip_shortcodes(strip_tags(get_the_excerpt(), '<img><iframe>'))));
+			return apply_filters('the_excerpt', wpautop(strip_shortcodes(strip_tags(get_the_excerpt()))));
 		
 		// Do we have a read more tag (<!--more-->) in the post content ?
 		if(strpos( $post->post_content, '<!--more-->' )){
 			$content_arr = get_extended($post->post_content);
-			return apply_filters('the_excerpt', wpautop(strip_shortcodes(strip_tags($content_arr['main'], '<img><iframe>'))));
+			return apply_filters('the_excerpt', wpautop(strip_shortcodes(strip_tags($content_arr['main']))));
 		}
 		
 		// Get the post content without shortcodes or HTML tags
-		$content = strip_shortcodes(strip_tags(get_the_content(), '<img><iframe>'));
+		$content = strip_shortcodes(strip_tags(get_the_content()));
 		
 		// Create a custom excerpt based on the post content
 		return apply_filters('the_excerpt', wpautop(wp_trim_words( $content , $length )));
