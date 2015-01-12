@@ -10,7 +10,7 @@
 
 <?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
 
-<?php $sidebar = apply_filters('toutatis_show_sidebar', get_option('toutatis_show_sidebar')); ?>
+<?php $sidebar = apply_filters('toutatis_show_sidebar', get_option('toutatis_show_sidebar', true)); ?>
 
 <?php get_header(); ?>
 
