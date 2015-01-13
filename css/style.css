@@ -2067,6 +2067,8 @@ body.admin-bar .site-header {
   color: #f7f7f7; }
 .footer-bar .widget ul li {
   border-bottom: 1px solid rgba(133, 133, 133, 0.3); }
+  .footer-bar .widget ul li:last-child {
+    border: none; }
 
 .pagination {
   display: inline-block;

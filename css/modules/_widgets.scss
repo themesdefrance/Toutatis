@@ -232,5 +232,9 @@
 	
 	ul li{
 		border-bottom: 1px solid rgba(133,133,133, 0.3);
+		
+		&:last-child{
+			border:none;
+		}
 	}
 }

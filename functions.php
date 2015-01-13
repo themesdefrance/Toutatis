@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 // Define theme constants (relative to licensing)
 define('TOUTATIS_STORE_URL', 'https://www.themesdefrance.fr');
 define('TOUTATIS_THEME_NAME', 'Toutatis');
-define('TOUTATIS_THEME_VERSION', '0.0.1');
+define('TOUTATIS_THEME_VERSION', '1.0.0');
 define('TOUTATIS_LICENSE_KEY', 'toutatis_license_edd');
 
 // Include theme updater (relative to licensing)
@@ -347,7 +347,7 @@ if(!function_exists('toutatis_user_styles')){
 				box-shadow: 0 0 5px <?php echo $color; ?>;
 			}
 			
-			.site-header .main-menu ul > li.current-menu-item a,
+			.site-header .main-menu > ul > li.current-menu-item a,
 			.site-header .main-menu > ul > li:hover > a{
 				box-shadow: -10px -13px 0px -10px <?php echo $color; ?> inset;
 			}
