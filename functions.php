@@ -6,9 +6,6 @@
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since 1.0
  */
-?>
-
-<?php
 	
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
@@ -350,7 +347,7 @@ if(!function_exists('toutatis_user_styles')){
 				box-shadow: 0 0 5px <?php echo $color; ?>;
 			}
 			
-			.site-header .main-menu li.current-menu-item a,
+			.site-header .main-menu ul > li.current-menu-item a,
 			.site-header .main-menu li:hover > a{
 				border-bottom-color:<?php echo $color; ?>;	
 			}

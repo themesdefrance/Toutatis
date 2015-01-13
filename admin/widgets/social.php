@@ -7,9 +7,6 @@
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since 1.0
  */
-?>
-
-<?php
 	
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
@@ -110,9 +107,10 @@ class ToutatisSocial extends WP_Widget{
      *
 	 * @since 1.0
 	 * @return void
-	 */
+	 */	
 	public function form($instance){
-		$fields = array_merge(array('title'), array_keys($this->reseaux));
+		
+		$fields = array_merge(array(__('Title','toutatis')), array_keys($this->reseaux));
 		
 		echo '<style>';
 		include 'widgets.css';
@@ -127,8 +125,9 @@ class ToutatisSocial extends WP_Widget{
 			echo '</div>';
 		}
 		
-		//verifie si les reseaux masqués par défaut ont une valeur
+		// Check if hidden networks have any value
 		$open = '';
+		
 		foreach ($instance as $reseau){
 			if (in_array($reseau, array_slice($fields, $this->hideAfter+1))) $open = 'open';
 		}
@@ -147,7 +146,7 @@ class ToutatisSocial extends WP_Widget{
 			
 			<?php $value = (isset($instance[$field])) ? $instance[$field] : ''; ?>
 			<p>
-				<label for="<?php echo $field[$this->get_field_id($field)]; ?>">
+				<label for="<?php echo $this->get_field_id($field); ?>">
 					<?php echo ucfirst(str_replace("-"," ",$field)).':'; ?>
 				</label> 
 				<input class="widefat" id="<?php echo $this->get_field_id($field); ?>" name="<?php echo $this->get_field_name($field); ?>" type="url" value="<?php echo esc_attr($value); ?>" />
