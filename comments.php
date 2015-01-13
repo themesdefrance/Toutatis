@@ -22,7 +22,7 @@
 	
 		<h2 class="comments-title">
 			<?php
-               printf(_n(apply_filters('toutatis_one_comment', '1 comment was added, add yours.'), apply_filters('toutatis_several_comments', '%1$s comments were added, add yours.'), get_comments_number(), 'toutatis'), number_format_i18n(get_comments_number()));
+               printf(_n(apply_filters('toutatis_one_comment', '1 comment was added, add yours.'), apply_filters('toutatis_several_comments', '%1$s comments were added, add yours.'), get_comments_number(), 'toutatis'), number_format_i18n(get_comments_number())); 
             ?>
 		</h2><!-- END .comments-title -->
 		
@@ -59,7 +59,7 @@
 	<?php else:  ?>
 	
 		<h2 class="comments-title">
-			<?php apply_filters('toutatis_first_comment', __('Be the first to post a comment.', 'toutatis')); ?>
+			<?php echo apply_filters('toutatis_first_comment', __('Be the first to post a comment.', 'toutatis')); ?>
 		</h2>
 		
 		<?php do_action('toutatis_before_comment_form'); ?>

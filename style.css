@@ -1527,7 +1527,8 @@ body.admin-bar .site-header {
   margin: 40px auto 0;
   padding: 20px 0;
   background: #000;
-  color: #858585; }
+  color: #858585;
+  letter-spacing: -0.5px; }
 
 .site-footer a {
   color: #f7f7f7;
@@ -1660,7 +1661,7 @@ body.admin-bar .site-header {
   margin-bottom: 10px;
   font-size: 28px;
   line-height: 39px;
-  letter-spacing: -0.5px;
+  letter-spacing: -1px;
   font-weight: bold;
   transition: color 0.2s ease-out; }
 
@@ -1728,7 +1729,8 @@ body.admin-bar .site-header {
   .entry-content img {
     height: auto; }
   .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
-    font-weight: bold; }
+    font-weight: bold;
+    letter-spacing: -1px; }
   .entry-content h1 {
     font-size: 36px;
     margin-bottom: 14px; }
@@ -1809,13 +1811,16 @@ body.admin-bar .site-header {
 
 .entry-footer {
   margin-top: 20px; }
+  .entry-footer:empty {
+    margin-top: 0; }
 
 .entry-comments {
   padding: 0 0 50px; }
 
 .comments-title {
   padding: 20px 0 40px;
-  font-weight: bold; }
+  font-weight: bold;
+  letter-spacing: -0.5px; }
 
 .comment-form {
   margin: 20px 0; }
@@ -1864,7 +1869,8 @@ body.admin-bar .site-header {
 .comment-form .logged-in-as {
   font-weight: bold;
   padding: 0;
-  margin: 10px 0; }
+  margin: 10px 0;
+  letter-spacing: -0.5px; }
   .comment-form .logged-in-as a {
     text-decoration: none; }
 
@@ -2064,6 +2070,8 @@ body.admin-bar .site-header {
 
 .footer-bar .widget > h3 {
   color: #f7f7f7; }
+.footer-bar .widget ul li {
+  border-bottom: 1px solid rgba(133, 133, 133, 0.3); }
 
 .pagination {
   display: inline-block;
