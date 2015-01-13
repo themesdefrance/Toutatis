@@ -348,8 +348,8 @@ if(!function_exists('toutatis_user_styles')){
 			}
 			
 			.site-header .main-menu ul > li.current-menu-item a,
-			.site-header .main-menu li:hover > a{
-				border-bottom-color:<?php echo $color; ?>;	
+			.site-header .main-menu > ul > li:hover > a{
+				box-shadow: -10px -13px 0px -10px <?php echo $color; ?> inset;
 			}
 
 			</style>

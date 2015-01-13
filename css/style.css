@@ -1386,26 +1386,24 @@ img, table, td, blockquote, code, pre, textarea, input, video {
         padding-right: 0; }
       .site-header .main-menu li:hover > a {
         color: #ff625b;
-        border-bottom-color: #ff625b; }
+        box-shadow: -10px -13px 0px -10px #ff625b inset; }
       .site-header .main-menu li:hover .sub-menu {
         display: block; }
       @media only screen and (min-width: 800px) {
         .site-header .main-menu li.current-menu-item a {
           color: #ff625b;
-          border-bottom-color: #ff625b; }
+          box-shadow: -10px -13px 0px -10px #ff625b inset; }
  }
     .site-header .main-menu a {
       display: inline-block;
       color: #38455b;
-      padding: 40px 10px 37px;
-      border-bottom: 3px solid transparent;
+      padding: 40px 10px;
       text-decoration: none;
       font-size: 16px; }
       @media only screen and (max-width: 800px) {
         .site-header .main-menu a {
           display: block;
-          padding: 20px 0px 17px;
-          border-color: transparent !important; } }
+          padding: 20px 0px 17px; } }
 
 .site-header .sub-menu {
   position: absolute;
@@ -1413,7 +1411,6 @@ img, table, td, blockquote, code, pre, textarea, input, video {
   left: 0;
   right: 0;
   top: 100%;
-  margin-top: 1px;
   display: none;
   min-width: 200px;
   border: 1px solid rgba(56, 69, 91, 0.1);
@@ -1430,12 +1427,15 @@ img, table, td, blockquote, code, pre, textarea, input, video {
     display: inline-block;
     width: 100%; }
     .site-header .sub-menu li:hover > a, .site-header .sub-menu li.current-menu-item a {
-      border-bottom-color: transparent !important; }
+      box-shadow: none; }
+    .site-header .sub-menu li:hover > a {
+      padding-left: 1em; }
   .site-header .sub-menu a {
     color: #38455b;
     font-size: 14px;
     padding: 12px 10px 14px 10px;
-    transition: 0.2s color ease-out; }
+    transition: 0.2s color ease-out;
+    transition: 0.2s padding ease-out; }
 
 .site-header .sub-menu a {
   font-size: 16px; }
