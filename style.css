@@ -3,7 +3,7 @@ Theme Name: Toutatis
 Theme URI: https://www.themesdefrance.fr/themes/toutatis
 Author: Themes de France
 Author URI: https://www.themesdefrance.fr
-Description:
+Description: Toutatis est le premier thème gratuit de Thèmes de France. Utilisez-le pour bloguer, créer un site vitrine ou proposer vos services.
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -1233,10 +1233,6 @@ html {
     page-break-after: avoid; }
  }
 
-/*.grid{
-	@extend .clearfix;
-	//margin-left: - $grid-gutters !important;
-}*/
 [class*='col-'], .footer-bar .widget {
   float: left;
   padding-right: 40px; }
@@ -1269,10 +1265,7 @@ html {
   [class*='col-'] {
     width: 100%;
     padding-right: 0; }
-
-  /*.grid{
-		margin-left: 0 !important;
-	}*/ }
+ }
 
 img, table, td, blockquote, code, pre, textarea, input, video {
   max-width: 100%; }
@@ -1469,37 +1462,6 @@ img, table, td, blockquote, code, pre, textarea, input, video {
       .header-bar #site-breadcrumbs a:hover {
         text-decoration: underline; }
 
-/*
-.site-header .search-wrapper,
-.site-header .social-menu{
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	z-index: 100;
-	
-	@include width-below($grid-collapse-below){
-		position: static;
-	}
-}
-.site-header .search-wrapper{
-	left: 0;
-	width: 15%;
-	max-width: 250px;
-	display: flex;
-	align-items: center;
-	
-	&.active{
-		background: #fff;
-	}
-	
-	@include width-below($grid-collapse-below){
-		width: 100%;
-		max-width: none;
-		align-items: flex-start;
-		padding: 10px 0;
-	}
-}
-*/
 .search-wrapper .search-form {
   display: none; }
 

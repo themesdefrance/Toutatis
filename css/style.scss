@@ -36,8 +36,6 @@
 	}
 }
 
-$menu-width: 280px;
-
 .site-header{
 	z-index: $z-menu;
 	width: 100%;
@@ -248,42 +246,6 @@ $menu-width: 280px;
 	}
 }
 
-
-//this would be a no-js version of the menu hovering
-//.top-level-menu > li:hover .sub-menu{
-//	display: block;
-//}
-/*
-.site-header .search-wrapper,
-.site-header .social-menu{
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	z-index: 100;
-	
-	@include width-below($grid-collapse-below){
-		position: static;
-	}
-}
-.site-header .search-wrapper{
-	left: 0;
-	width: 15%;
-	max-width: 250px;
-	display: flex;
-	align-items: center;
-	
-	&.active{
-		background: #fff;
-	}
-	
-	@include width-below($grid-collapse-below){
-		width: 100%;
-		max-width: none;
-		align-items: flex-start;
-		padding: 10px 0;
-	}
-}
-*/
 .search-wrapper .search-form{
 	display: none;
 }
@@ -314,7 +276,6 @@ $menu-width: 280px;
 	}
 }
 
-
 body.admin-bar .site-header{
 	top: 32px !important;
 }
@@ -329,7 +290,6 @@ body.admin-bar .site-header{
 		display: block;
 	}
 }
-
 
 .sidebar{
 	padding-top:0;
@@ -413,7 +373,6 @@ body.admin-bar .site-header{
 		font-size: 22px;
 	}
 }
-
 
 @import "modules/search";
 @import "modules/post";
