@@ -25,7 +25,7 @@ $(function(){
 			else $toTop.fadeOut();
 		});
 		
-		$('.entry-video, .widget-video').fitVids();
+		$('.entry-video, .widget-video, .entry-content').fitVids();
 		
 		$("#toggle-menu-icon").click(function() {
 		  $(".top-level-menu").slideToggle(400);
