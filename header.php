@@ -36,7 +36,7 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
-<!--[if lt IE 8]><p class=chromeframe><?php _e('Your browser is <em>too old !','toutatis'); ?></em> <a href="http://browsehappy.com/"><?php _e('Update your browser','toutatis'); ?></a> <?php _e('or','toutatis'); ?> <a href="http://www.google.com/chromeframe/?redirect=true"><?php _e('Install Google Chrome Frame','toutatis'); ?></a> <?php _e('to display this website correctly','toutatis'); ?>.</p><![endif]-->
+<!--[if lt IE 8]><p class="chromeframe"><?php _e('Your browser is <em>too old !','toutatis'); ?></em> <a href="http://browsehappy.com/"><?php _e('Update your browser','toutatis'); ?></a> <?php _e('or','toutatis'); ?> <a href="http://www.google.com/chromeframe/?redirect=true"><?php _e('Install Google Chrome Frame','toutatis'); ?></a> <?php _e('to display this website correctly','toutatis'); ?>.</p><![endif]-->
 	
 	<div class="page-wrapper">
 			
@@ -49,13 +49,13 @@
 						<?php if(get_option('toutatis_logo')) : ?>
 						
 							<a href="<?php echo home_url(); ?>" class="logo-img">	
-								<img src="<?php echo esc_url(get_option('toutatis_logo')); ?>" alt="<?php echo bloginfo('name'); ?>">
+								<img src="<?php echo esc_url(get_option('toutatis_logo')); ?>" alt="<?php echo esc_attr(bloginfo('name')); ?>">
 							</a>
 						
 						<?php else: ?>
 						
-							<a href="<?php echo home_url(); ?>" title="<?php echo bloginfo('name'); ?>" class="logo-text">
-								<?php echo bloginfo('name'); ?>
+							<a href="<?php echo home_url(); ?>" title="<?php echo esc_attr(bloginfo('name')); ?>" class="logo-text">
+								<?php echo esc_attr(bloginfo('name')); ?>
 							</a>
 						
 						<?php endif; ?>
@@ -65,8 +65,6 @@
 					</div><!--END .toutatis-logo-->
 					
 					<nav class="main-menu" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-						
-						
 						
 						<?php
 						wp_nav_menu(array(

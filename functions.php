@@ -33,19 +33,9 @@ require_once 'admin/widgets/video.php';
 // Load other theme functions
 require_once 'admin/functions/toutatis-functions.php';
 
-/**
- * Refresh the permalink structure
- *
- * @since 1.0
- * @return void
- */
-if (!function_exists('toutatis_activation')){
-	function toutatis_activation(){
-		global $wp_rewrite;
-		$wp_rewrite->flush_rules();
-	}
-}
-add_action('after_switch_theme', 'toutatis_activation');
+
+//Refresh the permalink structure
+add_action('after_switch_theme', 'flush_rewrite_rules');
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -145,8 +135,6 @@ add_action( 'load-post-new.php', 'toutatis_custom_format' );
 if (!function_exists('toutatis_enqueue')){
 	function toutatis_enqueue(){
 
-		$theme = wp_get_theme();
-
 		wp_register_script('fitvids', get_template_directory_uri().'/js/min/jquery.fitvids.min.js', array('jquery'), false, true);
 
 		wp_register_script('toutatis', get_template_directory_uri().'/js/min/toutatis.min.js', array('jquery'), false, true);
@@ -187,10 +175,6 @@ add_action('admin_menu', 'toutatis_admin_menu');
  */
 if (!function_exists('toutatis_options')){
 	function toutatis_options(){
-		if (!current_user_can('edit_theme_options')) {
-			wp_die(__('You do not have sufficient permissions to access this page.'));
-		}
-
        	include 'admin/index.php';
     }
 }
@@ -411,7 +395,7 @@ if(!function_exists('toutatis_admin_notice')){
 		global $current_user;
         $user_id = $current_user->ID;
 		
-		if(current_user_can('level_10')){
+		if(current_user_can('edit_theme_options')){
 		
 			if(!get_option('toutatis_license_status')){
 				

@@ -28,7 +28,7 @@
 	
 			<p class="readmore">
 	
-				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php _e('Read more','toutatis'); ?></a>
+				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php _e('Read more','toutatis'); ?></a>
 	
 			</p>
 	
@@ -45,7 +45,7 @@
 			?>
 	
 			<p class="readmore">
-				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php _e('Read more','toutatis'); ?></a>
+				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php _e('Read more','toutatis'); ?></a>
 			</p>
 	
 			<?php
