@@ -23,15 +23,15 @@ if(!class_exists('EDD_SL_Theme_Updater'))
 // Define framework constant then load the Cocorico Framework
 define('TOUTATIS_COCORICO_PREFIX', 'toutatis_');
 if(is_admin())
-	require_once 'admin/Cocorico/Cocorico.php';
+	require 'admin/Cocorico/Cocorico.php';
 
 // Load the widgets
-require_once 'admin/widgets/social.php';
-require_once 'admin/widgets/calltoaction.php';
-require_once 'admin/widgets/video.php';
+require 'admin/widgets/social.php';
+require 'admin/widgets/calltoaction.php';
+require 'admin/widgets/video.php';
 
 // Load other theme functions
-require_once 'admin/functions/toutatis-functions.php';
+require 'admin/functions/toutatis-functions.php';
 
 
 //Refresh the permalink structure
@@ -87,7 +87,7 @@ if (!function_exists('toutatis_setup')){
 		add_image_size('toutatis-post-thumbnail-full', 1140, 605, true);
 
 		// Add Meta boxes for post formats
-		require_once 'admin/metaboxes/post-formats.php';
+		require 'admin/metaboxes/post-formats.php';
 
 	}
 }
@@ -118,9 +118,9 @@ add_filter('image_size_names_choose', 'toutatis_image_size_names_choose');
  */
 if(!function_exists('toutatis_custom_format')){
 	function toutatis_custom_format() {
-		$cpts = array('post' => array('video', 'link', 'quote'));
-		$current_post_type = $GLOBALS['typenow'];
-		if ($current_post_type == 'post') add_theme_support('post-formats', $cpts[$GLOBALS['typenow']]);
+		if ( 'post' == $GLOBALS['typenow'] ) {
+                add_theme_support( 'post-formats', array( 'video', 'link', 'quote' ) );
+        }
 	}
 }
 add_action( 'load-post.php', 'toutatis_custom_format' );
@@ -211,7 +211,7 @@ if(!function_exists('toutatis_user_styles')){
 			$color = apply_filters('toutatis_color', get_option('toutatis_color'));
 			
 			// Load color functions
-			require_once 'admin/functions/color-functions.php';
+			require 'admin/functions/color-functions.php';
 			
 			$hsl = toutatis_RGBToHSL(toutatis_HTMLToRGB($color));
 			if ($hsl->lightness > 180){

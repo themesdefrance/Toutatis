@@ -364,6 +364,20 @@ if (!function_exists('toutatis_archives')){
 }
 
 /**
+ * Show a popup in order to make people drop IE mouahaha
+ *
+ * @since 1.0
+ * @return void
+ */
+if(!function_exists('toutatis_chromeframe_notice')){
+	function toutatis_chromeframe_notice(){ ?>
+		<!--[if lt IE 8]><p class='chromeframe'><?php _e('Your browser is <em>too old !','toutatis'); ?></em> <a href="http://browsehappy.com/"><?php _e('Update your browser','toutatis'); ?></a> <?php _e('or','toutatis'); ?> <a href="http://www.google.com/chromeframe/?redirect=true"><?php _e('Install Google Chrome Frame','toutatis'); ?></a> <?php _e('to display this website correctly','toutatis'); ?>.</p><![endif]-->
+	<?php
+	}
+}
+add_action('toutatis_body_top','toutatis_chromeframe_notice');
+
+/**
  * Add content for the bbPress Addon in the theme options' Addons tab
  *
  * @param object $form	Cocorico form object

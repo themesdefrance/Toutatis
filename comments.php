@@ -21,9 +21,9 @@
 	<?php if (have_comments()): ?>
 	
 		<h2 class="comments-title">
-			<?php
-               printf(_n(apply_filters('toutatis_one_comment', '1 comment was added, add yours.'), apply_filters('toutatis_several_comments', '%1$s comments were added, add yours.'), get_comments_number(), 'toutatis'), number_format_i18n(get_comments_number())); 
-            ?>
+			
+			<?php printf(_n('1 comment was added, add yours.', '%s comments were added, add yours.', get_comments_number(), 'toutatis'),number_format_i18n(get_comments_number())); ?>
+			
 		</h2><!-- END .comments-title -->
 		
 		<?php do_action('toutatis_before_comment_form'); ?>
