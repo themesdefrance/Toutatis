@@ -28,11 +28,37 @@ $form->groupHeader(array('general'=>__('General', 'toutatis'),
 $form->startWrapper('tab', 'general');
 
 	$form->startForm();
-
+		
+		// Toutatis free
+		/*$form->startWrapper('tr');
+	
+			$form->startWrapper('th');
+			
+				$form->component('raw', __('Toutatis Premium', 'toutatis'));
+			
+			$form->endWrapper('th');
+	
+			$form->startWrapper('td');
+		
+				$form->component('raw', __('Purchase a licence key in order to receive Toutatis updates and get access to support.', 'toutatis') . '<br><br>');
+					
+				$form->component('link',
+									 'https://www.themesdefrance.fr/themes/toutatis/#acheter?utm_source=theme&utm_medium=licenselink&utm_campaign=toutatis',
+									 __('Get Toutatis updates & support', 'toutatis'),
+									 array(
+										 'class'=>array('button', 'button-primary'),
+										 'target'=>'_blank'
+									 ));
+				
+			$form->endWrapper('td');
+		
+		$form->endWrapper('tr');*/
+		
+		// Toutatis premium
 		$form->setting(array('type'=>'text',
 					 'name'=>substr(TOUTATIS_LICENSE_KEY, strlen(TOUTATIS_COCORICO_PREFIX)),
 					 'label'=>__("License", 'toutatis'),
-					 'description'=>__('Purchase a licence key in order to receive Toutatis updates and get access to support. Then paste it in the field above.', 'toutatis') . '<br><br><a href="https://www.themesdefrance.fr/themes/toutatis/#acheter?utm_source=theme&utm_medium=licenselink&utm_campaign=toutatis" target="_blank" class="button button-primary">' . __('Get Toutatis updates & support', 'toutatis') . '</a>'));
+					 'description'=>__("Enter your licence key in order to receive Toutatis updates. You'll find it in the confirmation email we sent you after your purchase.",'toutatis')));
 					 
 	
 		$form->setting(array('type'=>'color',
