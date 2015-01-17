@@ -21,9 +21,10 @@ $z-menu: 500;
 	border: none;
 	color: #fff;
 	font-size: 16px;
-	padding: 6px 16px;
+	padding: 10px 30px;
 	font-family: $heading-font;
 	transition: background 0.2s ease-out;
+	line-height:1.6;
 	
 	&:hover{
 		text-decoration: none;

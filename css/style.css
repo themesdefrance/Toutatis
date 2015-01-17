@@ -1117,17 +1117,20 @@ textarea {
   overflow: auto;
   font-family: inherit;
   resize: vertical;
-  font-size: 100%; }
+  font-size: 100%;
+  width: 500px; }
 
 button, input, select {
   font-family: inherit;
   font-size: 100%; }
 
 input[type='text'], input[type='email'], input[type='url'], select {
-  max-width: 300px; }
+  max-width: 400px;
+  line-height: 32px; }
 
 input[type='tel'], input[type='number'], input[type='date'] {
-  max-width: 170px; }
+  max-width: 200px;
+  line-height: 32px; }
 
 input[type='text'], input[type='email'], input[type='url'], input[type='tel'], input[type='number'], input[type='date'], textarea, select {
   display: inline-block;
@@ -1274,9 +1277,10 @@ img, table, td, blockquote, code, pre, textarea, input, video {
   border: none;
   color: #fff;
   font-size: 16px;
-  padding: 6px 16px;
+  padding: 10px 30px;
   font-family: 'Quicksand';
-  transition: background 0.2s ease-out; }
+  transition: background 0.2s ease-out;
+  line-height: 1.6; }
   .button:hover, .comment-form input[type="submit"]:hover, input[type='submit']:hover, input[type='button']:hover, .widget_calendar #next a:hover, .widget_calendar #prev a:hover, .widget_toutatiscalltoaction a.button:hover {
     text-decoration: none; }
 
@@ -1291,12 +1295,6 @@ img, table, td, blockquote, code, pre, textarea, input, video {
   position: relative;
   overflow: hidden;
   width: 100%; }
-
-.content {
-  padding: 50px 0; }
-  @media only screen and (max-width: 800px) {
-    .content {
-      padding-top: 0; } }
 
 .wrapper {
   max-width: 1140px;
@@ -1387,12 +1385,20 @@ img, table, td, blockquote, code, pre, textarea, input, video {
       .site-header .main-menu li:hover > a {
         color: #ff625b;
         box-shadow: -10px -13px 0px -10px #ff625b inset; }
+        @media only screen and (max-width: 800px) {
+          .site-header .main-menu li:hover > a {
+            box-shadow: none !important; } }
       .site-header .main-menu li:hover .sub-menu {
         display: block; }
       @media only screen and (min-width: 800px) {
         .site-header .main-menu li.current-menu-item a {
           color: #ff625b;
           box-shadow: -10px -13px 0px -10px #ff625b inset; }
+ }
+      @media only screen and (max-width: 800px) {
+        .site-header .main-menu li.current-menu-item a {
+          color: #ff625b;
+          box-shadow: none !important; }
  }
     .site-header .main-menu a {
       display: inline-block;
@@ -1428,8 +1434,10 @@ img, table, td, blockquote, code, pre, textarea, input, video {
     width: 100%; }
     .site-header .sub-menu li:hover > a, .site-header .sub-menu li.current-menu-item a {
       box-shadow: none; }
-    .site-header .sub-menu li:hover > a {
-      padding-left: 1em; }
+    @media only screen and (min-width: 800px) {
+      .site-header .sub-menu li:hover > a {
+        padding-left: 1em; }
+ }
   .site-header .sub-menu a {
     color: #38455b;
     font-size: 14px;
@@ -1445,9 +1453,9 @@ img, table, td, blockquote, code, pre, textarea, input, video {
       opacity: 1; } }
 
 .header-bar {
-  padding-top: 50px;
   font-weight: bold; }
   .header-bar .header-bar-title {
+    padding: 50px 0;
     font-size: 28px;
     font-weight: bold;
     color: #38455b;
@@ -1460,32 +1468,6 @@ img, table, td, blockquote, code, pre, textarea, input, video {
       text-decoration: none; }
       .header-bar #site-breadcrumbs a:hover {
         text-decoration: underline; }
-
-.search-wrapper .search-form {
-  display: none; }
-
-.search-wrapper .search-form .search-field {
-  width: 80%;
-  padding: 4px 4px;
-  border-left: 2px solid #B2B2B2; }
-  .search-wrapper .search-form .search-field:focus {
-    background: #fff; }
-
-.search-wrapper .search-form .reset-btn {
-  background: #fff; }
-
-.search-wrapper .submit-btn {
-  display: none; }
-
-.search-wrapper .form-toggle {
-  border: none;
-  background: none;
-  color: #f1f1f1;
-  font-size: 20px; }
-  @media only screen and (max-width: 800px) {
-    .search-wrapper .form-toggle {
-      padding-top: 10px;
-      padding-left: 15px; } }
 
 body.admin-bar .site-header {
   top: 32px !important; }
@@ -1984,9 +1966,11 @@ body.admin-bar .site-header {
     position: absolute;
     right: 0;
     top: 0;
-    bottom: 0; }
+    bottom: 0;
+    line-height: 1; }
     .widget_search .submit-btn:before {
-      font-size: 24px; }
+      font-size: 24px;
+      line-height: 1; }
 
 .widget_text p {
   margin-bottom: 10px; }
