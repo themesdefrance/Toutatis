@@ -1366,7 +1366,7 @@ img, table, td, blockquote, code, pre, textarea, input, video {
       float: right; }
       @media only screen and (max-width: 800px) {
         .site-header .main-menu ul.top-level-menu {
-          float: none;
+          float: left;
           display: none;
           width: 100%;
           overflow: hidden; } }

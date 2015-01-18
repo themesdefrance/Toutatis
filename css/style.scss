@@ -8,7 +8,7 @@
 	width: 100%;
 }
 
-.content{	
+.content{
 
 }
 
@@ -17,9 +17,9 @@
 	max-width: 1140px;
 	width:94%;
 	margin: 0 auto;
-	
-	@extend .clearfix;	
-	
+
+	@extend .clearfix;
+
 	@include width-below(1200px){
 		max-width: 960px;
 	}
@@ -37,25 +37,21 @@
 	width: 100%;
 	font-weight: bold;
 	border-bottom: 1px solid rgba(56, 69, 91, 0.1);
-	
+
 	@extend %custom-bg;
 	@extend .clearfix;
-	
-	@include width-below($grid-collapse-below){
-		
-	}
-	
+
 	.toutatis-logo{
 		width: 30%;
 		float: left;
 		text-align: left;
 		padding: 30px 0;
-		
+
 		@include width-below($grid-collapse-below){
 			width:100%;
 			padding: 20px 0;
 		}
-		
+
 		a.logo-text{
 			font-size: 26px;
 			color: $heading-font-color;
@@ -65,15 +61,15 @@
 			padding: 3px 0;
 			display: inline-block;
 		}
-		
+
 		a.logo-img img{
 			max-height: 35px;
 		}
 	}
-	
+
 	#toggle-menu-icon{
 		display: none;
-		
+
 		@include width-below($grid-collapse-below){
 			z-index: 100;
 			display: block;
@@ -87,73 +83,73 @@
 			max-height: 36px;
 			transition: .1s color ease-in;
 		}
-		
+
 	}
-	
+
 	.main-menu{
 		width: 70%;
 		float: left;
 		font-family: $heading-font;
-		
+
 		@include width-below($grid-collapse-below){
 			text-align: left;
 			float:none;
 			width:100%;
 		}
-		
+
 		ul.top-level-menu{
 			list-style: none;
 			z-index: 10;
 			position: relative;
 			float:right;
-			
+
 			@include width-below($grid-collapse-below){
-				float:none;
+				float:left;
 				display: none;
 				width:100%;
 				overflow:hidden;
 			}
-			
+
 			@include width-above($grid-collapse-below){
 				display: block !important;
 			}
 		}
-		
+
 		li{
 			display: inline-block;
 			position: relative;
-			
+
 			@include width-below($grid-collapse-below){
-				display: block;	
-				padding:0;	
+				display: block;
+				padding:0;
 			}
-			
+
 			&:last-child {
 				padding-right: 0;
 			}
-			
+
 			&:hover {
 				> a{
 					color:$main-color;
 					box-shadow: -10px -13px 0px -10px $main-color inset;
-					
+
 					@include width-below($grid-collapse-below){
 						box-shadow:none !important;
 					}
 				}
-				
+
 				.sub-menu{
 					display:block;
 				}
 			}
-			
+
 			@include width-above($grid-collapse-below){
 				&.current-menu-item a{
 					color:$main-color;
 					box-shadow: -10px -13px 0px -10px $main-color inset;
 				}
 			}
-			
+
 			@include width-below($grid-collapse-below){
 				&.current-menu-item a{
 					color:$main-color;
@@ -161,14 +157,14 @@
 				}
 			}
 		}
-		
+
 		a{
 			display: inline-block;
 			color: $heading-font-color;
 			padding:40px 10px;
 			text-decoration: none;
 			font-size: 16px;
-			
+
 			@include width-below($grid-collapse-below){
 				display: block;
 				padding: 20px 0px 17px;
@@ -187,7 +183,7 @@
 	min-width: 200px;
 	border:1px solid rgba(56, 69, 91, 0.1);
 	border-top:none;
-	
+
 	@include width-below($grid-collapse-below){
 		display: block;
 		position: static;
@@ -200,18 +196,18 @@
 		opacity: 1;
 		display: inline-block;
 		width: 100%;
-		
+
 		&:hover > a,
 		&.current-menu-item a{
 			box-shadow:none;
 		}
-		
+
 		@include width-above($grid-collapse-below){
 			&:hover > a{
 				padding-left:1em;
 			}
 		}
-		
+
 	}
 	a{
 		color: $heading-font-color;
@@ -224,7 +220,7 @@
 .site-header .sub-menu a{
 	@extend %custom-color;
 	font-size: 16px;
-	
+
 	@include width-below($grid-collapse-below){
 		padding-left: 30px;
 		opacity: 1;
@@ -233,7 +229,7 @@
 
 .header-bar {
 	font-weight: bold;
-	
+
 	.header-bar-title {
 		padding: 50px 0;
 		font-size: 28px;
@@ -242,14 +238,14 @@
 		text-transform: uppercase;
 		letter-spacing: -1px;
 	}
-	
+
 	#site-breadcrumbs {
 		margin: 10px 0;
 		font-size: 14px;
-		
+
 		a{
 			text-decoration:none;
-			
+
 			&:hover{
 				text-decoration:underline;
 			}
@@ -266,7 +262,7 @@ body.admin-bar .site-header{
 	border: none;
 	font-size: 30px;
 	display: none;
-	
+
 	@include width-below($grid-collapse-below){
 		display: block;
 	}
@@ -284,9 +280,9 @@ body.admin-bar .site-header{
 .footer-bar{
 	margin-top: 20px;
 	color: $footer-font-color;
-	
+
 	@extend .clearfix;
-	
+
 	.widget{
 		border-bottom: none;
 	}
@@ -294,7 +290,7 @@ body.admin-bar .site-header{
 
 .footer-bar .widget{
 	@extend %grid-col;
-	
+
 	@include width-above(701px){
 		width: 33.33333333%;
 	}
@@ -318,7 +314,7 @@ body.admin-bar .site-header{
 	text-decoration: none;
 	font-family: $heading-font;
 	font-weight:bold;
-	
+
 	&:hover{
 		text-decoration:underline;
 	}
@@ -330,7 +326,7 @@ body.admin-bar .site-header{
 }
 .site-footer .menu{
 	text-align: right;
-	
+
 	@include width-below($grid-collapse-below){
 		text-align: center;
 		margin-top: 20px;
@@ -350,7 +346,7 @@ body.admin-bar .site-header{
 	right: 50px;
 	bottom: 0;
 	padding: 10px;
-	
+
 	&:before{
 		font-size: 22px;
 	}
