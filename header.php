@@ -81,5 +81,3 @@
 				</div><!--END .wrapper-->
 
 			</header><!--END .site-header-->
-
-			<?php get_template_part('header', 'bar'); ?>

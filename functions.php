@@ -327,8 +327,8 @@ if(!function_exists('toutatis_user_styles')){
 			input[type='date']:focus,
 			textarea:focus,
 			select:focus{
-				border-color:<?php echo $color; ?>;
-				box-shadow: 0 0 5px <?php echo $color; ?>;
+				border-color:<?php echo $color; ?> !important;
+				box-shadow: 0 0 5px <?php echo $color; ?> !important;
 			}
 
 			.site-header .main-menu > ul > li.current-menu-item a,
