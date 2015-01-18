@@ -6,7 +6,7 @@
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since 1.0
  */
-	
+
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
@@ -23,7 +23,7 @@ if(!class_exists('EDD_SL_Theme_Updater'))
 // Define framework constant then load the Cocorico Framework
 define('TOUTATIS_COCORICO_PREFIX', 'toutatis_');
 if(is_admin())
-	require 'admin/Cocorico/Cocorico.php';
+	require_once 'admin/Cocorico/Cocorico.php';
 
 // Load the widgets
 require 'admin/widgets/social.php';
@@ -204,15 +204,15 @@ add_action('wp_head', 'toutatis_custom_styles', 99);
  */
 if(!function_exists('toutatis_user_styles')){
 	function toutatis_user_styles(){
-		
+
 		// Get the main color defined by the user
 		if (get_option('toutatis_color')){
 
 			$color = apply_filters('toutatis_color', get_option('toutatis_color'));
-			
+
 			// Load color functions
-			require 'admin/functions/color-functions.php';
-			
+			require_once 'admin/functions/color-functions.php';
+
 			$hsl = toutatis_RGBToHSL(toutatis_HTMLToRGB($color));
 			if ($hsl->lightness > 180){
 				$contrast = apply_filters('toutatis_color_contrast', '#333');
@@ -232,7 +232,7 @@ if(!function_exists('toutatis_user_styles')){
 		}
 		?>
 			<style type="text/css">
-				
+
 			.site-header .main-menu li:hover > a,
 			.site-header .main-menu li.current-menu-item a,
 			.site-header a.logo-text:hover,
@@ -255,8 +255,8 @@ if(!function_exists('toutatis_user_styles')){
 			.post-header-title:before,
 			.widget > h3:before{
 				color: <?php echo $color; ?>;
-			}	
-			
+			}
+
 			.content a:hover,
 			.footer a:hover,
 			.post-header-meta a:hover,
@@ -281,7 +281,7 @@ if(!function_exists('toutatis_user_styles')){
 			.footer-bar .widget_toutatissocial ul li a{
 				color:<?php echo $contrast; ?>;
 			}
-			
+
 			.button,
 			.comment-form input[type="submit"],
 			html a.button,
@@ -316,8 +316,8 @@ if(!function_exists('toutatis_user_styles')){
 			.back-to-top:hover{
 				background: <?php echo $complement; ?>;
 				color: <?php echo $contrast; ?>;
-			}			
-			
+			}
+
 			.widget_tag_cloud a:hover,
 			input[type='text']:focus,
 			input[type='email']:focus,
@@ -330,7 +330,7 @@ if(!function_exists('toutatis_user_styles')){
 				border-color:<?php echo $color; ?>;
 				box-shadow: 0 0 5px <?php echo $color; ?>;
 			}
-			
+
 			.site-header .main-menu > ul > li.current-menu-item a,
 			.site-header .main-menu > ul > li:hover > a{
 				box-shadow: -10px -13px 0px -10px <?php echo $color; ?> inset;
@@ -345,7 +345,7 @@ add_action('wp_head','toutatis_user_styles', 98);
 /**
  * License activation stuff (from Easy Digital Downloads Software Licensing Addon)
  * This function will activate the theme licence on Themes de France
- * 
+ *
  * @since 1.0
  * @return void
  */
@@ -353,10 +353,10 @@ if(!function_exists('toutatis_edd')){
 	function toutatis_edd(){
 		$license = trim(get_option(TOUTATIS_LICENSE_KEY));
 		$status = get_option('toutatis_license_status');
-		
+
 		// No license is activated yet
 		if (!$status){
-			
+
 			// Activate the license
 			$api_params = array(
 				'edd_action'=>'activate_license',
@@ -365,7 +365,7 @@ if(!function_exists('toutatis_edd')){
 			);
 
 			$response = wp_remote_get(add_query_arg($api_params, TOUTATIS_STORE_URL), array('timeout'=>15, 'sslverify'=>false));
-			
+
 			if (!is_wp_error($response)){
 				$license_data = json_decode(wp_remote_retrieve_body($response));
 				if ($license_data->license === 'valid') update_option('toutatis_license_status', true);
@@ -386,7 +386,7 @@ add_action('admin_init', 'toutatis_edd');
 
 /**
  * Display an admin notice if the licence isn't activated
- * 
+ *
  * @since 1.0
  * @return void
  */
@@ -394,16 +394,16 @@ if(!function_exists('toutatis_admin_notice')){
 	function toutatis_admin_notice(){
 		global $current_user;
         $user_id = $current_user->ID;
-		
+
 		if(current_user_can('edit_theme_options')){
-		
+
 			if(!get_option('toutatis_license_status')){
-				
+
 				if ( ! get_user_meta($user_id, 'ignore_purchasetoutatis_notice') ) {
 					echo '<div class="error"><p>';
-					
+
 						printf(__("To get Toutatis support and automatic updates, <a href='%s' target='__blank'>purchase a licence key on Themes de France</a> | <a href='%s'>I'm not interested</a>", 'toutatis'), 'https://www.themesdefrance.fr/themes/toutatis/#acheter?utm_source=theme&utm_medium=noticelink&utm_campaign=toutatis', '?ignore_notice=purchasetoutatis');
-					
+
 					echo '</p></div>';
 				}
 			}
