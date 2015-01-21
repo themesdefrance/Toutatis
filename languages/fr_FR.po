@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Toutatis\n"
-"POT-Creation-Date: 2015-01-17 11:00+0100\n"
-"PO-Revision-Date: 2015-01-17 11:01+0100\n"
+"POT-Creation-Date: 2015-01-21 17:17+0100\n"
+"PO-Revision-Date: 2015-01-21 17:19+0100\n"
 "Last-Translator: Alex Thèmes de France <alex@themesdefrance.fr>\n"
 "Language-Team: Thèmes de France <bonjour@themesdefrance.fr>\n"
 "Language: fr_FR\n"
@@ -16,11 +16,11 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../404.php:37
+#: ../404.php:39
 msgid "Oops, there is nothing here..."
 msgstr "Mince, il n'y a rien ici..."
 
-#: ../404.php:52
+#: ../404.php:54
 #, php-format
 msgid ""
 "The page you requested does not seem to exist. You can go back to <a href="
@@ -65,27 +65,27 @@ msgstr "Publié"
 msgid "on"
 msgstr "le"
 
-#: ../content-header.php:41
+#: ../content-header.php:48
 msgid "by"
 msgstr "par"
 
-#: ../content-header.php:53
+#: ../content-header.php:60
 msgid "in"
 msgstr "dans"
 
-#: ../content-header.php:63
+#: ../content-header.php:70
 msgid "No Comment"
 msgstr "Aucun commentaire"
 
-#: ../content-header.php:63
+#: ../content-header.php:70
 msgid "One Comment"
 msgstr "Un commentaire"
 
-#: ../content-header.php:63
+#: ../content-header.php:70
 msgid "% Comments"
 msgstr "% commentaires"
 
-#: ../content-header.php:69
+#: ../content-header.php:76
 msgid "Edit"
 msgstr "Modifier"
 
@@ -162,11 +162,11 @@ msgstr "Largeur pleine page"
 msgid "Toutatis Settings"
 msgstr "Options Toutatis"
 
-#: ../functions.php:380
+#: ../functions.php:382
 msgid "Themes de France"
 msgstr "Thèmes de France"
 
-#: ../functions.php:405
+#: ../functions.php:407
 #, php-format
 msgid ""
 "To get Toutatis support and automatic updates, <a href='%s' "
@@ -247,18 +247,21 @@ msgstr "Général"
 msgid "Addons"
 msgstr "Modules"
 
-#: ../admin/index.php:60
-msgid "License"
-msgstr "Licence"
+#: ../admin/index.php:37
+msgid "Toutatis Premium"
+msgstr "Toutatis Premium"
 
-#: ../admin/index.php:61
+#: ../admin/index.php:43
 msgid ""
-"Enter your licence key in order to receive Toutatis updates. You'll find it "
-"in the confirmation email we sent you after your purchase."
+"Purchase a licence key in order to receive Toutatis updates and get access "
+"to support."
 msgstr ""
-"Entrez votre clé de licence afin de recevoir les mises à jour de Toutatis. "
-"Vous la trouverez quand l'email de confirmation que nous vous avons envoyé "
-"après à votre commande."
+"Achetez une clé de licence pour recevoir des mises à jour et accéder au "
+"support."
+
+#: ../admin/index.php:47
+msgid "Get Toutatis updates & support"
+msgstr "Obtenir des mises à jour et du support pour Toutatis"
 
 #: ../admin/index.php:69
 msgid "Main color"
@@ -365,95 +368,107 @@ msgstr "Supprimer"
 msgid "Set up the main menu"
 msgstr "Veuillez configurer le menu principal"
 
-#: ../admin/functions/toutatis-functions.php:205
+#: ../admin/functions/toutatis-functions.php:212
+msgid "Published In"
+msgstr "Publié dans"
+
+#: ../admin/functions/toutatis-functions.php:214
+msgid "Previous Post"
+msgstr "Article précédent"
+
+#: ../admin/functions/toutatis-functions.php:215
+msgid "Next Post"
+msgstr "Article suivant"
+
+#: ../admin/functions/toutatis-functions.php:244
 msgid "Pingback:"
 msgstr "Rétrolien:"
 
-#: ../admin/functions/toutatis-functions.php:216
+#: ../admin/functions/toutatis-functions.php:255
 msgid "Your comment is waiting for moderation."
 msgstr "Votre commentaire est en attente de modération."
 
-#: ../admin/functions/toutatis-functions.php:226
+#: ../admin/functions/toutatis-functions.php:265
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: ../admin/functions/toutatis-functions.php:226
+#: ../admin/functions/toutatis-functions.php:265
 #, php-format
 msgid "<cite class=\"fn\">%s</cite>"
 msgstr "<cite class=\"fn\">%s</cite>"
 
-#: ../admin/functions/toutatis-functions.php:229
+#: ../admin/functions/toutatis-functions.php:268
 #, php-format
 msgid "Published on %s at %s"
 msgstr "Publié le %s à %s"
 
-#: ../admin/functions/toutatis-functions.php:244
+#: ../admin/functions/toutatis-functions.php:283
 msgid "Reply"
 msgstr "Répondre"
 
-#: ../admin/functions/toutatis-functions.php:273
+#: ../admin/functions/toutatis-functions.php:312
 #, php-format
 msgid "Reply to %s"
 msgstr "Répondre à %s"
 
-#: ../admin/functions/toutatis-functions.php:274
+#: ../admin/functions/toutatis-functions.php:313
 msgid "Post comment"
 msgstr "Envoyer le commentaire"
 
-#: ../admin/functions/toutatis-functions.php:278
-#: ../admin/functions/toutatis-functions.php:281
+#: ../admin/functions/toutatis-functions.php:317
+#: ../admin/functions/toutatis-functions.php:320
 msgid "Name"
 msgstr "Nom"
 
-#: ../admin/functions/toutatis-functions.php:281
-#: ../admin/functions/toutatis-functions.php:288
+#: ../admin/functions/toutatis-functions.php:320
+#: ../admin/functions/toutatis-functions.php:327
 msgid "required"
 msgstr "requis"
 
-#: ../admin/functions/toutatis-functions.php:285
-#: ../admin/functions/toutatis-functions.php:288
+#: ../admin/functions/toutatis-functions.php:324
+#: ../admin/functions/toutatis-functions.php:327
 msgid "Email"
 msgstr "Email"
 
-#: ../admin/functions/toutatis-functions.php:291
-#: ../admin/functions/toutatis-functions.php:294
+#: ../admin/functions/toutatis-functions.php:330
+#: ../admin/functions/toutatis-functions.php:333
 msgid "Website"
 msgstr "Site"
 
-#: ../admin/functions/toutatis-functions.php:297
+#: ../admin/functions/toutatis-functions.php:336
 msgid "Comment"
 msgstr "Commentaire"
 
-#: ../admin/functions/toutatis-functions.php:326
+#: ../admin/functions/toutatis-functions.php:365
 msgid "There is no archives to display."
 msgstr "Il n'y a aucune archive à afficher."
 
-#: ../admin/functions/toutatis-functions.php:374
+#: ../admin/functions/toutatis-functions.php:413
 msgid "Your browser is <em>too old !"
 msgstr "Votre navigateur est <em>trop vieux !"
 
-#: ../admin/functions/toutatis-functions.php:374
+#: ../admin/functions/toutatis-functions.php:413
 msgid "Update your browser"
 msgstr "Mettez à jour votre navigateur"
 
-#: ../admin/functions/toutatis-functions.php:374
+#: ../admin/functions/toutatis-functions.php:413
 msgid "or"
 msgstr "ou"
 
-#: ../admin/functions/toutatis-functions.php:374
+#: ../admin/functions/toutatis-functions.php:413
 msgid "Install Google Chrome Frame"
 msgstr "Installez Google Chrome Frame"
 
-#: ../admin/functions/toutatis-functions.php:374
+#: ../admin/functions/toutatis-functions.php:413
 msgid "to display this website correctly"
 msgstr "pour afficher votre site correctement"
 
-#: ../admin/functions/toutatis-functions.php:395
+#: ../admin/functions/toutatis-functions.php:434
 msgid "Toutatis bbPress Addon"
 msgstr "Module bbPress pour Toutatis"
 
-#: ../admin/functions/toutatis-functions.php:404
+#: ../admin/functions/toutatis-functions.php:443
 msgid ""
 "Toutatis bbPress Addon bring custom CSS styling to Toutatis to get a perfect "
 "bbPress integration."
@@ -462,22 +477,22 @@ msgstr ""
 "intégration parfaite avec le plugin bbPress (pour créer un forum sur votre "
 "site)."
 
-#: ../admin/functions/toutatis-functions.php:408
+#: ../admin/functions/toutatis-functions.php:447
 msgid "Get Toutatis bbPress Addon"
 msgstr "Obtenir le module bbPress pour Toutatis"
 
-#: ../admin/functions/toutatis-functions.php:415
+#: ../admin/functions/toutatis-functions.php:454
 msgid "Toutatis bbPress Addon is installed. Thanks for using it !"
 msgstr ""
 "Le module bbPress pour Toutatis est installé. Merci à vous de l'utiliser !"
 
-#: ../admin/functions/toutatis-functions.php:417
+#: ../admin/functions/toutatis-functions.php:456
 msgid "If you have some time, help us to improve it by giving some feedback."
 msgstr ""
 "Si vous avez un peu de temps, aidez-nous à améliorer ce module en nous "
 "disant que ce vous en pensez."
 
-#: ../admin/functions/toutatis-functions.php:421
+#: ../admin/functions/toutatis-functions.php:460
 msgid "Give feedback on Toutatis bbPress Addon"
 msgstr "Faites un retour sur le module bbPress pour Toutatis"
 
@@ -601,21 +616,22 @@ msgstr "L'url de cette vidéo semble être erronée."
 msgid "Video URL (Youtube, Dailymotion or Vimeo):"
 msgstr "URL de la vidéo"
 
+#~ msgid "License"
+#~ msgstr "Licence"
+
+#~ msgid ""
+#~ "Enter your licence key in order to receive Toutatis updates. You'll find "
+#~ "it in the confirmation email we sent you after your purchase."
+#~ msgstr ""
+#~ "Entrez votre clé de licence afin de recevoir les mises à jour de "
+#~ "Toutatis. Vous la trouverez quand l'email de confirmation que nous vous "
+#~ "avons envoyé après à votre commande."
+
 #~ msgid "You do not have sufficient permissions to access this page."
 #~ msgstr "Vous n’avez pas les droits suffisants pour accéder à cette page."
 
 #~ msgid "Search ..."
 #~ msgstr "Rechercher ..."
-
-#~ msgid ""
-#~ "Purchase a licence key in order to receive Toutatis updates and get "
-#~ "access to support. Then paste it in the field above."
-#~ msgstr ""
-#~ "Achetez une clé de licence pour recevoir des mises à jour et accéder au "
-#~ "support. Collez-là ensuite dans le champ ci-dessus."
-
-#~ msgid "Get Toutatis updates & support"
-#~ msgstr "Obtenir des mises à jour et du support pour Toutatis"
 
 #~ msgid ""
 #~ "In order to get updates, please enter your licence that you received by "

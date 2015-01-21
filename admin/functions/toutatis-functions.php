@@ -182,7 +182,46 @@ if (!function_exists('toutatis_posts_nav')){
 }
 
 /**
- * Display a numeric page navigation
+ * Display navigation to next/previous post when applicable.
+ * Derived from Twenty Fourteen Theme
+ *
+ * @since 1.0.1
+ * @return void
+ */
+ 
+if (!function_exists('toutatis_post_nav')){
+	function toutatis_post_nav() {
+		
+		// Filter to handle displaying of the post navigation
+		if(!apply_filters('toutatis_post_nav',true)){
+			return;
+		}
+		
+		// Don't print empty markup if there's nowhere to navigate.
+		$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
+		$next     = get_adjacent_post( false, '', false );
+	
+		if ( ! $next && ! $previous ) {
+			return;
+		}
+	
+		?>
+		<nav class="entry-navigation" role="navigation">
+			<?php
+			if ( is_attachment() ) :
+				previous_post_link( '<span class="meta-nav-prev">%link</span>', __( 'Published In', 'toutatis' ) . '%title' );
+			else :
+				previous_post_link( '<span class="meta-nav-prev">%link</span>', __( 'Previous Post', 'toutatis' ));
+				next_post_link( '<span class="meta-nav-next">%link</span>', __( 'Next Post', 'toutatis' ));
+			endif;
+			?>
+		</nav><!-- .entry-navigation -->
+		<?php
+	}
+}
+
+/**
+ * Display post comments
  *
  * @param object $comment 	Comment to display.
  * @param array  $args    	An array of arguments.

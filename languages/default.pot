@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Toutatis\n"
-"POT-Creation-Date: 2015-01-17 11:01+0100\n"
-"PO-Revision-Date: 2015-01-17 11:01+0100\n"
+"POT-Creation-Date: 2015-01-21 17:19+0100\n"
+"PO-Revision-Date: 2015-01-21 17:19+0100\n"
 "Last-Translator: Alex Thèmes de France <alex@themesdefrance.fr>\n"
 "Language-Team: Thèmes de France <bonjour@themesdefrance.fr>\n"
 "Language: en_US\n"
@@ -16,11 +16,11 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../404.php:37
+#: ../404.php:39
 msgid "Oops, there is nothing here..."
 msgstr ""
 
-#: ../404.php:52
+#: ../404.php:54
 #, php-format
 msgid ""
 "The page you requested does not seem to exist. You can go back to <a href="
@@ -63,27 +63,27 @@ msgstr ""
 msgid "on"
 msgstr ""
 
-#: ../content-header.php:41
+#: ../content-header.php:48
 msgid "by"
 msgstr ""
 
-#: ../content-header.php:53
+#: ../content-header.php:60
 msgid "in"
 msgstr ""
 
-#: ../content-header.php:63
+#: ../content-header.php:70
 msgid "No Comment"
 msgstr ""
 
-#: ../content-header.php:63
+#: ../content-header.php:70
 msgid "One Comment"
 msgstr ""
 
-#: ../content-header.php:63
+#: ../content-header.php:70
 msgid "% Comments"
 msgstr ""
 
-#: ../content-header.php:69
+#: ../content-header.php:76
 msgid "Edit"
 msgstr ""
 
@@ -153,11 +153,11 @@ msgstr ""
 msgid "Toutatis Settings"
 msgstr ""
 
-#: ../functions.php:380
+#: ../functions.php:382
 msgid "Themes de France"
 msgstr ""
 
-#: ../functions.php:405
+#: ../functions.php:407
 #, php-format
 msgid ""
 "To get Toutatis support and automatic updates, <a href='%s' "
@@ -229,14 +229,18 @@ msgstr ""
 msgid "Addons"
 msgstr ""
 
-#: ../admin/index.php:60
-msgid "License"
+#: ../admin/index.php:37
+msgid "Toutatis Premium"
 msgstr ""
 
-#: ../admin/index.php:61
+#: ../admin/index.php:43
 msgid ""
-"Enter your licence key in order to receive Toutatis updates. You'll find it "
-"in the confirmation email we sent you after your purchase."
+"Purchase a licence key in order to receive Toutatis updates and get access "
+"to support."
+msgstr ""
+
+#: ../admin/index.php:47
+msgid "Get Toutatis updates & support"
 msgstr ""
 
 #: ../admin/index.php:69
@@ -332,113 +336,125 @@ msgstr ""
 msgid "Set up the main menu"
 msgstr ""
 
-#: ../admin/functions/toutatis-functions.php:205
+#: ../admin/functions/toutatis-functions.php:212
+msgid "Published In"
+msgstr ""
+
+#: ../admin/functions/toutatis-functions.php:214
+msgid "Previous Post"
+msgstr ""
+
+#: ../admin/functions/toutatis-functions.php:215
+msgid "Next Post"
+msgstr ""
+
+#: ../admin/functions/toutatis-functions.php:244
 msgid "Pingback:"
 msgstr ""
 
-#: ../admin/functions/toutatis-functions.php:216
+#: ../admin/functions/toutatis-functions.php:255
 msgid "Your comment is waiting for moderation."
 msgstr ""
 
-#: ../admin/functions/toutatis-functions.php:226
+#: ../admin/functions/toutatis-functions.php:265
 #, php-format
 msgid "%s"
 msgstr ""
 
-#: ../admin/functions/toutatis-functions.php:226
+#: ../admin/functions/toutatis-functions.php:265
 #, php-format
 msgid "<cite class=\"fn\">%s</cite>"
 msgstr ""
 
-#: ../admin/functions/toutatis-functions.php:229
+#: ../admin/functions/toutatis-functions.php:268
 #, php-format
 msgid "Published on %s at %s"
 msgstr ""
 
-#: ../admin/functions/toutatis-functions.php:244
+#: ../admin/functions/toutatis-functions.php:283
 msgid "Reply"
 msgstr ""
 
-#: ../admin/functions/toutatis-functions.php:273
+#: ../admin/functions/toutatis-functions.php:312
 #, php-format
 msgid "Reply to %s"
 msgstr ""
 
-#: ../admin/functions/toutatis-functions.php:274
+#: ../admin/functions/toutatis-functions.php:313
 msgid "Post comment"
 msgstr ""
 
-#: ../admin/functions/toutatis-functions.php:278
-#: ../admin/functions/toutatis-functions.php:281
+#: ../admin/functions/toutatis-functions.php:317
+#: ../admin/functions/toutatis-functions.php:320
 msgid "Name"
 msgstr ""
 
-#: ../admin/functions/toutatis-functions.php:281
-#: ../admin/functions/toutatis-functions.php:288
+#: ../admin/functions/toutatis-functions.php:320
+#: ../admin/functions/toutatis-functions.php:327
 msgid "required"
 msgstr ""
 
-#: ../admin/functions/toutatis-functions.php:285
-#: ../admin/functions/toutatis-functions.php:288
+#: ../admin/functions/toutatis-functions.php:324
+#: ../admin/functions/toutatis-functions.php:327
 msgid "Email"
 msgstr ""
 
-#: ../admin/functions/toutatis-functions.php:291
-#: ../admin/functions/toutatis-functions.php:294
+#: ../admin/functions/toutatis-functions.php:330
+#: ../admin/functions/toutatis-functions.php:333
 msgid "Website"
 msgstr ""
 
-#: ../admin/functions/toutatis-functions.php:297
+#: ../admin/functions/toutatis-functions.php:336
 msgid "Comment"
 msgstr ""
 
-#: ../admin/functions/toutatis-functions.php:326
+#: ../admin/functions/toutatis-functions.php:365
 msgid "There is no archives to display."
 msgstr ""
 
-#: ../admin/functions/toutatis-functions.php:374
+#: ../admin/functions/toutatis-functions.php:413
 msgid "Your browser is <em>too old !"
 msgstr ""
 
-#: ../admin/functions/toutatis-functions.php:374
+#: ../admin/functions/toutatis-functions.php:413
 msgid "Update your browser"
 msgstr ""
 
-#: ../admin/functions/toutatis-functions.php:374
+#: ../admin/functions/toutatis-functions.php:413
 msgid "or"
 msgstr ""
 
-#: ../admin/functions/toutatis-functions.php:374
+#: ../admin/functions/toutatis-functions.php:413
 msgid "Install Google Chrome Frame"
 msgstr ""
 
-#: ../admin/functions/toutatis-functions.php:374
+#: ../admin/functions/toutatis-functions.php:413
 msgid "to display this website correctly"
 msgstr ""
 
-#: ../admin/functions/toutatis-functions.php:395
+#: ../admin/functions/toutatis-functions.php:434
 msgid "Toutatis bbPress Addon"
 msgstr ""
 
-#: ../admin/functions/toutatis-functions.php:404
+#: ../admin/functions/toutatis-functions.php:443
 msgid ""
 "Toutatis bbPress Addon bring custom CSS styling to Toutatis to get a perfect "
 "bbPress integration."
 msgstr ""
 
-#: ../admin/functions/toutatis-functions.php:408
+#: ../admin/functions/toutatis-functions.php:447
 msgid "Get Toutatis bbPress Addon"
 msgstr ""
 
-#: ../admin/functions/toutatis-functions.php:415
+#: ../admin/functions/toutatis-functions.php:454
 msgid "Toutatis bbPress Addon is installed. Thanks for using it !"
 msgstr ""
 
-#: ../admin/functions/toutatis-functions.php:417
+#: ../admin/functions/toutatis-functions.php:456
 msgid "If you have some time, help us to improve it by giving some feedback."
 msgstr ""
 
-#: ../admin/functions/toutatis-functions.php:421
+#: ../admin/functions/toutatis-functions.php:460
 msgid "Give feedback on Toutatis bbPress Addon"
 msgstr ""
 

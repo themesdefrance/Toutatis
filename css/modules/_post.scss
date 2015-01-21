@@ -336,6 +336,32 @@
 	margin-top: 20px;
 	
 	&:empty{
-		margin-top:0;
+		display:none;
+	}
+}
+
+.entry-navigation{
+	&:empty{
+		display:none;
+	}
+	
+	@extend .clearfix;
+	margin-bottom: 50px;
+	font-weight: bold;
+	
+	a{
+		text-decoration:none;
+		
+		&:hover{
+			text-decoration:underline;
+		}
+	}
+	
+	.meta-nav-prev{
+		float: left;
+	}
+	
+	.meta-nav-next{
+		float: right;
 	}
 }
