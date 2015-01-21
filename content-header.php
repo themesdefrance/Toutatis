@@ -19,7 +19,7 @@
 
 <?php if(!is_page()): ?>
 
-	<div class="entry-meta" >
+	<div class="entry-meta">
 
 	<?php
 

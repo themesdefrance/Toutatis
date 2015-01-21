@@ -18,11 +18,11 @@
 	
 		<?php if(has_tag() && is_single()){ ?>
 		
-			<span class="entry-footer-meta" itemscope="keywords">
+			<div class="entry-footer-meta" itemscope="keywords">
 			
 				<?php echo get_the_tag_list(apply_filters('toutatis_before_post_tags', ''),' | ',apply_filters('toutatis_after_post_tags', '')); ?>
 			
-			</span>
+			</div>
 			
 		<?php } ?>
 	

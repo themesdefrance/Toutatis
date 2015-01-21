@@ -41,7 +41,7 @@
 				
 					<blockquote>
 						
-						<a href="<?php the_permalink(); ?>" title="<?php echo $quote; ?>"><?php echo $quote; ?></a>
+						<a href="<?php the_permalink(); ?>" title="<?php echo $quote; ?>" rel="bookmark" itemprop="url"><?php echo $quote; ?></a>
 					
 					</blockquote>
 					
@@ -49,7 +49,7 @@
 				
 				<div class="entry-quote-author">
 				
-					<a href="<?php the_permalink(); ?>" title="<?php echo $quote; ?>">
+					<a href="<?php the_permalink(); ?>" title="<?php echo $quote; ?>" rel="bookmark" itemprop="url">
 						
 						<?php echo $author_quote; ?>
 						
