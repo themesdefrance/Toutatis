@@ -1296,6 +1296,9 @@ img, table, td, blockquote, code, pre, textarea, input, video {
   overflow: hidden;
   width: 100%; }
 
+.content {
+  padding-bottom: 60px; }
+
 .wrapper {
   max-width: 1140px;
   width: 94%;
@@ -1686,14 +1689,16 @@ body.admin-bar .site-header {
     .entry-link a:after {
       content: '\e09c'; }
 
-.entry-header-meta {
+.entry-meta {
   color: #777777;
   font-weight: bold;
   font-size: 14px; }
+  .entry-meta .updated {
+    display: none; }
 
-.entry-header-meta a, .entry-footer-meta a {
+.entry-meta a, .entry-footer-meta a {
   text-decoration: none; }
-  .entry-header-meta a:hover, .entry-footer-meta a:hover {
+  .entry-meta a:hover, .entry-footer-meta a:hover {
     text-decoration: underline; }
 
 .entry-content {
@@ -2056,7 +2061,7 @@ body.admin-bar .site-header {
 
 .pagination {
   display: inline-block;
-  margin: 20px 0 80px; }
+  margin: 20px 0; }
   .pagination > span, .pagination > a, .pagination > i.nothere {
     display: inline-block;
     color: inherit;

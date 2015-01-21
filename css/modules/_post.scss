@@ -168,12 +168,16 @@
 	}
 }
 
-.entry-header-meta{
+.entry-meta{
 	color: #777777;
 	font-weight:bold;
 	font-size: 14px;
+	
+	.updated{
+		display:none;
+	}
 }
-.entry-header-meta a,
+.entry-meta a,
 .entry-footer-meta a{
 	@extend %custom-color;
 	text-decoration: none;
