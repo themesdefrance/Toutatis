@@ -30,7 +30,7 @@
 				
 					get_template_part('content', get_post_format());
 					
-					toutatis_post_nav();
+					toutatis_single_post_nav();
 					
 					comments_template();
 				
