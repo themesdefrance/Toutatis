@@ -177,7 +177,7 @@ if (!function_exists('toutatis_posts_nav')){
 			
 		$output .= $after;
 		
-		echo apply_filters('toutatis_post_nav', $output);
+		echo apply_filters('toutatis_posts_nav', $output);
 	}
 }
 
@@ -189,11 +189,11 @@ if (!function_exists('toutatis_posts_nav')){
  * @return void
  */
  
-if (!function_exists('toutatis_post_nav')){
-	function toutatis_post_nav() {
+if (!function_exists('toutatis_single_post_nav')){
+	function toutatis_single_post_nav() {
 		
 		// Filter to handle displaying of the post navigation
-		if(!apply_filters('toutatis_post_nav',true)){
+		if(!apply_filters('toutatis_single_post_nav',true)){
 			return;
 		}
 		
