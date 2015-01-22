@@ -14,6 +14,8 @@
 
 <?php get_header(); ?>
 
+<?php get_template_part('header', 'bar'); ?>
+
 <?php do_action('toutatis_before_main'); ?>
 
 <section class="content">

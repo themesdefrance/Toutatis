@@ -238,7 +238,7 @@ if(!function_exists('toutatis_user_styles')){
 			.site-header a.logo-text:hover,
 			#toggle-menu-icon:hover,
 			#site-breadcrumbs a,
-			.entry-header-meta a,
+			.entry-meta a,
 			.entry-content a,
 			.entry-navigation a,
 			.footer a,
