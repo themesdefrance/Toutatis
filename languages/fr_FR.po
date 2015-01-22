@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Toutatis\n"
-"POT-Creation-Date: 2015-01-21 17:17+0100\n"
-"PO-Revision-Date: 2015-01-21 17:19+0100\n"
+"POT-Creation-Date: 2015-01-21 18:32+0100\n"
+"PO-Revision-Date: 2015-01-21 18:32+0100\n"
 "Last-Translator: Alex Thèmes de France <alex@themesdefrance.fr>\n"
 "Language-Team: Thèmes de France <bonjour@themesdefrance.fr>\n"
 "Language: fr_FR\n"
@@ -73,19 +73,19 @@ msgstr "par"
 msgid "in"
 msgstr "dans"
 
-#: ../content-header.php:70
+#: ../content-header.php:72
 msgid "No Comment"
 msgstr "Aucun commentaire"
 
-#: ../content-header.php:70
+#: ../content-header.php:73
 msgid "One Comment"
 msgstr "Un commentaire"
 
-#: ../content-header.php:70
+#: ../content-header.php:74
 msgid "% Comments"
 msgstr "% commentaires"
 
-#: ../content-header.php:76
+#: ../content-header.php:80
 msgid "Edit"
 msgstr "Modifier"
 
