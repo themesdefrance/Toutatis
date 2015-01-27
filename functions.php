@@ -236,7 +236,6 @@ if(!function_exists('toutatis_user_styles')){
 			.site-header .main-menu li:hover > a,
 			.site-header .main-menu li.current-menu-item a,
 			.site-header a.logo-text:hover,
-			#toggle-menu-icon:hover,
 			#site-breadcrumbs a,
 			.entry-meta a,
 			.entry-content a,
