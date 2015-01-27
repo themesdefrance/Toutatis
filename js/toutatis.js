@@ -3,13 +3,6 @@ $(function(){
 
 	 $(document).ready(function(){
 
-		//menu toggle on mobile view
-		$('.menu-toggle').click(function(){
-			$('.content-wrapper').toggleClass('menu-open');
-		});
-
-		$('.post-video, .widget-video').fitVids();
-
 		//back to top button
 		var $toTop = $('#back-to-top');
 		if ($(window).scrollTop() <= $(window).height()) $toTop.hide();
@@ -41,7 +34,13 @@ $(function(){
 		
 		var recalculateMenuSize = function(){
 			var browserWidth = $( window ).width();
-
+			
+			if ( browserWidth == GetWidth() ) {
+		        return;
+		    }
+		
+		    browserWidth = GetWidth();
+			
 			if ( browserWidth > 800 ) {
 				$(".top-level-menu").show();
 			}else{
