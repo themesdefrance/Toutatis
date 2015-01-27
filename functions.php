@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 // Define theme constants (relative to licensing)
 define('TOUTATIS_STORE_URL', 'https://www.themesdefrance.fr');
 define('TOUTATIS_THEME_NAME', 'Toutatis');
-define('TOUTATIS_THEME_VERSION', '1.0.0');
+define('TOUTATIS_THEME_VERSION', '1.0.1');
 define('TOUTATIS_LICENSE_KEY', 'toutatis_license_edd');
 
 // Include theme updater (relative to licensing)
@@ -36,6 +36,20 @@ require 'admin/functions/toutatis-functions.php';
 
 //Refresh the permalink structure
 add_action('after_switch_theme', 'flush_rewrite_rules');
+
+//Remove accents in uploaded files
+add_filter( 'sanitize_file_name', 'remove_accents' );
+
+//Remove extra stuff from header
+remove_action('wp_head', 'rsd_link');
+remove_action('wp_head', 'wp_generator');
+remove_action('wp_head', 'feed_links', 2);
+remove_action('wp_head', 'index_rel_link');
+remove_action('wp_head', 'wlwmanifest_link');
+remove_action('wp_head', 'feed_links_extra', 3);
+remove_action('wp_head', 'start_post_rel_link', 10, 0);
+remove_action('wp_head', 'parent_post_rel_link', 10, 0);
+remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -81,6 +95,9 @@ if (!function_exists('toutatis_setup')){
 
 		// Enable custom title tag for 4.1
 		add_theme_support( 'title-tag' );
+		
+		// Enable Feed Links
+		add_theme_support( 'automatic-feed-links' );
 
 		// Set images sizes
 		add_image_size('toutatis-post-thumbnail', 720, 445, true);
