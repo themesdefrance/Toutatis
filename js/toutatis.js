@@ -35,11 +35,9 @@ $(function(){
 		var recalculateMenuSize = function(){
 			var browserWidth = $( window ).width();
 			
-			if ( browserWidth == GetWidth() ) {
+			if ( browserWidth == $( window ).width() ) {
 		        return;
 		    }
-		
-		    browserWidth = GetWidth();
 			
 			if ( browserWidth > 800 ) {
 				$(".top-level-menu").show();
