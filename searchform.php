@@ -12,7 +12,7 @@
 
 <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
 	<label>
-		<span class="screen-reader-text"><?php __('Search for:','toutatis') ?></span>
+		<span class="screen-reader-text"><?php _e('Search for:','toutatis') ?></span>
 		
 	</label>
 		<input type="search" class="search-field" placeholder="<?php esc_attr__('Search ...','toutatis') ?>" value="" name="s" title="<?php esc_attr__('Search for:','toutatis') ?>" />

@@ -100,7 +100,7 @@ if (!function_exists('toutatis_setup')){
 		add_theme_support( 'automatic-feed-links' );
 
 		// Set images sizes
-		add_image_size('toutatis-post-thumbnail', 720, 445, true);
+		set_post_thumbnail_size('toutatis-post-thumbnail', 720, 445, true);
 		add_image_size('toutatis-post-thumbnail-full', 1140, 605, true);
 
 		// Add Meta boxes for post formats
@@ -267,6 +267,7 @@ if(!function_exists('toutatis_user_styles')){
 			#respond a,
 			.comment-author a,
 			.comment-reply-link,
+			.comment-navigation a,
 			.widget a,
 			.comment-form .logged-in-as a,
 			.post-header-title:before,
@@ -282,6 +283,7 @@ if(!function_exists('toutatis_user_styles')){
 			.entry-navigation a:hover,
 			.comment-author a:hover,
 			.comment-reply-link:hover,
+			.comment-navigation a:hover,
 			.widget a:hover,
 			.widget_toutatissocial ul li a:hover,
 			.comment-form .logged-in-as a:hover{

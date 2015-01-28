@@ -18,7 +18,12 @@
 
 	<?php if (is_single()):
 	
-			the_content();
+			// Display an excerpt on comments page
+			if(get_query_var( 'cpage' ) > 0):
+				echo toutatis_excerpt(50);
+			else:
+				the_content();
+			endif;
 	
 		elseif(is_category() || is_tax() || is_search()):
 	
