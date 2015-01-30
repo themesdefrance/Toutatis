@@ -167,6 +167,10 @@ if (!function_exists('toutatis_enqueue')){
 		wp_enqueue_script('fitvids');
 
 		wp_enqueue_script('toutatis');
+		
+		if ( is_singular() ){
+			wp_enqueue_script( "comment-reply" );
+		}
 	}
 }
 add_action('wp_enqueue_scripts', 'toutatis_enqueue');
