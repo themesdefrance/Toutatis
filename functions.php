@@ -435,3 +435,22 @@ if(!function_exists('toutatis_admin_notice')){
 	}
 }
 add_action('admin_notices', 'toutatis_admin_notice');
+
+/**
+ * Hide admin notice if the user isn't interested in purchasing the license.
+ *
+ * @since 1.0.2
+ * @return void
+ */
+if(!function_exists('toutatis_admin_ignore')){
+	function toutatis_admin_ignore() {
+	
+	    global $current_user;
+        $user_id = $current_user->ID;
+        /* If user clicks to ignore the notice, add that to their user meta */
+        if ( isset($_GET['ignore_notice']) && 'purchasetoutatis' == $_GET['ignore_notice'] ) {
+             add_user_meta($user_id, 'ignore_purchasetoutatis_notice', 'true', true);
+	    }
+	}
+}
+add_action('admin_init', 'toutatis_admin_ignore');
