@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 // Define theme constants (relative to licensing)
 define('TOUTATIS_STORE_URL', 'https://www.themesdefrance.fr');
 define('TOUTATIS_THEME_NAME', 'Toutatis');
-define('TOUTATIS_THEME_VERSION', '1.0.1');
+define('TOUTATIS_THEME_VERSION', '1.0.2');
 define('TOUTATIS_LICENSE_KEY', 'toutatis_license_edd');
 
 // Include theme updater (relative to licensing)

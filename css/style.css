@@ -4,7 +4,7 @@ Theme URI: https://www.themesdefrance.fr/themes/toutatis
 Author: Themes de France
 Author URI: https://www.themesdefrance.fr
 Description: Toutatis est le premier thème gratuit de Thèmes de France. Utilisez-le pour bloguer, créer un site vitrine ou proposer vos services.
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: 
@@ -1935,6 +1935,11 @@ body.admin-bar .site-header {
 #respond a {
   text-decoration: none; }
   #respond a:hover {
+    text-decoration: underline; }
+
+.comment-navigation a {
+  text-decoration: none; }
+  .comment-navigation a:hover {
     text-decoration: underline; }
 
 .widget {
